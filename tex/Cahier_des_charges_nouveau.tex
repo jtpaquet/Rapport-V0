@@ -1,0 +1,371 @@
+%!TEX encoding = IsoLatin
+
+%
+% Chapitre "Cahier des charges"
+%
+
+\chapter{Cahier des charges}
+\label{s:cahier_des_charges}
+
+\section{Tableau des critères}
+
+\begin{table}[htp]
+   \footnotesize
+   \centering
+   \label{t:criteres}
+   \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Critères & Pondération & Barème & Min. & Max.\\
+        \hline
+        \hline
+        Intervention humaine & 20\% & & & \\
+        \hline
+        Durée de vie de l'alimentation du système [jours] & 4\% & Éq. \ref{eq:bareme_duree_batterie}  & 14  & $\infty$\\
+        Acheminement des informations [m] & 4\% & Éq. \ref{eq:bareme_acheminement_infos} & 53 & 284 \\
+        \hline\hline
+        Qualité du produit & 40\% & & &\\
+        \hline
+        Précision du logiciel de reconnaissance [\%] & 10\% & Éq. \ref{eq:bareme_precision} & & \\
+        Utilisation de l'interface graphique & 2\% & Table \ref{t:bareme_interface} & & \\
+        Identification des poissons [poissons] & 10\% & Éq.  \ref{eq:bareme_identification} & 5 & $\infty$ \\
+        Capacité de stockage des données [Go] & 7\% & Éq. \ref{eq:bareme_stockage} & 200 & $\infty$ \\
+        Fiabilité du système de sécurité & 7\% & Éq. \ref{eq:bareme_sécurité} & & \\
+        \hline\hline
+        Coûts & 15\% & & &\\
+        \hline
+        Coûts du matériel [\$] & 4\% & Éq. \ref{eq:bareme_cout_materiel} & 0 & 10 000 \\
+        Coût de main d'oeuvre [\$] & 2\% & Éq. \ref{eq:bareme_cout_logiciel} & 0 & 40 000\\
+        \hline\hline
+        Respect des contraintes & 15\% & & & \\
+        \hline
+        Prise de mesure passive & 7\% & Table \ref{t:bareme_systeme_passif} & & \\
+        Masse du capteur [kg] & 5\% & Éq. \ref{eq:bareme_masse_capteur} & 0 & 5 \\
+        Volume du capteur [m$^3$] & 3\% & Éq. \ref{eq:bareme_volume_capteur} & 0 & 0.3\\
+        Résistance à la profondeur [m] & 3\% & Éq. \ref{eq:bareme_profondeur} & 15.25 & 280\\
+        Résistance à la température [$\degree$ C] & 3\% & Éq. \ref{eq:bareme_res_temperature} & -6 & 30\\
+        Volume d'analyse [m$^3$] & 3\% & Éq. \ref{eq:bareme_volume_analyse} & 1 & $\infty$\\
+        Taille des spécimens observés [cm] & \% & Éq. \ref{eq:bareme_taille_poisson} & 6 & 140\\
+        \hline
+        \hline\hline
+        Performance & 15\% & & & \\
+        \hline
+        Température mesurable [$\degree$ C] & 7\% & Éq. \ref{eq:bareme_mesure_temperature} & -6 & 30\\
+        Précision de la mesure de température [$\%_\text{écart}$] & 5\% & Éq. \ref{eq:bareme_precision_temperature} & 0 & $\infty$ \\
+        Précision de la mesure du temps [$\%_\text{écart}$] & 5\% & Éq. \ref{eq:bareme_precision_temps} & 0 & $\infty$ \\
+        Analyse de l'état du système & 5\% & Éq. \ref{eq:bareme_etat_systeme} & & \\
+        \hline
+   \end{tabular}
+      \caption{Table des critères du projet Fish \& Chips}
+\end{table}
+
+
+
+\newpage{}
+
+\section{Intervention humaine}
+
+En analysant les demandes du client, on se rend vite compte que l’automatisation du système sera un élément prépondérant dans notre système. Pour parvenir à un système autonome, il faudra impérativement tenir compte de certains aspects comme la  durée de vie de la batterie, l’automatisation des transferts de données, l’accès à distance ainsi que la complexité de la maintenance qu’il faudra minimiser afin de réduire au maximum l’intervention humaine. Compte tenu de l’importance de cet aspect dans le projet, l’équipe de conception attribue une pondération de 20\%.
+
+\subsection{Durée de vie de l'alimentation du système}
+
+Dans l'objectif d'atteindre une autonomie minimale de deux semaines, il est nécessaire d'optimiser le système d'alimentation du capteur. %De plus, afin de ne pas limiter la disponibilité du capteur, il est idéal d'utiliser une batterie à cet effet. Une batterie rechargeable permettrait également d'augmenter significativement la durée de vie du capteur optique.
+La durée de vie minimale demandée est de deux semaines. On considère que la composante chargée d'alimenter le système a une note de 0.8 si celui-ci est en mesure d'accomplir deux cycles de 14 jours. De cette manière, l'opérateur possède un cycle additionnel en cas d'oubli de rechargement. L'autonomie de la durée de vie de l'alimentation est évaluée selon l'équation \ref{eq:bareme_duree_batterie}. Si le système ne peut fournir de l'alimentation au capteur pour une durée de 14 jours, celui-ci sera rejeté.
+
+\begin{equation}
+    y(x) = \begin{cases}
+        \text{Rejeté} & \text{ si } x \le 14 \\
+        -6.25 e^{-0.13089x}+1 & \text{ si } x \geq 14
+    \end{cases}
+    \label{eq:bareme_duree_batterie}
+\end{equation}
+
+
+\subsection{Acheminement des informations}
+
+Le système doit être capable de fonctionner à des profondeurs pouvant atteindre les 15.25m sous l’eau. En estimant qu'un poste de contrôle se situe au maximum à 50m de la position du capteur au niveau de l'eau, la distance minimale pour acheminer les données serait d'environ 53m. Puisque le lac le plus profond a une profondeur d'environ 280m~\cite{Lac_walker}, On estime que le critère sera pleinement rempli si le système peut acheminer les données jusqu'à 284m. Ainsi, nous évaluerons ce critère selon l'équation \ref{eq:bareme_acheminement_infos} en utilisant le barème suivant avec $x$ comme étant la distance qui sépare le poste de contrôle local et le système en mètres (m). Si le système ne peut acheminer les informations au-delà de 53m, il sera rejeté automatiquement.
+
+\begin{equation}
+    y(x) = \begin{cases}
+        \text{Rejeté} & \text{ si } x \le 53 \\
+        \frac{x}{231} - \frac{53}{231} & \text{ si } 53 \leq x \leq 284
+    \end{cases}
+    \label{eq:bareme_acheminement_infos}
+\end{equation}
+
+\section{Assurer la qualité de conception}
+
+\subsection{Précision du logiciel de reconnaissance}
+
+\begin{wrapfigure}{R}{7cm}
+    \centering
+    \includegraphics[width=\linewidth]{fig/bareme_ident.png}
+    \caption{Illustration du barème pour la précision de l'identification des poissons}
+    \label{fig:bareme_precision}
+\end{wrapfigure}
+
+Le logiciel de reconnaissance du poisson étant au coeur du projet de conception, on donnera une certaine importance à la précision et l'exactitude du programme pour assurer une collecte de données efficace (pondération de 10\%). De plus, un logiciel incapable de faire une bonne différenciation des espèces de poissons ruine l'ensemble des investissements ultérieurs: une excellente caméra ne vaut rien sans un logiciel de qualité. Par contre, à une différenciation d'exactitude dans les très hauts pourcentages (85 à 100), on donnera graduellement moins d'importance aux variations d'efficacité. À un tel niveau d'exactitude, on laissera plus d'importance aux autres caractéristiques en considérant la précision de l'appareil déjà pratiquement maximisée. La fonction quantifiant la qualité de la reconnaissance du poisson s'apparente à une fonction de type racine carrée tel que présenté ci-contre:
+
+\begin{equation}
+    y = e^{5(x-1)}
+    \label{eq:bareme_precision}
+\end{equation}
+
+\subsection{Utilisation de l'interface graphique}
+
+\begin{table}[htb!]
+   \footnotesize
+   \centering
+   \scalebox{0.8}{
+   \begin{tabular}{|c|c|}
+        \hline
+        Difficulté de l'utilisation de l'interface & Barème \\
+        \hline
+        \hline
+        Très facile & 1.0 \\
+        \hline
+        Facile & 0.8 \\
+        \hline
+        Intermédiaire & 0.6 \\
+        \hline
+        Difficile & 0.4 \\
+        \hline
+        Très difficile & 0.0 \\
+        \hline
+   \end{tabular}}
+   \caption{Évaluation du barème de l'interface graphique}
+   \label{t:bareme_interface}
+\end{table}
+
+Puisque l'optique principale de ce projet tourne autour une automatisation des tâches, l'aisance d'utilisation de l'interface lors de l'accès aux données et des opérations de maintenance bimensuelles rejoint tout autant la ligne directrice du design d'appareil (pondération de 2\%). La différenciation entre un interface graphique excellent et médiocre étant difficile à quantifier par calcul, on donnera un barème sous forme de charte, où la valeur la plus grande sera accordée à une qualification de "très intuitive" et la plus faible à "très difficile d'utilisation". La charte des barèmes est présentée à la table \ref{t:bareme_interface}. 
+
+\subsection{Identification des poissons}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\linewidth]{fig/bareme_identification.png}
+    \caption{Barème pour le nombre de poissons à identifier}
+    \label{fig:bareme_identification}
+\end{figure}
+
+La quantité de poissons reste également à considérer dans l'implantation du système dans la mesure où deux sites différents peuvent chacun comporter une faune aquatique distinctive. Une optimisation de la taille de la librairie des poissons est d'une grande importance lors de la collecte des données par l'appareil: ce dernier doit évidemment être en mesure d'effectuer une bonne reconnaissance du type de poisson. On donnera donc à cette session une pondération de 10\%. Une variété de poisson trop stricte de la librairie causerait une collecte de données erronées dans certain milieux. Il est aussi à noter que le nombre de poissons à considérer est de cinq par site. On définira une équation exponentielle pour la gradation de ce barème: la clé du succès de ce critère repose dans la maximisation du nombre de poisson reconnaissables par la caméra. Par contre, on accordera graduellement moins d'importance à ce critère si le logiciel accepte déjà une grande quantité d'espèces marines. Avec un tel barème, on peut ainsi assurer la compatibilité du logiciel pour son implantation dans différents sites où la faune aquatique pourrait varier.
+
+\begin{equation}
+    y(x) = \begin{cases}
+        \text{Rejeté} & \text{ si } x \le 5 \\
+        -e^{-0.2(x-5)} + 1 & x \geq 5
+    \end{cases}
+    \label{eq:bareme_identification}
+\end{equation}
+
+
+\subsection{Capacité de stockage des données}
+\label{subsection:capacite_stockage}
+
+La collecte de données est un aspect primordial dans l'énonciation des critères imposés par le ministère: il est impératif que la taille de stockage puisse accepter des données allant jusqu'à une période de deux ans, et ce, à des fins de vérification. Le capteur peut avoir une résolution variant de 0 à 40 Megapixels (MP). Par contre, plus de pixels signifie moins de signal par pixel et il ne faut pas oublier que le capteur doit être capable d'opérer la nuit. Ainsi, on considère que la meilleure résolution soit de 12 Megapixels. En supposant que le système stockera en mémoire environ 20 photos par jour pendant 2 ans et que la taille d'un fichier serait de 12$\cdot 10^6$ octets, la capacité minimale de l'espace de stockage devra être de 175 Go. On arrondit ce chiffre à 200 Go pour être conservateur puisqu'il s'agit d'une estimation et que l'on stocke d'autres données supplémentaires comme la température et l'heure. On estime ensuite qu'un système pouvant enregistrer jusqu'à 1000 Go aura une note de 0.8. En utilisant un barème sous la forme exponentielle, on obtient l'équation \ref{eq:bareme_stockage}.
+
+\begin{equation}
+    y(x) = \begin{cases}
+        \text{Rejeté} & \text{ si } x \le 200 \\
+        -1.5e^{-0.002012x} + 1 & x \geq 200
+    \end{cases}
+    \label{eq:bareme_stockage}
+\end{equation}
+
+\subsection{Fiabilité du système de sécurité}
+
+%\begin{wrapfigure}{R}{6cm}
+%    \centering
+%    \includegraphics[width=\linewidth]{fig/Securite.png}
+%    \caption{Illustration du barème du système de sécurité}
+%    \label{fig:bareme_securite}
+%\end{wrapfigure}
+
+La confidentialité et l'authenticité des données est primordiale dans un tel projet: c'est pourquoi une grande partie de la cote associée à la qualité du design dépendra de la sécurité du produit. C'est pourquoi un 7\% de la note sera accordée à la sécurité. Plusieurs protocoles de conservation et de transfert des données devront être mis en place, et ce seront justement ici le nombre et la qualité des couches de sécurité offertes par le produit qui permettront une véritable quantification de ce critère. Puisque le système à livrer est fortement axé sur l'autonomie et l'accès à distance, un système qui est facilement compromis est à proscrire à tout prix. Une fonction exponentielle représente parfaitement l'enjeu ici: la moindre faiblesse du système de sécurité peut rendre le produit complètement inutilisable. Le niveau de sécurité $x$ est une combinaison du nombre de couches de sécurité pondéré par leurs qualités respectives.
+
+\begin{equation}
+    y = 0.849 e^{0.014x}
+    \label{eq:bareme_sécurité}
+\end{equation}
+
+\section{Coûts}
+
+Une limite des coûts a été établie : on ne peut dépasser 10 000 dollars de frais matériel et 40 000 dollars de coûts de main d'oeuvre. 
+
+Le barème est fait de telle sorte qu'un budget alloué utilisé dans son entièreté donne une note de 0 dans le but de minimiser les coûts. À l'opposé, un coût nul offrirait une note de 1.
+
+Ainsi, de manière générale, le barème pour un tel critère serait:
+
+\begin{equation}
+    y(x)=\frac{-x}{\text{Budget}} + 1
+\end{equation}
+
+\subsection{Coûts de conception du produit}
+
+La première étape précédant l’utilisation de la machine, est sa conception. Cette partie est non négligeable dans le processus d’analyse des coûts de la machine car elle représente la plus grande source de dépense en matériaux. Afin de combler les besoins du Ministère, on cherche à minimiser les coûts totaux liés à la fabrication de la machine. %En parallèle, il faut limiter les coûts pour que le Ministère puisse économiser et favorisera ainsi le projet.
+Ainsi, la fonction décrivant l’efficacité par rapport au coût de production suit une forme suivante :
+
+\begin{equation}
+y(x) = \begin{cases}
+        \frac{-x}{10000} + 1 & \text{ si } x \leq 10000\\
+        \text{Rejeté} & \text{ si } x \ge 10000
+    \end{cases}
+    \label{eq:bareme_cout_materiel}
+\end{equation}
+
+Un système ne respectant pas la limite de 10000\$ en coûts de matériel sera rejeté. Considérant l'importance du respect des coûts de conception, une pondération de 4\% a donc été attribué à ce critère.
+
+\subsection{Coûts en main d'oeuvre}
+
+\begin{equation}
+y(x) = \begin{cases}
+        \frac{-x}{40000} + 1 & \text{ si } x \leq 40000\\
+        \text{Rejeté} & \text{ si } x \ge 40000
+    \end{cases}
+    \label{eq:bareme_cout_logiciel}
+\end{equation}
+
+\section{Respect des contraintes}
+
+\subsection{Prise de mesure passive}
+
+Bien que l'objectif principal du capteur est d'identifier une variété de poissons dans un milieu aquatique, il est nécessaire que cette identification n'affecte pas le mode de vie des poissons. En effet, l'une des principales motivations du client à l'égard du projet Fish \& Chips est d'assurer une mesure passive. Le capteur optique ne doit en aucun cas perturber l'environnement des poissons évoluant sur le site. Une importance relative de 7\% est donc accordé à ce critère. En cas de perturbation de l'environnement, le design est automatiquement rejeté, comme le précise la table \ref{t:bareme_systeme_passif}.
+
+\begin{table}[htp]
+   \footnotesize
+   \centering
+   \begin{tabular}{|c|c|}
+        \hline
+        Degré de passivité du système & Barème\\
+        \hline
+        \hline
+        Le système assure une mesure passive & 1.0 \\
+        \hline
+        Le système n'assure pas une mesure passive & 0.0 \\
+        \hline
+   \end{tabular}
+   \caption{Évaluation du barème du degré de passivité du système}
+   \label{t:bareme_systeme_passif}
+\end{table}
+
+\subsection{Contraintes mécaniques}
+
+Le capteur optique doit respecter certaines contraintes physiques et mécaniques. Le non respect de ces contraintes ne doit en aucun cas affecter les fonctionnalités du système. De plus, l'aspect physique du capteur optique ne doit pas être un facteur pouvant perturber l'environnement des poissons. C'est dans cette optique qu'on attribue aux contraintes mécaniques une pondération de 5\% de l'ensemble du projet. Ce barème a été calculé considérant le tableau \ref{eq:bareme_volume_capteur} et les caractéristiques suivantes:
+
+Masse [kg]:
+\begin{equation}
+y(x) = \begin{cases}
+        0.5 \cos{\frac{\pi x}{5}} + 0.5 & \text{ si } 0 \le x \leq 5\\
+        \text{Rejeté} & \text{ si } x \ge 5
+    \end{cases}
+    \label{eq:bareme_masse_capteur}
+\end{equation}
+
+Volume [m$^3$]:
+\begin{equation}
+y(x) = \begin{cases}
+        0.5 \cos{\frac{\pi x}{0.3}} + 0.5 & \text{ si }0 \le x \leq 0.3\\
+        \text{Rejeté} & \text{ si } x \ge 0.3
+    \end{cases}
+    \label{eq:bareme_volume_capteur}
+\end{equation}
+
+Profondeur [m]:
+Profondeur maximale: 280m Lac Walker \cite{Lac_walker}, y(280)=1
+\begin{equation}
+y(x) = \begin{cases}
+        0.003777x-0.0557 & \text{ si } x \geq 15.25\\
+        \text{Rejeté} & \text{ si } x \le 15.25
+    \end{cases}
+    \label{eq:bareme_profondeur}
+\end{equation}
+
+Résistance température [$\degree$C]: table ici
+\begin{equation}
+    y(x) = 1
+    \label{eq:bareme_res_temperature}
+\end{equation}
+
+Volume analysé [m$^3$]:
+5m$^3$=0.8
+\begin{equation}
+y(x) = \begin{cases}
+        -e^{-0.4024(x-1)}+1 & \text{ si } x \geq 1\\
+        \text{Rejeté} & \text{ si } x \le 1
+    \end{cases}
+    \label{eq:bareme_volume_analyse}
+\end{equation}
+
+Taille des spécimens observés [cm]:
+Le plus gros poissons d'eau douce au Canada est l'esturgeon jaune \cite{Esturgeon} et il a une taille maximale de 140cm.
+
+\begin{equation}
+y(x) = \begin{cases}
+        \frac{x}{134}- \frac{6}{134} & \text{ si } 6 \leq x \leq 140\\
+        1 & \text{ si } x \geq 140\\
+        \text{Rejeté} & \text{ si } x \le 6
+    \end{cases}
+    \label{eq:bareme_taille_poisson}
+\end{equation}
+
+Le capteur optique doit posséder une masse inférieure à 5kg sous l'eau. Le volume du capteur sous l'eau se doit de ne pas dépasser 0.3$m^{3}$. Le capteur doit être fonctionnel jusqu'à une profondeur de 50 pieds. Le système doit supporter une température entre +5°C et -10°C par rapport à la température de l'eau où le capteur sera situé.
+
+%\begin{enumerate}
+%    \item Le capteur optique doit posséder une masse inférieure à 5kg sous l'eau.
+%    \item Le volume du capteur sous l'eau se doit de ne pas dépasser 0.3$m^{3}$. 
+%    \item Le capteur doit être fonctionnel jusqu'à une profondeur de 50 pieds.
+%    \item Le système doit supporter une température entre +5°C et -10°C par rapport à la température de l'eau où le capteur sera situé.
+%\end{enumerate}
+
+
+%   \begin{enumerate}
+%       \item Les images capturées doivent être en couleur.
+%       \item La taille des images ne doit pas excéder 8 bits.
+%       \item Les dimensions des photos doivent être de 100 X 100 pixels.
+%       \item Chacune des images recueillies doivent également fournir la date et l'heure, la           température interne du système, la température de l'eau et l'identification du poisson.
+%       \item Le capteur optique doit être en mesure d'observer des spécimens de plus de 6cm.
+%       \item Le système doit être en mesure de capter des poissons dans un volume minimal de           1$m^{3}$.
+%    \end{enumerate}
+
+Précision température [$\%_\text{écart}$]
+Précision de 50\% = 0.2
+\begin{equation}
+    y(x) = e^{-0.03219x}
+    \label{eq:bareme_precision_temperature}
+\end{equation}
+
+Précision temps [$\%_\text{écart}$]
+Précision de 50\% = 0.2
+\begin{equation}
+    y(x) = e^{-0.03219x}
+    \label{eq:bareme_precision_temps}
+\end{equation}
+
+Intervalle de température mesurable [$\degree$C] (table)
+\begin{equation}
+y(x) = \begin{cases}
+    1 & \text{ si } -6 \leq x \leq 30\\
+    \text{Rejeté} & \text{Autrement}
+    \end{cases}
+    \label{eq:bareme_mesure_temperature}
+\end{equation}
+
+État du système (table)
+\begin{equation}
+y(x) = \begin{cases}
+    1 & \text{ si on peut}\\
+    \text{Rejeté} & \text{Autrement}
+    \end{cases}
+    \label{eq:bareme_etat_systeme}
+\end{equation}
+
+\newpage
+
+
+\section{Maison de qualité}
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[width=0.90\linewidth]{fig/maison_de_qualite.pdf}
+    \caption{Maison de qualité du projet Fish \& Chips}
+    \label{fig:maison_qualite}
+\end{figure}
