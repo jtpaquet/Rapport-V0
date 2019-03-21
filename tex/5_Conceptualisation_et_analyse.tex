@@ -47,6 +47,7 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 \textbf{Aspects temporels:}
 \begin{itemize}[label = {--}]
     \item Le temps de développement de la solution doit être minimisé.
+    \item Le temps de livraison de la solution doit être minimisé.
 \end{itemize}
 
 \textbf{Aspects socio-environnementaux:}
@@ -56,7 +57,7 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 
 \subsubsection{GoPro Hero7 Black Edition}
 
-\textbf{Description:} La GoPro Hero7 Black comporte plusieurs fonctionnalités. Elle peut prendre des images de 12 méga-pixels à grande gamme dynamique (HDR) et des vidéos allant de 720p à 4K. La GoPro peut également prendre entre 24 et 240 images par secondes. Elle comprend un système de stabilisation d'images idéal pour la détection de poissons et un mode pour la vision nocturne. Sa fonctionnalité « Live Streaming » ainsi que son système de connexion Wi-Fi et Bluetooth intégré permettraient également de relever les données sur les poissons en temps réels. Un système intégré GPS permet de la localisé en tout temps. La GoPro est livrable entre 3 et 6 jours a des frais d'environ 560\$. \vspace{5mm}
+\textbf{Description:} La GoPro Hero7 Black comporte plusieurs fonctionnalités. Elle peut prendre des images de 12 méga-pixels à grande gamme dynamique (HDR) et des vidéos allant de 720p à 4K. La GoPro peut également prendre entre 24 et 240 images par secondes. Elle comprend un système de stabilisation d'images idéal pour la détection de poissons et un mode pour la vision nocturne. Sa fonctionnalité « Live Streaming » ainsi que son système de connexion Wi-Fi et Bluetooth intégré permettraient également de relever les données sur les poissons en temps réels. Un système intégré GPS permet de la localisé en tout temps. La GoPro est livrable entre 3 et 6 jours à des frais d'environ 560\$. \vspace{5mm}
 
 \textbf{Décision:} Retenue, mais. \vspace{5mm}
 
@@ -79,7 +80,7 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 
 \subsubsection{GoFishCam}
 
-\textbf{Description:} La GoFishCam est une caméra utilisée pour la pêche. Elle peut enregistrer des vidéos de haute définition de 720p et de 1080p. Elle peut prendre entre 30 et 60 images par seconde. Cette caméra est conçue avec du matériel militaire et sa forme aérodynamique permet une stabilisation d'image lors de l'enregistrement. La GoFishCam comprend des diodes électroluminescentes (LEDs) efficace pour la vision de nuit. Son prix s'élève à environ 320\$ \vspace{5mm}
+\textbf{Description:} La GoFishCam est une caméra utilisée pour la pêche. Elle peut enregistrer des vidéos de haute définition de 720p et de 1080p. Elle peut prendre entre 30 et 60 images par seconde. Cette caméra est conçue avec du matériel militaire et sa forme aérodynamique permet une stabilisation d'image lors de l'enregistrement. La GoFishCam comprend des diodes électroluminescentes (LEDs) efficace pour la vision de nuit. Son prix s'élève à environ 325\$ et est livrable entre 10 et 15 jours. \vspace{5mm}
 
 \textbf{Décision:} Retenue. \vspace{5mm}
 
@@ -91,11 +92,11 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 \subsubsection{Capteur d'image OV5640}
 \label{subsubsection:camera_custom}
 
-\textbf{Description:} Cette solution permet de créer notre propre caméra à l'aide du capteur d'image CMOS OV5640 (modèle ELP-USB500W02M-AF60). Ce capteur permet d'enregistrer des images de 5 méga-pixel, dont la résolution maximale est de 2592x1944 pixels. Il peut prendre entre 15 et 30 images par seconde, et ce, en couleur et en haute définition. Le capteur peut prendre des images des objets situés entre 5cm et 100m de la lentille. Le «focus» de la lentille est d'ailleurs automatique. Ce capteur peut être opérationnel à des températures variant entre -20°C et 70°C. Un tel système est composé d'un senseur et d'une lentille pour imager sur le senseur. Ainsi, il s'agit d'un système simple, léger et complètement programmable par port USB. Il serait contenu  \vspace{5mm}
+\textbf{Description:} Cette solution permet de créer notre propre caméra à l'aide du capteur d'image CMOS OV5640 (modèle ELP-USB500W02M-AF60). Ce capteur permet d'enregistrer des images de 5 méga-pixel, dont la résolution maximale est de 2592x1944 pixels. Il peut prendre entre 15 et 30 images par seconde, et ce, en couleur et en haute définition. Le capteur peut prendre des images des objets situés entre 5cm et 100m de la lentille. Le «focus» de la lentille est d'ailleurs automatique. Ce capteur peut être opérationnel à des températures variant entre -20°C et 70°C. Un tel système est composé d'un senseur et d'une lentille pour imager sur le senseur. Ainsi, il s'agit d'un système simple, léger et complètement programmable par port USB. Par ailleurs, puisque le capteur ne peut être submergé, il aurait un boitier fait en aluminium 2014-T6 et une fenêtre en PMMA\footnote{Communément appelé Plexiglas™} encastrée pour permettre de voir au travers comme montré à la figure \ref{fig:boitier_camera_custom}. Il serait contenu dans un volume de 0.04m$^3$ et il aurait une masse totale de 2.25kg avec les données de l'annexe \ref{annexe:equation_boitier}. \vspace{5mm}
 
 \textbf{Décision:} Retenue, mais. \vspace{5mm}
 
-\textbf{Justification:} Le principal avantage de la création d'un système de capture d'image est le coût. En effet, un tel système coûte seulement 60\$ et est livrable entre 3 et 13 jours. Il respecte aussi les contraintes de température. Une telle conception respecte également les spécification requise à la qualité d'image. Cependant, un tel système est davantage complexe puisqu'il faut s'assurer de l'étanchéité du capteur. En ce sens, il est nécessaire de créer une boîtier pour conserver l'état du capteur. Pour ce faire, il est possible de souder 6 plaques d'aluminium ensemble dont l'une ayant un vitre en acrylique encastrée. Dans le cadre du projet, la pression à 15,25m est de 251kPa. L'aluminium résiste jusqu'à une pression de 414MPa et le verre en acrylique résiste jusqu'à une pression de 45MPa, ce qui est amplement suffisant pour le projet Fish \& Chips. \vspace{5mm}
+\textbf{Justification:} Le principal avantage de la création d'un système de capture d'image est le coût. En effet, un tel système coûte seulement 60\$ et est livrable entre 3 et 13 jours. Les coûts du boitier sont présentés à la table \ref{t:commande_boitier}. Il respecte aussi les contraintes de température. Une telle conception respecte également les spécification requise à la qualité d'image. Cependant, un tel système est davantage complexe puisqu'il faut s'assurer de l'étanchéité du capteur. En ce sens, il est nécessaire de créer une boîtier pour conserver l'état du capteur. Pour ce faire, il est possible de souder 6 plaques d'aluminium ensemble dont l'une ayant un vitre en PMMA encastrée. Dans le cadre du projet, la pression à 15.25m est de 251kPa. L'aluminium résiste jusqu'à une pression de 414MPa et le PMMA résiste jusqu'à une pression de 45MPa, ce qui est amplement suffisant pour le projet Fish \& Chips. \vspace{5mm}
 
 \textbf{Références:} \cite{OV5640} \cite{OV5640_coûts} \cite{ASM} \cite{Glass}
 
@@ -113,7 +114,7 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 \scalebox{1.1}{
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
-    \multirow{2}{*}{Concepts} & \multicolumn{4}{c}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\
+    \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
     & Physiques & Économiques & Temporels & Socio-envir & \\
     \hline\hline
     GoPro Hero7 Black & Oui, mais & Oui & Oui & Oui & Retenue, mais\\
@@ -131,7 +132,7 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
  Cette fonction permet l'alimentation en énergie du système. C'est une fonction assez importante car le système a besoin d'énergie pour fonctionner. Le client demande un système capable de fonctionner 24 heures sur 24 pour une durée minimum de 14 jours en zone éloignée. Ainsi les aspects que nous utiliserons pour évaluer les critères de faisabilités sont les suivants : 
  \textbf{Aspects physiques:}
  \begin{itemize} [label = {--}]
-    \item Dimensions de la solution et intensités
+    \item Dimensions de la solution, intensités et fiabilité de  la solution. La solution doit operer pendant au moins 14 jours .
 \end{itemize}
  \textbf{Aspects économiques:}
  \begin{itemize} [label = {--}]
@@ -139,41 +140,54 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 \end{itemize}
  \textbf{Aspects temporels:}
  \begin{itemize} [label = {--}]
-    \item Durabilité, c'est a dire un minimum de 14 jours
+    \item Disponibilité de la solution
 \end{itemize}
  \textbf{Aspects socio-environnementaux::}
  \begin{itemize} [label = {--}]
     \item Le système doit être sécuritaire pour l'environnement
 \end{itemize}
- \subsubsection{Batterie au lithium :}
- \textbf{Description :}
- Pour alimenter notre systeme on peut se servir des batteries au lithium telle que  Energizer Ultimate Lithium. Ces piles, lorqu'elles sont utilisées dans certains capteurs comme la camera HP2X Hyperfire 2, ont une duree de vie s'etalant sur deux ans ou encore 40000 images ce qui nous permettra de repondre aux attentes du client. En plus d'une bonne durée de vie, les couts de ces bateries sont tres bas, on parle de 17.87 dollars la douzaine chez walmart. Performantes dans les temperatures extremes allant de -40 à 60 dégrés celsius, elles gardent leurs energies pendant 20 ans losqu'elles sont entreposées. Ces batteries de 1.5V chacune ne sont pas rechargeables et ne presentent pas de risques pour l'environnement.
+\subsubsection{Batterie au lithium :}
+
+\textbf{Description :}
+Pour alimenter notre systeme on peut se servir des batteries au lithium telle que Energizer Ultimate Lithium. Ces piles, lorqu'elles sont utilisées dans certains capteurs comme la camera HP2X Hyperfire 2, ont une duree de vie s'etalant sur deux ans ou encore 40000 images ce qui nous permettra de repondre aux attentes du client. En plus d'une bonne durée de vie, les couts de ces batteries sont tres bas, on parle de 17.87 dollars la douzaine chez walmart. Performantes dans les temperatures extremes allant de -40 à 60° C, elles gardent leurs energies pendant 20 ans losqu'elles sont entreposées. Ces batteries de 1.5V chacune ne sont pas rechargeables et ne presentent pas de risques pour l'environnement.
+ 
  \textbf{Décision :}
  Retenue
+ 
  \textbf{Justification :}
- Avec une bonne durée de vie et peu couteuse, cette option respecte nos contraintes economiques et temporels. Aussi en empilant un certain nombre de ces batteries on aboutie a une alimentation fiable et securitaire, de ce fait nos contraintes physiques et socio-environnementaux sont egalement respectées.
- \subsubsection{Batterie au plomb :}
- \textbf{Description :}
+ Peu coûteuse et facilement accessible chez plusieurs fournisseurs, cette option respecte nos contraintes économiques et temporels. Aussi en empilant un certain nombre de ces batteries on aboutie a une alimentation fiable et sécuritaire, de ce fait nos contraintes physiques et socio-environnementaux sont également respectées.
+ 
+\subsubsection{Batterie Power Bank :}
+\textbf{Description :}
+ Ce concept consiste à se servir de Power Bank de type Anker qui n'est rien d'autre qu'un chargeur portable, pour alimenter notre système. Il a une haute puissance avec sortie de 4.8A . Le voltage de sortie est de 5V. Ce type de chargeur est disponbible pour livraison chez Best Buy dans les 5 jours ouvrables suivant la date de l'achat, et ce au prix de 69.09 dollars. Les dimensions sont approximativement de 14.5 cm pour la longeur, 6 cm pour la largeur et 2.5 cm pour la hauteur. Il faut noter que la batterie doit etre fixée dans la boite contenant le système et relié à ce dernier par un cable.
+ 
+\textbf{Décision :}
+ Rejetée
+ 
+\textbf{Justification :}
+Avec cette option on pourra certes répondre à la demande du client mais il faudra associer, c'est à dire  mettre en série au moins trois batteries. Ce qui fera augmenter la facture et aussi utilisera beaucoup trop d'espace  dans la boite du système.
+ 
+\subsubsection{Alimentation Filaire:}
+\textbf{Description :}
+Pour le 3e concept, il s'agit de l'alimentation filaire. Pour cette solution, le système sera directement relié a une prise électrique située a la surface par l'entremise d'un cable  d'alimentation. Si necessaire, plusieurs cordons seront enfilés pour avoir une longueur maximale.
  
  \textbf{Décision :}
+ Retenu
  
  \textbf{Justification :}
- 
- \subsubsection{Filaire:}
- \textbf{Description :}
- 
- \textbf{Décision :}
- 
- \textbf{Justification :}
- 
- \subsubsection{Paneaux solaires:}
- \textbf{Description :}
-  Le panneau solaire externe donne également une autre possibilité pour alimenter notre système. Il est muni d'un coffre de 8" * 8" qui contient une baterie rechargeable de 12V avec prise d'alimentation externe, qui est rechargée en permanence par le panneau solaire via un cable de 3'. Avec une puissance de 7 watts et des dimensions de 13" * 14", le panneau solaire est une option un peu plus dispendieuse , son prix est de 299.99 dollars (reconyx). Ce prix inclut tout le cablage ainsi que le materiel de montage. Les avantages de cette option c'est surtout la permanence de l'energie qui permettra a notre système de fontionner sans interruption.
- \textbf{Décision :}
- 
- \textbf{Justification :}
- 
- \begin{table}[!htb]
+ La solution filaire, en plus de reduire les couts, permet d'alimenter constemment le systeme dans une configuration securitaire.
+\subsubsection{Panneaux solaires:}
+
+\textbf{Description :}
+Le panneau solaire externe donne également une autre possibilité pour alimenter notre système. Il est muni d'un coffre de 8" * 8" qui contient une batterie rechargeable de 12V avec prise d'alimentation externe, qui est rechargée en permanence par le panneau solaire via un câble de 3'. Avec une puissance de 7 watts et des dimensions de 13" * 14", le panneau solaire est une option un peu plus dispendieuse , son prix est de 299.99 dollars livrable en xx jours ouvrables (reconyx). Ce prix inclut tout le câblage ainsi que le matériel de montage. Les avantages de cette option c'est surtout la permanence de l'énergie qui permettra a notre système de fonctionner sans interruption.
+
+\textbf{Décision :}
+Retenue mais
+
+\textbf{Justification :}
+Le concept du panneau solaire respecte nos contraintes, mais il faut mentionner qu'il peut constituer un danger lorsqu'il est mal installé.
+
+\begin{table}[!htb]
 \footnotesize
 \centering
 \scalebox{1.2}{
@@ -182,10 +196,10 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
     \multirow{2}{*}{Concepts} & \multicolumn{4}{c}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\
     & Physiques & Économiques & Temporels & Socio-envir & \\
     \hline\hline
-    Batterie au lithium & Oui & Oui & Oui & Oui & Retenue\\
-    Batterie au plomb & Oui & Oui & Oui & Oui & Retenue \\
-    Filaire & Oui & Oui & Oui & Oui mais & Retenue mais \\
-    Panneaux solaires & Oui & Non & Oui & Oui mais & Rejetée \\
+    Batterie au lithium & Oui & Oui & Oui & Oui & Retenu\\
+    Batterie Power Bank & Non & Oui mais & Oui & Oui & Rejété \\
+    Filaire & Oui & Oui & Oui & Oui & Retenu \\
+    Panneaux solaires & Oui & oui mais & Oui & Oui mais & Retenu mais  \\
     \hline
     \end{tabular}
 }
@@ -194,11 +208,166 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 \end{table}
 
 \subsection{Acheminer les informations au centre de contrôle}
-Cette composante se devra de transférer les données brutes de poissons, de température et de l'heure à un poste de contrôle pour les traiter et les compiler. Elle agit donc en tant que connexion entre le capteur et le poste de contrôle. Il est à considérer que le capteur peut se situer jusqu'à 15.25m sous l'eau et que les informations doivent être acheminées à une distance d'au moins 50m à travers l'eau. 
+Cette composante se devra de transférer les données brutes de poissons, de température et de l'heure à un poste de contrôle pour les traiter et les compiler. Elle agit donc en tant que connexion entre le capteur et le poste de contrôle. Il est à considérer que le capteur peut se situer jusqu'à 15.25m sous l'eau et que les informations doivent être acheminées à une distance d'au moins 50m à travers l'eau comme montré à la figure \ref{fig:distance_acheminer}.
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig/distance_min.png}
+    \caption{Distance pour acheminer les informations au poste de contrôle}
+    \label{fig:distance_acheminer}
+\end{figure}
+
+
+ \textbf{Aspects physiques:}
+ \begin{itemize} [label = {--}]
+    \item Doit pouvoir acheminer les données au travers de l'eau jusqu'à une distance de 50m
+    \item Doit résister aux différentes conditions environnementales comme les conditions météorologiques et la faune et la flore aquatique
+\end{itemize}
+
+ \textbf{Aspects économiques:}
+ \begin{itemize} [label = {--}]
+    \item Doit être le moins coûteux possible 
+\end{itemize}
+
+ \textbf{Aspects temporels:}
+ \begin{itemize} [label = {--}]
+    \item N/A
+\end{itemize}
+
+ \textbf{Aspects socio-environnementaux:}
+ \begin{itemize} [label = {--}]
+    \item Ne doit pas être polluant pour la faune et la flore
+\end{itemize}
+
+\subsubsection{Utilisation de la connexion intégrée au capteur}
+\textbf{Description :} Plusieurs capteurs ont déjà une connexion WiFi intégrée. C'est d'ailleurs le cas de la GoPro Hero7 Black et de la GoFishCam. Il serait possible d'utiliser ces connexions pour communiquer avec le poste de contrôle via un téléphone intelligent. Le choix du téléphone intelligent se pose sur le iPhone7. Dans le cas de la GoPro Hero7 Black, il s'agirait d'une connexion dans les fréquences radio (RF) à 2.4GHz avec un débit maximal de 78 Mbit/s. La connexion se fait à partir d'un téléphone intelligent ayant l'application GoPro. Pour la GoFishCam, il s'agit d'une connexion à une fréquence de 2.4GHz qui permet de filmer en temps réel en 1080p à 60fps jusqu'à une distance de 50 pieds par rapport à un téléphone intelligent ayant l'application GoFishCam. Le coût de cette solution sera déterminé par le coût du téléphone intelligent, soit 629 \$. À chaque deux semaines, un opérateur pourrait recueillir les données enregistrées sur le iPhone et les envoyer dans le logiciel pour le traitement.
+ 
+\textbf{Décision :} Oui mais
+ 
+\textbf{Justification :} Dans les deux cas, le transfert de données se fait via une application de téléphone intelligent. Comme le WiFi intégré dans les capteurs ne sont pas optimisés en distance, il faut que le téléphone soit submergé et alimenté en tout temps pour recueillir les données. Considérant que la batterie d'un iPhone est de 1400mAh et qu'il faut l'alimenter durant au minimum 14 jours, cela augmente drastiquement la consommation d'électricité du système. De plus, pour garder le iPhone submergé, le système devra inclure un boîtier. Le système se complexifie grandement pour une fonction qui est relativement simple. En ajoutant un boîtier à 20\$, le coût de cette composante du système s'élève à environ 650\$. Considérant que les coûts en matériel sont limités à 10 000\$, le coût de cette composante est acceptable. De plus, ce concept ne constitue pas un danger de pollution pour les poissons.
+
+\textbf{Références:} \cite{GoPro_Specs} \cite{GoPro_Waterproof} \cite{GoFishCam} \cite{iPhone7}
+
+\subsubsection{Connexion filaire}
+\textbf{Description :} Cette solution serait un fil qui relie directement le capteur au poste de contrôle. Ce serait le fil 50m Fibre Optic USB 3.0 Cable de Lindy. Il s'agit d'un fil qui convertit les données numérique en signal optique pour acheminer les données à travers une fibre optique. Acheminer un signal numérique par un fil USB standard sur de plus longues distances peut résulter en des pertes et il faut un relai pour rehausser le voltage. Le coût de ce file est de 700\$. De plus, il faudra isoler le fil d'une couche protectrice puisque la fibre optique est fragile et que le fil est assez dispendieux. La couche protectrice sera le HWN0.13BK - Flexo Heavy Wall 3.18mm en PET. Son coût pour une distance de 250ft (76.2m) est de 82.50\$. Le coût total est donc de 782.50\$.
+ 
+\textbf{Décision :} Oui
+ 
+\textbf{Justification :} Avec la couche protectrice, le fil à fibre optique pourra résister à l'eau et à certains chocs malgré la fragilité de la fibre optique. En effet, la gaine protectrice est prévue pour des applications marines et industrielles et peut résister au contact constant avec des surfaces abrasives, comme la terre et la roche. Avec une atténuation nominale de 2.5dBm/km, le signal optique parcourra avec les 50m avec très peu de pertes. Le fil de fibre optique peut opérer entre 0°C et 50°C, ce qui couvre l'intervalle de température de l'eau (4 à 25°C). Il remplit donc facilement les contraintes physiques reliées au projet. Comme mentionné précédemment, avec un budget en matériel de 10 000\$, il est sécuritaire de dire que ce concept remplit aussi les contraintes économiques. Le fil ne cause pas de pollution dans l'eau.
+
+\textbf{Références:} \cite{usb_50m} \cite{usb_standard_50m} \cite{Techflex}
+
+\subsubsection{Utilisation d'un Raspberry Pi}
+\textbf{Description :} Le Raspberry Pi peut accueillir jusqu'à 4 périphériques USB ainsi qu'une connexion WiFi. En installant un routeur au poste de contrôle et en reliant le capteur au Raspberry Pi, il serait possible de communiquer par WiFi. Une connexion standard 802.11N serait utilisée à 2.4GHz et un débit maximal de 750 Mbps. La portée d'une telle connexion peut aller jusqu'à 250m. Le coût d'un Raspberry Pi 3 – Modèle B Plus est de 46.50\$. Le routeur Synology RT2600ac à 250\$ peut accueillir le standard WiFi souhaité.
+
+\textbf{Décision :} Oui mais
+ 
+\textbf{Justification :} Les ondes électromagnétiques dans les RF sont atténuées par les propriétés conductrices de l'eau ce qui pourrait compromettre l'acheminement de l'information. Cependant, comme la conductivité de l'eau douce est faible, il est possible de propager des signaux à 2.4GHz sans trop de pertes. Il faut tout de même savoir que la signal WiFi se propage en ligne droite et que la majorité de son trajet sera sous l'eau. Un tel système de pourra donc pas être trop loin du poste de contrôle. Les contraintes physiques sont donc remplies, mais ce concept comporte certaines limites. Le coût est raisonnable et les ondes EM n'interfèrent pas avec la faune et la flore aquatique. Les deux autres contraintes sont donc remplies. 
+
+\textbf{Références :} \cite{Raspberry_Pi} \cite{Routeur} \cite{eau_EM}
+
+\subsubsection{Acheminement manuel}
+\textbf{Description :} Plusieurs capteurs comportent déjà une mémoire interne sous forme de carte SD et il serait intéressant d'en tirer profit. Puisque le système doit être complètement autonome pour une durée d'au moins 14 jours, un opérateur pourrait venir récolter les informations sur la mémoire interne des capteurs à chaque deux semaines. Les données seraient ensuite transférées au poste de contrôle pour le traitement.
+ 
+\textbf{Décision :} Oui
+ 
+\textbf{Justification :} Les mémoires internes des cartes SD peut aller jusqu'à 512Go, ce qui couvre largement la tailles des données enregistrées pendant 2 semaines. La durée du transfert de données serait donc de deux semaines, mais comme, il n'est pas nécessaire d'avoir accès aux données en temps réel, c'est un délai qui reste raisonnable pour la création d'une base de données. De plus, il ne s'agit pas d'une grande corvée puisqu'il y a de grandes chances que l'opérateur doive recharger le capteur de toute façon. Si le capteur est muni d'une carte SD, le coût est nul et sinon, il serait d'une quarantaine de dollars. Il s'agit d'une solution qui remplit les trois critères demandés.
+
+\begin{table}[!htb]
+\footnotesize
+\centering
+\scalebox{1}{
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \multirow{2}{*}{Concepts} & \multicolumn{4}{c}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\
+    & Physiques & Économiques & Temporels & Socio-envir & \\
+    \hline\hline
+    Connexion intégrée au capteur & Oui mais & Oui & N/A & Oui & Retenu mais\\
+    Connexion filaire & Oui & Oui & N/A & Oui & Retenu \\
+    Raspberry Pi & Oui mais & Oui & N/A & Oui & Oui mais \\
+    Manuel & Oui & Oui & Oui & N/A & Oui \\
+    \hline
+    \end{tabular}
+}
+\caption{Évaluation globale des concepts pour l'acheminer des données brutes}
+\label{t:Decision_acheminer}
+\end{table}
+ 
 
 \subsection{Identifier les poissons et compiler les données}
+
 Cette composante a pour fonction de transformer et compiler les données brutes recueillies par les différents capteurs pour créer les vignettes. Elle devra donc être en mesure d'identifier les espèces de poissons à partir des données du capteur. De plus, elle se chargera de comptabiliser le nombre de poissons de chaque d'espèces et de produire des statistiques.
+
+
+L’automatisation de la prise de données sur les poissons étant au cœur du projet de conception, il est important de considérer l’ensemble des opportunités qui se présentent avec un budget de développement de 40,000\$. Le projet devant être profitable à long terme, la considération du coût et du temps de développement seront pris en compte, mais également la facilité de configuration pour le déploiement dans différents sites. Le facteur du 5 poissons à détecter par site peut également jouer en ligne de compte sur la complexité de l’algorithme à développer, c’est pourquoi il sera pris en compte. Le logiciel doit être fiable, opérationnel en tout temps et ne comporter aucun bug. Une solution présentée pourrait demander du matériel pour une collecte de données au préalable avant le déploiement du système, c’est pourquoi ce critère sera abordé seulement dans cette section. 
+
+
+ \textbf{Aspects physiques:}
+ \begin{itemize} [label = {--}]
+    \item La collecte de donnée (si applicable) devra utiliser le moins de matériel possible.
+\end{itemize}
+
+ \textbf{Aspects économiques:}
+ \begin{itemize} [label = {--}]
+    \item Les coûts de développement du système se doivent d’être minimisés le plus possible, sans dépasser la limite de 40,000\$
+\end{itemize}
+
+ \textbf{Aspects temporels:}
+ \begin{itemize} [label = {--}]
+    \item Le logiciel devra être prêt à être déployé avant le XXX
+\end{itemize}
+
+ \textbf{Aspects socio-environnementaux:}
+ \begin{itemize} [label = {--}]
+    \item N/A
+\end{itemize}
+
+\subsubsection{Réseau de neurones convolutionnel avec la librairie Tensorflow :}
+
+\textbf{Description :} Pour l’analyse visuelle et la reconnaissance intelligente de types de poissons, l’apprentissage profond de type convolutionnel conviendrait bien aux besoins du client. Le principe d’une telle méthode d’apprentissage ressemble drôlement au processus d’apprentissage animal : on entre des milliers de photos en entrée et on évalue ensuite la sortie de l’ordinateur lorsque le logiciel exécute une reconnaissance. On répète les opérations jusqu’à temps que le logiciel aille un fort taux de précision. Il est difficile de mettre un nombre exact sur le temps de développement et le nombre de photos en entrées pour l’apprentissage du logiciel. Par contre, plus le temps de développement et le nombre de photos en entrée sont élevées, plus la précision de détection du logiciel augmentera.  Pour mettre le tout simplement, le capteur sera composé d’un programme déclenchant la prise de photo suite à un entraînement, et la création de la vignette s’opérera au centre de contrôle placé à l’extérieur de l’eau. Le désavantage ici est évidemment la quantité de photos utilisées et le temps nécessaire pour le développement du programme, car une bonne précision demandera une durée et un nombre de photos importants. De plus, un changement de site impliquerait un réapprentissage partiel du programme, ce qui signifierait potentiellement une augmentation des coûts de développement à long terme.
+
+\textbf{Décision :} Retenue
+
+\textbf{Justification :} L’utilisation de la technologie d’apprentissage machine répondrait parfaitement aux besoins du client et serait autonome dans sa prise de mesure. Le processus d’apprentissage s’avère long et demande un bon nombre de ressources en images, mais à long terme, le logiciel peut s’avérer plus profitable, plus exact et plus précis que la majorité des autres options présentées plus bas. 
+
+\textbf{Références :}
+
+
+\subsubsection{Logiciel simple de création de masque et de détection de forme :}
+
+\textbf{Description :} Un algorithme moins coûteux que celui présenté plus haut consiste en un traitement d’image par création de masques. Le principe est la création de photos noirs et blancs selon la détection de formes, de contours et de changements de couleurs (« edge detection »). Il serait ensuite possible de superposer les masques des poissons capturés par la caméra avec ceux d’une librairie préinstallée sur le système et calculer l’intersection du nombre de pixels blancs correspondants. Il est à noter que l’ajout d’un flou gaussien devrait améliorer la détection des formes et des couleurs. Avec un taux de ressemblance allant dans les hauts pourcentages (90\% à 100\%), on dira que le poisson sera identifié avec justesse. La seule limitation de cette technique se présentera lors de la création de la librairie : la qualité de la reconnaissance dépendra grandement de la qualité des photos utilisées. On devra donc utiliser une grande base de données de poissons, telle que FishBase, ou bien capturer le poisson de chaque espèce à détecter et prendre des photos dans tous les angles pour s’assurer d’une bonne détection du logiciel. 
+
+\textbf{Décision :} Rejetée
+
+\textbf{Justification :} Cette option est avantageuse en raison du faible nombre de poissons à détecter, ce qui ne nécessiterait pas nécessairement un logiciel d’apprentissage profond. Par contre, on aura tendance à prioriser un logiciel plus efficace et fiable dans sa prise de mesure pour un projet de calibre professionnel. À long terme, on aura avantage à investir dans une détection de poisson plus fiable qu’une simple superposition de masques.
+
+\textbf{Références :}
+
+
+\subsubsection{Développement par un Tiers}
+
+\textbf{Description: }L’établissement d’un partenariat avec une compagnie établie en intelligence artificielle pourrait également être envisageable dans la conception du logiciel de détection de poissons. Toute compagnie établie dans le domaine de l’intelligence artificielle, telle que la compagnie Element AI à Montréal, et qui possède de l’expertise en vision numérique pourrait amener de son expertise au projet et développer un logiciel de reconnaissance d’espèces de poisson avec aise. Le coût de développement d’un tel logiciel peut s’avérer coûteux. Puisqu’il est difficile de mettre un chiffre exact sur les tarifs d’une compagnie en particulier, on estimera, par sécurité, les coûts de développement à la limite permise, soient 40,000\$.
+
+\textbf{Décision :} Retenue
+
+\textbf{Justification :} le développement d’un logiciel par une compagnie experte dans l’intelligence génèrerait nécessairement un logiciel de grande qualité. Le seul désavantage dans une telle solution serait le coût de production. D’un autre côté, on peut s’assurer d’une qualité de production supérieure, donc profitable à long terme.
+
+\textbf{Référence :}
+
+
+\subsubsection{FishVerify App}
+
+\textbf{Description :} Il existe aussi déjà des solutions logicielles potables sur le marché donnant des approximations sur l’espèce d’un poisson : il est ainsi possible de réduire les coûts de production en amorçant le développement du logiciel à partir d’une application déjà fonctionnelle. Il serait possible tout en l’adaptant à notre situation. Un partenariat avec une compagnie telle que FishVerify, une application de détection de poisson pour la pêche, pourrait être un excellent point de départ dans la création d’un logiciel tel que demandé par le ministère. L’avantage de cette solution est la réduction des coûts, mais également la réduction de temps nécessaire pour développer le produit.
+
+\textbf{Décision :} Rejetée
+
+\textbf{Justification :} On peut s’assurer d’un produit fonctionnel et efficace avec une telle optique de production. Puisqu’on amorce le projet avec un produit fonctionnel, on peut s’assurer d’un produit fonctionnel et adapté aux besoins du ministère en peu de temps. La contrainte du partenariat peut facilement rendre cette solution inconvéniente, ce qui explique son rejet.
+
+
+\textbf{Références :}
+
+\url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.402.1860&rep=rep1&type=pdf}
+
 
 
 \subsection{Stocker les données}
@@ -295,70 +464,128 @@ Cette composante devra afficher les données d'une manière efficace et convivia
 
 \textbf{Aspects économiques:}
 \begin{itemize} [label = {--}]
-    \item La solution doit satisfaire un excellent rapport qualité/prix
+    \item La solution doit satisfaire un excellent rapport qualité/prix.
 \end{itemize}
 
 \textbf{Aspects temporel:}
 \begin{itemize} [label = {--}]
-    \item La conception de la solution doit respecter les délais alloués
+    \item La conception de la solution doit respecter les délais alloués.
 \end{itemize}
 
 \textbf{Aspects socio-environnementaux:}
 \begin{itemize} [label = {--}]
-    \item La solution doit présenter les données de manière efficace et conviviale
+    \item La solution doit présenter les données de manière efficace et conviviale.
 \end{itemize}
 
 
 \subsubsection{Application web avec Ajax}
 
-\textbf{Description:} Ajax est une série de techniques de développement web qui utilise une combinaison de langage tel que JavaScript, XML, HTML et CSS pour créer des applications web. La page web performe automatiquement un appel JavaScript à l'engin Ajax, ce qui correspond à une requête XMLHttpRequest. Puis, une requête HTTP est envoyé au serveur afin de retrouver la donnée appropriée. Cette donnée est ensuite retourner à Ajax sous forme HTML, XML ou Javascript pour être livrée à la page web.  \vspace{5mm}
-% Reste à trouver les coûts
-
-
-\textbf{Décision:} Retenue. \vspace{5mm}
-
-\textbf{Justification:} L'avantage d'Ajax est qu'il crée des applications web dites asynchrones. Ainsi, les applications web peuvent envoyer et retourner des données d'un serveur sans affecter l'affichage de la page web courante. Les requêtes au serveur se font sans attendre la demande de l'utilisateur, ce qui optimise la performance de l'interface. En d'autres mots, le contenu de la page peut changer dynamiquement sans que l'utilisateur ait besoin de rafraîchir la page. De cette manière, il serait possible de voir en temps réels les données des population de poissons. \vspace{5mm}
-% J'ai pas finis
-
-\textbf{Références:} \cite{Ajax_wiki} \cite{Ajax}
-
-\subsubsection{Application web et mobile avec PrimeFaces}
-
-\textbf{Description:} PrimeFaces offre plusieurs modèles d'application web à l'aide de serveur Java. Ces modèles comprennent également l'interaction avec plusieurs autres appareil, comme les tablettes et les téléphones intelligents. PrimeFaces permet ainsi la création d'application web et mobile. Par exemple, le modèle Roma 
+\textbf{Description:} Ajax est une série de techniques de développement web qui utilise une combinaison de langage tel que JavaScript, XML, HTML pour créer des applications web. La page web performe automatiquement un appel JavaScript à l'engin Ajax, ce qui correspond à une requête XMLHttpRequest. Puis, une requête HTTP est envoyé au serveur afin de retrouver la donnée appropriée. Cette donnée est ensuite retourner à Ajax sous forme HTML, XML ou Javascript pour être livrée à la page web. La compagnie Csoft Technology offre leur service de développement web avec la solution Ajax. Csoft Technology sont reconnu pour leur faibles coûts, l'agilité et la qualité de leur produit. L'équipe de développeur de Csoft Technology s'occupe de l'implantation de l'application web. Le prix relié à cette collaboration dépends de la complexité du site web et du temps de conception.
 
 \textbf{Décision:} Retenue.
 
-\textbf{Justification:} PrimeFaces comprends une variété de modèles d'application web de haute qualité. Les prix des licences complètes varient entre 320\$ et 1050\$ dépendamment du modèle choisis. L'utilisation de PrimeFaces est efficace et robuste. Elle promet une expérience client facile d'utilisation.
+\textbf{Justification:} L'avantage d'Ajax est qu'il crée des applications web dites asynchrones. Ainsi, les applications web peuvent envoyer et retourner des données d'un serveur sans affecter l'affichage de la page web courante. Les requêtes au serveur se font sans attendre la demande de l'utilisateur, ce qui optimise la performance de l'interface. En d'autres mots, le contenu de la page peut changer dynamiquement sans que l'utilisateur ait besoin de rafraîchir la page. De cette manière, il serait possible de voir en temps réels les données des population de poissons.
 
-\textbf{Références:} \cite{PF} \cite{PF_Roma} \cite{PF_exemple}
+\textbf{Références:} \cite{Ajax_wiki} \cite{Ajax} \cite{Csoft}
+
+\subsubsection{Application web et mobile avec PrimeFaces}
+
+\textbf{Description:} L'affichage des données serait effectué en langage Java accompagné de librairies de PrimeFaces pour faciliter la création de l'application web et mobile. PrimeFaces offre plusieurs modèles d'application web à l'aide de serveur Java. Ces modèles comprennent également l'interaction avec plusieurs autres appareil, comme les tablettes et les téléphones intelligents. PrimeFaces permet ainsi la création d'application web et mobile. Par exemple, le modèle Roma propose plus de 1000 variations de dispositions afin de produire le design désiré. Il comprend le support SaSS avec la syntaxe scss pour présenter des documents HTML et XML. Les licenses de base sont appropriés pour les besoins du client. Les prix des licences varient entre 50\$ et 105\$ dépendamment du modèle choisis. L'implantation d'une telle application nécessite un développeur web ayant des connaissances en Java. Il est impossible de déterminer le prix de l'implantation d'un tel logiciel, puisqu'il est impossible de calculer le temps de conception. Cependant, on assume que plus le temps de conception (et le prix) est élevé, plus l'application web sera de qualité. Le salaire moyen d'un développeur web au Canada est de 33\$ par heure.
+
+\textbf{Décision:} Retenue, mais.
+
+\textbf{Justification:} PrimeFaces comprends une variété de modèles d'application web de haute qualité. Plusieurs thèmes et personnalisations sont disponible. De plus, certains des modèles de pages d'erreurs et de connexion pour créer l'interface web. L'utilisation de PrimeFaces est efficace et robuste. Elle promet également une expérience facile d'utilisation.
+
+\textbf{Références:} \cite{PF} \cite{PF_Roma} \cite{PF_exemple} \cite{Dev_salary}
+
+\subsubsection{Application web avec Comentum}
+
+\textbf{Description:} Cette solution propose d'utiliser les services de la compagnie de développement Comentum. Comentum est spécialisé dans la création d'application web. Elle utilise des modules, des libraires et des outils afin de produire une application rapide et efficace. La compagnie a créer son propre modèle (Framework) et promets une architecture avancé et performante. Comentum travail auprès du client afin de choisir le modèle, les libraires, les outils et le langage le plus approprié pour le projet. Les coûts reliés aux servicex de Comentum dépendent du projet.
+
+\textbf{Décision:} Retenue.
+
+\textbf{Justification:} Comentum comporte de nombreux avantages. La compagnie comprend une équipe de développeur ayant plus de 21 ans d'expérience. Ils promettent une application structurée, dont le code respecte les normes. Ils utilisent également les dernières technologies pour assurer une utilisation facile et performante par le client. Le langage et les librairies sont spécifiques aux besoins du client. De plus, Comentum utilise des procédures de sécurité afin de protéger les données du client.
+
+\textbf{Références:} \cite{Comentum}
+
+\subsubsection{Application mobile avec CodeCreators}
+
+\textbf{Description:} Afin d'afficher les données récoltées par le capteur, il est possible d'utiliser une application web. Les applications mobiles sont destinées à s'exécuter sur des téléphones ou des tablettes intelligentes. Les deux principales applications mobiles sont les natives et les hybrides. Les applications natives sont des applications destinées à une plateforme spécifique, tel que iOS ou Android, alors que les applications hybrides sont disponible sur toute les plateformes. CodeCreators est une compagnie qui offre ses services au développement d'application mobiles natives et hybrides. Les frais de leur service dépendent de l'ampleur du projet.
+
+\textbf{Décision:} Retenue.
+
+\textbf{Justification:} Les applications mobiles sont idéales pour maximiser l'accès à l'information. Les données sur les poissons serait ainsi disponible partout à l'aide d'un téléphone. Les services de CodeCreators permettent la création d'applications qui respectent les besoins du client tout en offrant une utilisation simple et des fonctionnalités intéressantes. Codecreators a remporté plusieurs prix pour leurs accomplissements auprès de nombreuses compagnies. Leur prix sont compétitifs et support technique 24/7 est disponible.
+
+\textbf{Références:} \cite{CodeCreators} \cite{CodeCreators2}
+
+\begin{table}[!htb]
+\footnotesize
+\centering
+\scalebox{1.0}{
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
+    & Physiques & Économiques & Temporels & Socio-envir & \\
+    \hline\hline
+    Application web - Ajax & N/A & Oui & Oui & Oui & Retenue\\
+    App web et mobile - Primefaces & N/A & Oui, mais & Oui & Oui & Retenue, mais \\
+    Application web - Comentum & N/A & Oui & Oui & Oui & Retenue \\
+    App mobile - CodeCreators & N/A & Oui & Oui & Oui & Retenue \\
+    \hline
+    \end{tabular}
+}
+\caption{Évaluation globale des concepts pour afficher les données}
+\label{t:Decision_affichage}
+\end{table}
 
 
 \subsection{Assurer un accès sécurisé}
 Cette fonction est présente dans le but de garder les données confidentielles et de limiter le contrôle du capteur seulement aux utilisateurs autorisés. % Il faudra donc déterminer une méthode d'identification.
 
-\begin{table}[htp]
-   \footnotesize
-   \centering
-   \scalebox{1}{
-   \begin{tabular}{|c|c|c|c|}
-        \hline
-        Section 1 & Section 2 [unités] & ... & ... \\
-        \hline\hline
-        Texte & Encore texte & ... & ... \\
-        Texte & Encore texte & ... & ... \\
-        Texte & Encore texte & ... & ... \\
-        Texte & Encore texte & ... & ... \\
-        \hline
-   \end{tabular}}
-\caption{Accès sécurisé}
-\label{t:securite}
-\end{table}
 
+\subsubsection{Protocoles d’encryption des données}
 
-\subsection{Mesurer la date et l'heure}
+\textbf{Description :} Un des moyens les plus conviviaux pour la protection des données est l’utilisation de protocoles d’encryptage des vignettes. Les algorithmes de cryptages qui sont dits symétriques, tels que AES ou Twofish, permettent un accès aux données seulement si l’utilisateur possède une copie de la clé originale. Là est la seule faiblesse de ce type d’encryptage : il est impératif d’avoir un endroit sécuritaire où placer et transférer la clé, car le meilleur protocole de cryptage de données ne vaut rien si la clé se retrouve dans les mauvaises mains. D’un autre côté, l’encryptage asymétrique donne l’accès à une clé utilisable pour tous, dite publique, et d’une clé privée lors de l’authentification. Dans le meilleur des mondes, on utilisera ce qu’on appelle l’encryptage hybride, qui consiste en l’encryptage de la clé d’accès à la base de données de manière asymétrique, et l’encryptage des données de manière symétrique. De cette manière, dans le cas peu probable d’une brèche de sécurité, une couche supplémentaire de sécurité est disponible pour la protection des données.
+
+\textbf{Décision :}  Retenue
+
+\textbf{Justification :}  Ce mécanisme de sécurité est simple, sécuritaire, peu couteux et utilisé par les grandes compagnies. Il serait injustifiable de s’en passer pour la protection d’une base de données.
+
+\textbf{Références :} 
+
+\subsubsection{Virtual private network}
+
+\textbf{Description :} L’utilisation d’un VPN peut s’avérer très utile lors de la connexion à la base de données. Le but de cette couche de sécurité est de préserver l’anonymat lors d’un accès internet. Il implique simplement la simulation d’une connexion privée alors que l’envoi et la réception de données s’effectue par l’entremise d’un réseau public. Dans notre cas, cette couche de sécurité permettrait de garder un niveau d’intimité additionnel à la connexion sur le serveur et pourrait éviter à un utilisateur d’être tracé après sa connexion. Parmi les meilleurs services de réseaux virtuels privés, on retrouve de nombreux protocoles de sécurité tels que IPsec, TLS et SSH VPN qui permettent la création d’un tunnel d’encryptage lors du transfert de données. De nombreux services de VPN sont offerts par des tiers généralement pour des prix sous le 10\$/mois, tels que NordVPN, Windscribe et CyberGhost pour en nommer quelques-uns.
+
+\textbf{Décision :} Retenue
+
+\textbf{Justification :} Garder son anonymat dans ses connexions au serveur peut éviter toutes sortes de brèches de sécurité qui pourraient compromettre les données. Le retour sur investissement est grandement justifié ici.
+
+\textbf{Références :} 
+
+\subsubsection{Accès internet sécurisé lors de l’accès à distance de la base de données}
+
+\textbf{Description :} Lors de l’accès à la base de données, il est important d’éviter toute connexion internet à faible niveau de sécurité. Avec les avancements en sécurité des dernières années, certains protocoles de transfert de données Wi-Fi tels WEP et WPA sont devenus beaucoup moins sécuritaires en raison des nouveaux logiciels d’algorithmes d’attaques de mot de passe (attaque par dictionnaire et par accès forcé). Il devient donc facile pour un pirate informatique d’avoir accès aux privilèges d’administrateurs sur l’ordinateur de l’utilisateur, et ce, sans même que ce dernier en ait la moindre idée.
+
+\textbf{Décision :}  Retenue
+
+\textbf{Justification :}  Il est impératif d’avoir une connexion sécurisée au serveur à tous les niveaux. S’il n’est pas sécuritaire de consulter les données du serveur, le produit ne conviendra pas aux besoins du client.
+
+\textbf{Références :} 
+
+\subsubsection{Partenariat avec un tiers spécialisé en sécurité - formation des opérateurs en sécurité}
+
+\textbf{Description :} Dans l’établissement d’un système de sécurité informatique, le maillon faible restera toujours la personne derrière le clavier. C’est pourquoi la formation des employés peut être une solution efficace pour préserver l’intégrité des données lors de l’accès à la base de données. De simples connaissances en informatique tels que la création d’un mot de passe sécuritaire, savoir détecter les anomalies de sécurité sur son ordinateur et savoir éliminer les programmes vulnérables à des attaques devrait grandement améliorer la sécurité générale du système. Il sera estimé qu’en une conférence de deux à trois heures suivie d’une heure additionnelle de formation continue à chaque année, l’opérateur aura acquis les connaissances nécessaires pour avoir accès au capteur et à la base de données pour une quelconque maintenance. On estime qu’un spécialiste en sécurité informatique pourrait coûter aux alentours de 100\$/heure et que tous les employés assistent à la conférence au même moment. 
+
+\textbf{Décision :}  Retenue
+
+\textbf{Justification :}  Toute couche de sécurité ne vaudra rien si l’opérateur ne sait pas comment sécuriser ses appareils d’accès au serveur et ne saura pas comment les conserver à l’abris des attaques informatiques. Pour assurer la complète sécurité de la base de données, quelques centaines de dollars additionnels ne sont pas gaspillés.
+
+\textbf{Références :} 
+
 
 \subsection{Mesurer la température externe} 
-Tel que voulu par le client, notre capteur doit être capable de mesurer la température de l’eau, c’est-à-dire la température de l’environnement à l’extérieur du capteur. Il est importé de mesurer cette température car le ministère a précisé que le capteur devait fonctionner dans des températures de l’eau allant de -4 °C jusqu’à 25 °C. Ainsi, on doit être capable de transférer l’information de la température de l’eau dans la vignette. La température influe sur le milieu de vie des poissons et il est important de savoir si la température n’atteint pas un point critique, un point à partir duquel le capteur pourrait rencontrer un disfonctionnement. 
+Tel que voulu par le client, notre capteur doit être capable de mesurer la température de l’eau, c’est-à-dire la température de l’environnement à l’extérieur du capteur. Il est importé de mesurer cette température car le ministère a précisé que le capteur devait fonctionner dans des températures de l’eau allant de -4 °C jusqu’à 25 °C. Ainsi, on doit être capable de transférer l’information de la température de l’eau dans la vignette. La température influe sur le milieu de vie des poissons et il est important de savoir si la température n’atteint pas un point critique, un point à partir duquel le capteur pourrait rencontrer un dysfonctionnement. 
 
 \textbf{Aspects physiques:}
 \begin{itemize}[label = {--}]
@@ -460,7 +687,6 @@ Le capteur est essentiellement construit de composantes électroniques. Ainsi, �
     \item Sous l'eau, la solution doit posséder une masse inférieure à 5kg
     \item Sous l'eau, la solution doit posséder un volume de moins de 0.3m$^3$
     \item La solution doit être utilisable jusqu'à une profondeur de 50 pieds
-    \item La température interne de la solution doit être entre +5°C et -10°C par rapport à la température de l'eau
     \item La température à l'intérieur du capteur doit être entre -14°C et 30°C.
     \item La solution doit être opérationnelle en tout temps pendant une période de 14 jours au minimum
     \item La solution doit être fonctionnelle sur une durée d'au moins 2 ans
@@ -538,3 +764,177 @@ Le capteur est essentiellement construit de composantes électroniques. Ainsi, �
 
 \subsection{Analyser l'état du système}
 Cette fonction traitera si une alarme doit être générée. Il y aura une alarme lorsque le fonctionnement du système pourrait être compromis, c'est-à-dire si il y la température interne excède l'intervalle de résistance à la température des composantes du capteur, si l'identification est impossible sur plusieurs captures ou si il y a une brèche de sécurité.
+
+\subsection{Mesurer la date et l'heure}
+
+Le MFA demande que la date et l'heure de chaque mesure soit inscrite sur les vignettes. Il faut donc prévoir un dispositif qui se chargera de mesurer ces informations. Elles seront par la suite acheminées au poste de contrôle. 
+
+\textbf{Aspects physiques:}
+\begin{itemize}[label = {--}]
+    \item La composante doit mesurer l'heure
+\end{itemize}
+
+\textbf{Aspects économiques:}
+\begin{itemize}[label = {--}]
+    \item La composante doit minimiser les coûts
+\end{itemize}
+
+\textbf{Aspects temporels:}
+\begin{itemize}[label = {--}]
+    \item N/A
+\end{itemize}
+
+\textbf{Aspects socio-environnementaux:}
+\begin{itemize}[label = {--}]
+    \item La mesure de la date et l'heure ne doit pas polluer l'environnement aquatique
+\end{itemize}
+
+\subsubsection{Implantation logicielle par une librairie}
+
+\textbf{Description :} Dans plusieurs langages de programmation, il existe des fonctions dans la librairie standard qui permettent de donner l'heure. Dans la compilation des données, il pourrait y avoir une fonction qui donne la date et l'heure actuelle au moment de l'identification. Une telle fonction est très simple à faire et coûterait peut-être 5\$ en main d'oeuvre.
+
+\textbf{Décision :} Retenue mais
+
+\textbf{Justification :} Dans le cas d'un opérateur qui transfère manuellement les données brutes, l'analyse se ferait au pire 14 jours après la prise de photos. Il y aurait donc une incertitude de 14 jours sur la date à laquelle la photo serait prise. Si le transfert de données se fait en temps réel, cette méthode serait la plus simple. La prise de décision dépend donc de la précision désirée sur la date et l'heure. Cette technique est très peu coûteuse et n'interfère pas avec l'environnement. Seul l'aspect physique pourrait être problématique.
+
+\textbf{Références :} \cite{Datetime}
+
+\subsubsection{Compteur électronique relié à un Raspberry Pi ou un Arduino}
+
+\textbf{Description :} Comme mentionné précédemment, certaines solutions comprennent l'utilisation d'un Arduino ou d'un Raspberry Pi. Il serait possible de mesurer l'heure avec le module électronique Mini RTC qui est compatible avec les deux micro-ordinateurs. Son coût est de 8.82\$.
+
+\textbf{Décision :} Retenue mais
+
+\textbf{Justification :} Le Mini RTC adapté profiterait du Raspberry Pi ou du Arduino déjà implanté dans le système pour mesurer l'heure en temps réel. Par contre, l'ajout d'un micro-ordinateur dans le système nécessite de l'alimentation alors il faut s'assurer que le système reste autonome durant 14 jours. Le coût est plus qu'abordable et le dispositif n'interfère pas avec l'environnement.
+
+\textbf{Références :} \cite{Timer}
+
+
+\subsubsection{Utilisation du capteur}
+
+\textbf{Description :} La caméra HP2W peut mesurer plusieurs informations nécessaires à la création des vignettes comme la date, l'heure et la température. Il serait intéressant de tirer avantage de ces caractéristiques puisque le coût associé à cette fonction deviendrait alors nul.
+
+
+\textbf{Décision :} Retenue
+
+\textbf{Justification :} La date et l'heure sont mesurées à l'instant auquel la photo est prise. L'aspect physique est donc rempli. Les coûts sont minimisés puisque le capteur est déjà implanté dans le système. De plus, la mesure n'interfère pas avec l'environnement.
+
+\textbf{Références :} \cite{HP2W}
+
+\subsubsection{Implantation logicielle par les méta-données des fichiers}
+
+\textbf{Description :} Si un opérateur vient récolter les données à tous les 14 jours, les photos seront enregistrées dans une carte SD. En écrivant le fichier, la date et l'heure à laquelle la photo a été prise devraient être enregistrées dans les méta-données des fichiers. Le logiciel pourrait avoir une fonction qui irait chercher cette mesure de la date et l'heure pour l'inscrire dans les vignettes. Le coût en main d'oeuvre est estimé à 30\$ pour l'implantation d'une telle fonction dans le logiciel.
+
+\textbf{Décision :} Retenue
+
+\textbf{Justification :} La mesure de la date et l'heure devient indépendante de la récolte des données par l'opérateur tout en gardant la mesure purement numérique. Cela fait en sorte que les coûts en matériel sont nuls et puisqu'il s'agit d'une fonction simple, les coûts de main d'oeuvre le sont aussi. Puisque la mesure est numérique, elle n'interfère pas avec l'environnement. Les trois critères sont donc remplis.
+
+\textbf{Références :} 
+
+
+\begin{table}[!htb]
+\footnotesize
+\centering
+\scalebox{0.9}{
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \multirow{2}{*}{Concepts} & \multicolumn{4}{c}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\
+    & Physiques & Économiques & Temporels & Socio-envir & \\
+    \hline\hline
+    Implantation logicielle par librairie & Oui mais & Oui & N/A & Oui & Retenue mais\\
+    Compteur électronique & Oui mais & Oui & N/A & Oui & Retenue mais \\
+    Utilisation du capteur & Oui & Oui & N/A & Oui & Retenue \\
+    Implantation logicielle par méta-données & Oui & Oui & N/A & Oui & Retenue \\
+    \hline
+    \end{tabular}
+}
+\caption{Évaluation globales des concepts pour la mesure de la date et l'heure}
+\label{t:Decision_date_heure}
+\end{table}
+
+
+
+\subsection{Réguler la température à l'intérieur du capteur}
+
+Lors de la collecte d'information, plusieurs systèmes seront en activité et cela va nécessairement dégager de l'énergie. Cette énergie sera alors convertie en chaleur. Cette chaleur va alors s'accumuler dans le capteur ce qui va augmenter la température. Pour éviter une trop grande augmentation de la température, ce qui pourrait endommager certains éléments, on cherchera alors à refroidir le système pour qu'il reste à un écart de température -10°C et 5°C au delà de la température de l'eau.
+
+\textbf{Aspects physiques:}
+\begin{itemize}[label = {--}]
+    \item Sous l'eau, la solution doit posséder une masse inférieure à 5kg
+    \item Sous l'eau, la solution doit posséder un volume de moins de 0.3m$^3$
+    \item La solution doit être utilisable jusqu'à une profondeur de 50 pieds
+    \item La température interne de la solution doit être entre +5°C et -10°C par rapport à la température de l'eau.
+    \item La solution doit être opérationnelle en tout temps pendant une période de 14 jours au minimum
+    \item La solution doit être fonctionnelle sur une durée d'au moins 2 ans
+\end{itemize}
+
+\textbf{Aspects économiques:}
+\begin{itemize}[label = {--}]
+    \item La solution doit être la moins dispendieuse possible
+\end{itemize}
+
+\textbf{Aspects temporels:}
+\begin{itemize}[label = {--}]
+    \item Le temps de développement de la solution doit être minimisé
+\end{itemize}
+
+\textbf{Aspects socio-environnementaux:}
+\begin{itemize}[label = {--}]
+    \item La solution doit assurer une mesure passive
+\end{itemize}
+
+\subsubsection{Système de refroidissement à eau EK-KIT S120:}
+
+\textbf{Description :} Un système de refroidissement à eau est un système de refroidissement consistant à verser une eau plus froide que le système qu'elle est sensée rafraîchir autour de ce même système. Ainsi, en circulant autour du système, on constate un refroidissement global. Ici, nous proposons un système de refroidissement à eau tel que ceux présents dans les ordinateurs. Le EK-KIT S120 coûte 219.99\$ sur le site EKWB.
+
+\textbf{Références :} \cite{eau1} \cite{eau2}
+
+\textbf{Décision :} Retenue
+
+\textbf{Justification :} Notre capteur sera innondé. Ainsi, il sera très facile d'alimenter le refroidisseur à eau. Ce capteur étant à la base conçu pour le refroidissement des ordinateurs, on peut affirmer que c'est un système approprié car notre système aura une taille comparable aux ordinateurs destinés à être refroidis par ce système et devra refroidir, comme dans un ordinateur, des éléments électroniques. Ainsi, comme tous les critères sont respectés, on peut utiliser ce système.
+
+\subsubsection{Radiateur de moteur de voiture ABAKUS :}
+\textbf{Description :} Dans les voitures, pour empêcher les surchauffes du moteur, on utilise des radiateurs qui assurent un transfert de la chaleur par la circulation de l'air dans le système et ainsi, empêcher le moteur d'atteindre des températures critiques. Ainsi, ici nous proposons un radiateur de moteur ABAKUS disponible pour 68,38 euros sur le site piecesauto24.
+
+\textbf{Références :} \cite{rad1} \cite{rad2}
+
+\textbf{Décision :} Rejetée
+
+\textbf{Justification :} Cette solution ne peut être retenue pour des considérations techniques. En effet, notre capteur étant submergé, ne sera pas en contact avec l'air lors de son fonctionnement. En effet, le système doit être submergé à une profondeur significative et l'échange avec l'air par les ventilateurs sera soit impossible, ou alors, en ajoutant un système d'échange d'air, exagérément grand et non-compatible aux consignes. De ce fait, on ne peut pas choisir ce système.
+
+\subsubsection{Pâte thermique NT-H1:}
+\textbf{Description :} Les pâtes thermiques sont des graisses, généralement utilisés dans les ordinateurs ou les systèmes électroniques dégageant beaucoup de chaleur. Le but de ces pâtes est de faciliter la conduction thermique d'une surface séparant deux milieux. Ainsi, un milieu plus froid comme l'air à température ambiante ou l'eau d'un lac pourra plus facilement refroidir un plus petit système dégageant beaucoup de chaleur. La pâte ici présentée est une pâte thermique pouvant opéré dans des températures allant de -50°C à 110°C pour 15,20 euros sur cdiscount par tube de 1,4 mL. Avec 10 de ces tubes, on peut recouvrir l'ensemble de l'intérieur du capteur. Mais nous essaierons de le limiter aux endroits présentant un dégagement de chaleur
+
+\textbf{Références :} \cite{pate1} \cite{pate2}
+
+\textbf{Décision :} Retenue
+
+\textbf{Justification :} Avec cette pâte, nous pourrions facilement limiter la résistance thermique de la cage du capteur. Ainsi, lorsque la température interne du capteur augementera, la température de l'eau pourra facilement réduire celle de l'intérieur du capteur sans que l'intérieur du capteur soit inondé. 
+
+\subsubsection{Module Peltier Tec1-12706 :}
+\textbf{Description :} Un module Peltier est une plaque, qui lorsque elle est alimentée par un courant, refroidi ou réchauffe sa surface. Ici, le module Tec1-12706, a une capacité de refroidissement allant jusqu'à -30°C et a une consommation maximum de 60W pour un cout de 6,77 \$ sur banggood.com. 
+
+\textbf{Références :} \cite{pel1} \cite{pel2}
+
+\textbf{Décision :} Retenue.
+
+\textbf{Justification :} Étant donné que le système est déjà alimenté en électricité, nous pourrions dédier une partie de cette alimentation à celle des modules Peltier. En alimentant correctement le module Peltier, nous pourrons empêcher une surchauffe du système.
+
+\begin{table}[!htb]
+\footnotesize
+\centering
+\scalebox{1.2}{
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \multirow{2}{*}{Concepts} & \multicolumn{4}{c}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\
+    & Physiques & Économiques & Temporels & Socio-envir & \\
+    \hline\hline
+    Refroidissement à eau & Oui & Oui & Oui & Oui & Retenue\\
+    Radiateur & Non & Oui & Oui & Oui & Rejetée \\
+    Pâte thermique & Oui & Oui & Oui & Oui & Retenue \\
+    Module Peltier & Oui & Oui & Oui & Oui & Retenue \\
+    \hline
+    \end{tabular}
+}
+\end{table}
+

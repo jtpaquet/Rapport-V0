@@ -139,6 +139,7 @@ On obtient alors les résultats montrés au tableau \ref{t:resultat_calcul_camer
 
 
 \chapter{Équations pour le boitier}
+\label{annexe:equation_boitier}
 
 La pression hydrostatique est définie à l'équation \ref{eq:profondeur}. La profondeur est $h$ et $p_0$ est la pression atmosphérique.
 
@@ -156,6 +157,45 @@ Ainsi, la pression à une profondeur de 15.25m est de 250.9kPa.
     p &= 250.9\text{kPa}
 \end{align}
 
+Selon le design du boitier à la figure \ref{fig:boitier_camera_custom}, les caractéristiques seraient les suivantes 
 
+\begin{table}[!htb]
+\footnotesize
+\centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Caractéristique & Aluminium & PMMA\\
+    \hline\hline
+    Surface & 6$\cdot$ 0.04m$^2$ & 0.04m$^2$\\
+    Épaisseur & 6mm & 2mm\\
+    Masse pour la commande & 4.032kg & 0.095kg\\
+    Coût & 2.6\$/kg & 3.70\$/ft$^2$ \\
+    \hline
+    Coût total & 10.50\$ & 1.59\$ \\
+    \hline
+    \end{tabular}
+\caption{Caractéristiques pour la commande des matériaux du boitier \cite{PMMA_cout} \cite{Aluminium_cout}}
+\label{t:commande_boitier}
+\end{table}
 
+La masse d'aluminium dans le dispositif est
+\begin{align}
+    m &= \rho_{Al} V\\
+    V &= c^3 - (c-t)^3\\
+    V &= (0.2m)^3 - (0.2m - 0.006m)^3\\
+    V &= 6.99 \cdot 10^{-4} m^3\\
+    m &= 2800 kg/m^3 \cdot 6.99 \cdot 10^{-4}m^3\\
+    m &= 1.956 kg
+\end{align}
 
+La masse de PMMA dans le dispositif est
+\begin{align}
+    m &= \rho_{PMMA} V\\
+    V &= \pi r^2 t\\
+    V &= \pi (0.075m)^2 (0.002m)\\
+    V &= 3.53 \cdot 10^{-5} m^3\\
+    m &= 1190 kg/m^3 \cdot 3.53 \cdot 10^{-5} m^3\\
+    m &= 0.042 kg
+\end{align}
+
+Le boitier aurait donc une masse de 2.00kg.
