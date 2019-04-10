@@ -11,7 +11,7 @@
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.80\linewidth]{fig/Diagramme_fonctionnel.pdf}
+    \includegraphics[width=0.85\linewidth]{fig/Diagramme_fonctionnel.pdf}
     \caption{Diagramme fonctionnel du projet Fish \& Chips}
     \label{fig:diagramme_fonctionnel}
 \end{figure}
@@ -20,7 +20,7 @@ La figure \ref{fig:diagramme_fonctionnel} présente le diagramme fonctionnel du 
 
 Les intrants constituent toutes les données nécessaires au projet que l'on extrait de l'environnement. Les poissons sont au coeur du projet: à l'aide d'une mesure passive, ils devront être analysés et identifiés par un système de reconnaissance. Le MFA souhaite comptabiliser les espèces de poissons d'eau douce du Québec qui font plus de 6 cm de long. Pour ce faire, des données de poissons seront fournies au système de reconnaissance. Elles seront sous une forme de base de données qui comprendra plusieurs photos de poissons de chaque espèce sous différents angles de vue avec leur espèce correspondante. Cela servira à l'entraînement ou de référence au système d'identification. Ensuite, une source d'énergie sera tirée de l'environnement ou d'une composante pour alimenter le dispositif qui sera chargé de capter les données brutes sur les poissons. La température interne du dispositif de mesure des poissons, la température de l'eau ainsi que la date et l'heure sont nécessaires à la création de la vignette. De plus, certaines de ces données serviront à déterminer s'il y a une erreur dans le système pour avertir un utilisateur.
 
-Les extrants du système sont les choses qui seront produites par le système. Le point central du design est de produire une base de données contenant toutes les vignettes de poissons identifiés, les statistiques sur les populations des différentes espèces, les images originales enregistrées pour une durée de 2 ans ainsi que d'autres informations connexes comme les commentaires, les paramètres de configuration et les alarmes. Les alarmes seront envoyées à un responsable sous la forme d'un message lui avertissant que le fonctionnement du système peut être compromis.
+Les extrants sont les produits du système. Le point central du design est de produire une base de données contenant toutes les vignettes de poissons identifiés, les statistiques sur les populations des différentes espèces, les images originales enregistrées pour une durée de 2 ans ainsi que d'autres informations connexes comme les commentaires, les paramètres de configuration et les alarmes. Les alarmes seront envoyées à un responsable sous la forme d'un message lui avertissant que le fonctionnement du système peut être compromis.
 
 %\pagebreak
 
@@ -33,9 +33,9 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 
 \textbf{Aspects physiques:}
 \begin{itemize}[label = {--}]
-    \item Sous l'eau, la solution doit posséder une masse inférieure à 5kg.
-    \item Sous l'eau, la solution doit posséder un volume de moins de 0.3m$^3$.
-    \item La solution doit être utilisable jusqu'à une profondeur de 50 pieds.
+    \item Sous l'eau, la solution accompagnée des autres concepts doit posséder une masse inférieure à 5kg.
+    \item Sous l'eau, la solution accompagnée des autres concepts doit posséder un volume de moins de 0.3m$^3$.
+    \item L'ensemble du système doit être utilisable jusqu'à une profondeur de 50 pieds.
     \item La température interne de la solution doit rester entre -6°C et 30°C.
 \end{itemize}
 
@@ -92,11 +92,11 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 \subsubsection{Capteur d'image OV5640}
 \label{subsubsection:camera_custom}
 
-\textbf{Description:} Cette solution permet de créer notre propre caméra à l'aide du capteur d'image CMOS OV5640 (modèle ELP-USB500W02M-AF60). Ce capteur permet d'enregistrer des images de 5 méga-pixel, dont la résolution maximale est de 2592x1944 pixels. Il peut prendre entre 15 et 30 images par seconde, et ce, en couleur et en haute définition. Le capteur peut prendre des images des objets situés entre 5cm et 100m de la lentille. Le «focus» de la lentille est d'ailleurs automatique. Ce capteur peut être opérationnel à des températures variant entre -20°C et 70°C. Un tel système est composé d'un senseur et d'une lentille pour imager sur le senseur. Ainsi, il s'agit d'un système simple, léger et complètement programmable par port USB. Par ailleurs, puisque le capteur ne peut être submergé, il aurait un boîtier fait en aluminium 2014-T6 et une fenêtre en PMMA\footnote{Communément appelé Plexiglas™} encastrée pour permettre de voir au travers comme montré à la figure \ref{fig:boitier_camera_custom}. Il serait contenu dans un volume de 0.04m$^3$ et il aurait une masse totale de 2.25kg avec les données de l'annexe \ref{annexe:equation_boitier}.
+\textbf{Description:} Cette solution permet de créer notre propre caméra à l'aide du capteur d'image CMOS OV5640 (modèle ELP-USB500W02M-AF60). Ce capteur permet d'enregistrer des images de 5 méga-pixel, dont la résolution maximale est de 2592x1944 pixels. Il peut prendre entre 15 et 30 images par seconde, et ce, en couleur et en haute définition. Le capteur peut prendre des images des objets situés entre 5cm et 100m de la lentille. Ce capteur peut être opérationnel à des températures variant entre -20°C et 70°C. Un tel système est composé d'un senseur et d'une lentille pour imager sur le senseur. Ainsi, il s'agit d'un système simple, léger et complètement programmable par port USB. Par ailleurs, puisque le capteur ne peut être submergé, il aurait un boîtier fait en aluminium 2014-T6 et une fenêtre en PMMA\footnote{Communément appelé Plexiglas™} encastrée pour permettre de voir au travers comme montré à la figure \ref{fig:boitier_camera_custom}. Il serait contenu dans un volume de 0.04m$^3$ et il aurait une masse totale de 2.25kg avec les données de l'annexe \ref{annexe:equation_boitier}.
 
 \textbf{Décision:} Retenu, mais.
 
-\textbf{Justification:} Le principal avantage de la création d'un système de capture d'image est le coût. En effet, un tel système coûte seulement 60\$ et est livrable entre 3 et 13 jours. Les coûts du boîtier sont présentés à la table \ref{t:commande_boitier}. Il respecte aussi les contraintes de température. Une telle conception respecte également les spécification requise à la qualité d'image. Cependant, un tel système est davantage complexe puisqu'il faut s'assurer de l'étanchéité du capteur. En ce sens, il est nécessaire de créer une boîtier pour conserver l'état du capteur. Pour ce faire, il est possible de souder 6 plaques d'aluminium ensemble dont l'une ayant un vitre en PMMA encastrée. Dans le cadre du projet, la pression à 15.25m est de 251kPa. L'aluminium résiste jusqu'à une pression de 414MPa et le PMMA résiste jusqu'à une pression de 45MPa, ce qui est amplement suffisant pour le projet Fish \& Chips.
+\textbf{Justification:} Le principal avantage de la création d'un système de capture d'image est le coût. En effet, un tel système coûte seulement 60\$ et est livrable entre 3 et 13 jours. Les coûts du boîtier sont présentés à la table \ref{t:commande_boitier}. Il respecte aussi les contraintes de température. Une telle conception respecte également les spécification requise à la qualité d'image. Cependant, un tel système est davantage complexe puisqu'il faut s'assurer de l'étanchéité du capteur. Pour ce faire, il est possible de souder 6 plaques d'aluminium ensemble dont l'une ayant un vitre en PMMA encastrée. Dans le cadre du projet, la pression à 15.25m est de 251kPa. L'aluminium résiste jusqu'à une pression de 414MPa et le PMMA résiste jusqu'à une pression de 45MPa, ce qui est amplement suffisant pour le projet Fish \& Chips.
 
 \textbf{Références:} \cite{OV5640} \cite{OV5640_coûts} \cite{ASM} \cite{Glass}
 
@@ -124,7 +124,7 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
  Cette fonction permet l'alimentation en énergie du système. C'est une fonction assez importante car le système a besoin d'énergie pour fonctionner. Le client demande un système capable de fonctionner 24 heures sur 24 pour une durée minimum de 14 jours en zone éloignée. Ainsi les aspects que nous utiliserons pour évaluer les critères de faisabilités sont les suivants : 
  \textbf{Aspects physiques:}
  \begin{itemize} [label = {--}]
-    \item Dimensions de la solution, intensités et fiabilité de  la solution. La solution doit operer pendant au moins 14 jours  ou encore 50mAh.
+    \item Dimensions de la solution, intensités et fiabilité de la solution. La solution doit opérer pendant au moins 14 jours ou encore 50mAh.
 \end{itemize}
  \textbf{Aspects économiques:}
  \begin{itemize} [label = {--}]
@@ -134,49 +134,49 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
  \begin{itemize} [label = {--}]
     \item Disponibilité de la solution.
 \end{itemize}
- \textbf{Aspects socio-environnementaux::}
+ \textbf{Aspects socio-environnementaux:}
  \begin{itemize} [label = {--}]
     \item Le système doit être sécuritaire pour l'environnement.
 \end{itemize}
 \subsubsection{Batterie au lithium :}
 
 \textbf{Description :}
-Pour alimenter notre système on peut se servir des batteries au lithium telle que Energizer Ultimate Lithium. Ces piles, lorsqu'elles sont utilisées dans certains capteurs comme la caméra HP2X Hyperfire 2, ont une durée de vie s'étalant sur deux ans ou encore 40000 images ce qui nous permettra de répondre aux attentes du client. En plus d'une bonne durée de vie, les coûts de ces batteries sont très bas, on parle de 17.87 dollars la douzaine chez Walmart. Performantes dans les températures extrêmes allant de -40 à 60° C, elles gardent leur énergie pendant 20 ans lorsqu'elles sont entreposées. Ces batteries de 1.5V chacune ne sont pas rechargeables et ne présentent pas de risques pour l'environnement.
+Pour alimenter notre système, on peut se servir des batteries au lithium telle que Energizer Ultimate Lithium. Ces piles, lorsqu'elles sont utilisées dans certains capteurs comme la caméra HP2W Hyperfire 2 (voir \ref{subsubsectionHyperfire}), ont une durée de vie s'étalant sur deux ans ou encore 40000 images ce qui nous permettra de répondre aux attentes du client. En plus d'une bonne durée de vie, les coûts de ces batteries sont très bas, on parle de 17.87\$ la douzaine chez Walmart. Elles sont également performantes dans les températures extrêmes allant de -40°C à 60°C. Ces batteries de 1.5V ne sont pas rechargeables et ne présentent pas de risques pour l'environnement.
  
  \textbf{Décision :}
  Retenu.
  
  \textbf{Justification :}
- Peu coûteuse et facilement accessible chez plusieurs fournisseurs, cette option respecte nos contraintes économiques et temporels. Aussi en empilant un certain nombre de ces batteries on aboutie a une alimentation fiable et sécuritaire, de ce fait nos contraintes physiques et socio-environnementaux sont également respectées.
+ Peu coûteuse et facilement accessible chez plusieurs fournisseurs, cette option respecte nos contraintes économiques et temporels. Aussi en empilant un certain nombre de ces batteries on aboutie à une alimentation fiable et sécuritaire. De cette manière, nos contraintes physiques et socio-environnementaux sont également respectées.
  
 \textbf{Références:} \cite{Lithium}
 
 \subsubsection{Batterie Power Bank :}
 \textbf{Description :}
- Ce concept consiste à se servir de Power Bank de type Anker qui n'est rien d'autre qu'un chargeur portable, pour alimenter notre système. Il a une haute puissance avec sortie de 4.8A . Le voltage de sortie est de 5V. Ce type de chargeur est disponible pour livraison chez Best Buy dans les 5 jours ouvrables suivant la date de l'achat, et ce au prix de 69.09 dollars. Les dimensions sont approximativement de 14.5 cm pour la longueur, 6 cm pour la largeur et 2.5 cm pour la hauteur. Il faut noter que la batterie doit être fixée dans la boite contenant le système et relié à ce dernier par un câble.
+ Ce concept consiste à se servir de Power Bank de type Anker qui n'est rien d'autre qu'un chargeur portable pour alimenter notre système. Il a une haute puissance avec sortie de 4.8A . Le voltage de sortie est de 5V. Ce type de chargeur est disponible pour livraison chez Best Buy dans les 5 jours ouvrables suivant la date de l'achat, et ce, au prix de 69.09\$. Les dimensions sont approximativement de 14.5 cm pour la longueur, 6 cm pour la largeur et 2.5 cm pour la hauteur. Il faut noter que la batterie doit être fixée dans la boite contenant le système et relié à ce dernier par un câble.
  
 \textbf{Décision :}
  Rejeté.
  
 \textbf{Justification :}
-Avec cette option on pourra certes répondre à la demande du client mais il faudra associer, c'est à dire  mettre en série au moins trois batteries. Ce qui fera augmenter la facture et aussi utilisera beaucoup trop d'espace  dans la boite du système.
+Avec cette option on pourra certes répondre à la demande du client mais il faudra associer, c'est à dire, mettre en série au moins trois batteries. Ce qui fera augmenter la facture et aussi utilisera beaucoup trop d'espace  dans la boite du système.
  
 \textbf{Références:} \cite{Power_Bank}
  
 \subsubsection{Alimentation Filaire:}
 \textbf{Description :}
-Pour le 3e concept, il s'agit de l'alimentation filaire. Pour cette solution, le système sera directement relié a uneprise ise électrique située a la surface par l'entremise d'un câble d'alimentation. Si nécessaire, plusieurs cordons seront enfilés pour avoir une longueur maximale.
+Pour le 3e concept, il s'agit de l'alimentation filaire. Pour cette solution, le système sera directement relié a une prise électrique située à la surface par l'entremise d'un câble d'alimentation. Si nécessaire, plusieurs cordons seront enfilés pour avoir une longueur maximale.
  
  \textbf{Décision :}
  Retenu.
  
  \textbf{Justification :}
- La solution filaire, en plus de réduire les coûts, permet d'alimenter constamment le systeme dans une configuration securitaire.
+ La solution filaire, en plus de réduire les coûts, permet d'alimenter constamment le système dans une configuration sécuritaire.
  
 \subsubsection{Panneaux solaires:}
 
 \textbf{Description :}
-Le panneau solaire externe donne également une autre possibilité pour alimenter notre système. Il est muni d'un coffre de 8" * 8" qui contient une batterie rechargeable de 12V avec prise d'alimentation externe, qui est rechargée en permanence par le panneau solaire via un câble de 3'. Avec une puissance de 7 watts et des dimensions de 13" * 14", le panneau solaire est une option un peu plus dispendieuse , son prix est de 299.99 dollars livrable en dans les 5 jours ouvrables suivants la date de l'achat . Ce prix inclut tout le câblage ainsi que le matériel de montage. Les avantages de cette option c'est surtout la permanence de l'énergie qui permettra a notre système de fonctionner sans interruption.
+Le panneau solaire externe donne également une autre possibilité pour alimenter notre système. Il est muni d'un coffre de 8x8 pouces qui contient une batterie rechargeable de 12V avec prise d'alimentation externe, qui est rechargée en permanence par le panneau solaire via un câble de 3 pouces. Avec une puissance de 7 watts et des dimensions de 13x14 pouces, le panneau solaire est une option un peu plus dispendieuse. Son prix est de 299.99\$ livrable dans les 5 jours ouvrables suivant la date de l'achat. Ce prix inclut tout le câblage ainsi que le matériel de montage. Le principal avantages de cette option est la permanence de l'énergie qui permettra à notre système de fonctionner sans interruption.
 
 \textbf{Décision :}
 Retenu, mais.
@@ -232,8 +232,8 @@ Cette composante se devra de transférer les données brutes de poissons, de tem
 \end{itemize}
 
 \subsubsection{Utilisation de la connexion intégrée au capteur}
-\textbf{Description :} La GoPro Hero7 Black et la GoFishCam ont déjà une connexion WiFi intégrée. Il serait possible d'utiliser ces connexions pour communiquer avec le poste de contrôle via un téléphone intelligent. Le choix du téléphone intelligent se pose sur le iPhone 7. Dans le cas de la GoPro Hero7 Black, il s'agirait d'une connexion dans les fréquences radio (RF) à 2.4GHz avec un débit maximal de 78 Mbit/s. La connexion se fait à partir d'un téléphone intelligent ayant l'application GoPro. Pour la GoFishCam, il s'agit d'une connexion à une fréquence de 2.4GHz qui permet de filmer en temps réel en 1080p à 60fps jusqu'à une distance de 50 pieds par rapport à un téléphone intelligent ayant l'application GoFishCam. Le coût de cette solution sera déterminé par le coût du téléphone intelligent, soit 629 \$. À chaque deux semaines, un opérateur pourrait recueillir les données enregistrées sur le iPhone et les envoyer dans le logiciel pour le traitement.
- 
+\textbf{Description :} La GoPro Hero7 Black et la GoFishCam ont déjà une connexion WiFi intégrée. Il serait possible d'utiliser ces connexions pour communiquer avec le poste de contrôle via un téléphone intelligent. Le choix se pose sur le iPhone 7. Pour les deux capteurs, la connexion Wifi serait à une fréquence de 2.4GHz avec un débit de 78 Mbps. La portée serait de 50 pieds. Le coût de cette solution sera déterminé par le coût du téléphone intelligent, soit 629 \$. À chaque deux semaines, un opérateur pourrait recueillir les données enregistrées sur le iPhone et les envoyer dans le logiciel pour le traitement.
+
 \textbf{Décision :} Retenu, mais.
  
 \textbf{Justification :} Dans les deux cas, le transfert de données se fait via une application de téléphone intelligent. Comme le WiFi intégré dans les capteurs ne sont pas optimisés en distance, il faut que le téléphone soit submergé et alimenté en tout temps pour recueillir les données. Considérant que la batterie d'un iPhone est de 1400mAh et qu'il faut l'alimenter durant au minimum 14 jours, cela augmente drastiquement la consommation d'électricité du système. De plus, pour garder le iPhone submergé, le système devra inclure un boîtier. Le système se complexifie grandement pour une fonction qui est relativement simple. En ajoutant un boîtier à 20\$, le coût de cette composante du système s'élève à environ 650\$. Considérant que les coûts en matériel sont limités à 10 000\$, le coût de cette composante est acceptable. De plus, ce concept ne constitue pas un danger de pollution pour les poissons.
@@ -241,7 +241,7 @@ Cette composante se devra de transférer les données brutes de poissons, de tem
 \textbf{Références:} \cite{GoPro_Specs} \cite{GoPro_Waterproof} \cite{GoFishCam} \cite{iPhone7}
 
 \subsubsection{Connexion filaire}
-\textbf{Description :} Cette solution serait un fil qui relie directement le capteur au poste de contrôle. Ce serait le fil 50m Fibre Optic USB 3.0 Cable de Lindy. Il s'agit d'un fil qui convertit les données numérique en signal optique pour acheminer les données à travers une fibre optique. Acheminer un signal numérique par un fil USB standard sur de plus longues distances peut résulter en des pertes et il faut un relai pour rehausser le voltage. Le coût de ce file est de 700\$. De plus, il faudra isoler le fil d'une couche protectrice puisque la fibre optique est fragile et que le fil est assez dispendieux. La couche protectrice sera le HWN0.13BK - Flexo Heavy Wall 3.18mm en PET. Son coût pour une distance de 250ft (76.2m) est de 82.50\$. Le coût total est donc de 782.50\$.
+\textbf{Description :} Cette solution serait un fil qui relie directement le capteur au poste de contrôle. Ce serait le fil 50m Fibre Optic USB 3.0 Cable de Lindy. Il s'agit d'un fil qui convertit les données numérique en signal optique pour acheminer les données à travers une fibre optique. Le coût de ce file est de 700\$. Une couche protectrice HWN0.13BK - Flexo Heavy Wall 3.18mm en PET sera ajoutée pour assurer la résistance du dispositif. Son coût pour une distance de 250ft (76.2m) est de 82.50\$. Le coût total est donc de 782.50\$.
  
 \textbf{Décision :} Retenu.
  
@@ -268,7 +268,7 @@ Cette composante se devra de transférer les données brutes de poissons, de tem
 \begin{table}[!htb]
 \footnotesize
 \centering
-\scalebox{1}{
+\scalebox{1.0}{
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
     \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
@@ -290,17 +290,17 @@ Cette composante se devra de transférer les données brutes de poissons, de tem
 
 Cette composante a pour fonction de transformer et compiler les données brutes recueillies par les différents capteurs pour créer les vignettes. Elle devra donc être en mesure d'identifier les espèces de poissons à partir des données du capteur. De plus, elle se chargera de comptabiliser le nombre de poissons de chaque d'espèces et de produire des statistiques. Cette fonction traitera aussi si une alarme doit être générée. Il y aura une alarme lorsque le fonctionnement du système pourrait être compromis, c'est-à-dire si il y la température interne excède l'intervalle de résistance à la température des composantes du capteur, si l'identification est impossible sur plusieurs captures ou si il y a une brèche de sécurité.
 
-L’automatisation de la prise de données sur les poissons étant au cœur du projet de conception, il est important de considérer l’ensemble des opportunités qui se présentent avec un budget de développement de 40,000\$. Le projet devant être profitable à long terme, la considération du coût et du temps de développement seront pris en compte, mais également la facilité de configuration pour le déploiement dans différents sites. Le facteur du 5 poissons à détecter par site peut également jouer en ligne de compte sur la complexité de l’algorithme à développer, c’est pourquoi il sera pris en compte. Le logiciel doit être fiable, opérationnel en tout temps et ne comporter aucun bug. Une solution présentée pourrait demander du matériel pour une collecte de données au préalable avant le déploiement du système, c’est pourquoi ce critère sera abordé seulement dans cette section. 
+L’automatisation de la prise de données sur les poissons étant au cœur du projet de conception, il est important de considérer l’ensemble des opportunités qui se présentent avec un budget de développement de 40 000\$. Le projet devant être profitable à long terme, la considération du coût et du temps de développement seront pris en compte, mais également la facilité de configuration pour le déploiement dans différents sites. Le facteur du 5 poissons à détecter par site peut également jouer en ligne de compte sur la complexité de l’algorithme à développer, c’est pourquoi il sera pris en compte. Le logiciel doit être fiable, opérationnel en tout temps et ne comporter aucun bug. Une solution présentée pourrait demander du matériel pour une collecte de données au préalable avant le déploiement du système, c’est pourquoi ce critère sera abordé seulement dans cette section. 
 
 
  \textbf{Aspects physiques:}
  \begin{itemize} [label = {--}]
-    \item La collecte de donnée (si applicable) devra utiliser le moins de matériel possible.
+    \item La collecte de donnée (si applicable) devra utiliser le moins de matériel possible et détecter les poissons avec justesse.
 \end{itemize}
 
  \textbf{Aspects économiques:}
  \begin{itemize} [label = {--}]
-    \item Les coûts de développement du système se doivent d’être minimisés le plus possible, sans dépasser la limite de 40,000\$.
+    \item Les coûts de développement du système se doivent d’être minimisés le plus possible, sans dépasser la limite de 40 000\$.
 \end{itemize}
 
  \textbf{Aspects temporels:}
@@ -337,7 +337,7 @@ L’automatisation de la prise de données sur les poissons étant au cœur du p
 
 \subsubsection{Développement par un Tiers}
 
-\textbf{Description: }L’établissement d’un partenariat avec une compagnie établie en intelligence artificielle pourrait également être envisageable dans la conception du logiciel de détection de poissons. Toute compagnie établie dans le domaine de l’intelligence artificielle, telle que la compagnie Element AI à Montréal, et qui possède de l’expertise en vision numérique pourrait amener de son expertise au projet et développer un logiciel de reconnaissance d’espèces de poisson avec aise. Le coût de développement d’un tel logiciel peut s’avérer coûteux. Puisqu’il est difficile de mettre un chiffre exact sur les tarifs d’une compagnie en particulier, on estimera, par sécurité, les coûts de développement à la limite permise, soient 40,000\$.
+\textbf{Description: }L’établissement d’un partenariat avec une compagnie établie en intelligence artificielle pourrait également être envisageable dans la conception du logiciel de détection de poissons. Toute compagnie établie dans le domaine de l’intelligence artificielle, telle que la compagnie Element AI à Montréal, et qui possède de l’expertise en vision numérique pourrait amener de son expertise au projet et développer un logiciel de reconnaissance d’espèces de poisson avec aise. Le coût de développement d’un tel logiciel peut s’avérer coûteux. Puisqu’il est difficile de mettre un chiffre exact sur les tarifs d’une compagnie en particulier, on estimera, par sécurité, les coûts de développement à la limite permise, soient 40 000\$.
 
 \textbf{Décision :} Retenu.
 
@@ -397,7 +397,7 @@ Comme mentionné à la section \ref{subsection:capacite_stockage}, ces données 
 
 \textbf{Aspects temporel:}
 \begin{itemize} [label = {--}]
-    \item La conception de la solution doit respecter les délais alloués.
+    \item La conception de la solution doit respecter des délais raisonnables.
 \end{itemize}
 
 \textbf{Aspects socio-environnementaux:}
@@ -407,35 +407,35 @@ Comme mentionné à la section \ref{subsection:capacite_stockage}, ces données 
 
 \subsubsection{Carte mémoire SD SanDisk 32 Go classe 10 :}
 
-\textbf{Description :} La carte mémoire SD SanDisk 32 Go classe 10 est une carte mémoire utilisée pour conserver les photographies en haute résolution utilisée sur les appareils photos compacts et de portée moyenne. Il a une capacité de stockage de 32 Go. Il peut stocker des vidéos en haute définition. La carte mémoire possède également une vitesse de transfert de 80 Mo/s. Également, il est dit que cette carte est étanche et résistante aux chocs et aux rayons X. Le système possède également une étiquette inscriptible lors de prise de photos et de vidéos. Elle coûte 13.98 dollars sur Amazon.
+\textbf{Description :} La carte mémoire SD SanDisk 32 Go classe 10 est une carte mémoire utilisée pour conserver les photographies en haute résolution sur les appareils photos compacts et de portée moyenne. Il a une capacité de stockage de 32 Go. Il peut stocker des vidéos en haute définition. La carte mémoire possède également une vitesse de transfert de 80 Mbps. Également, il est dit que cette carte est étanche et résistante aux chocs et aux rayons X. Le système possède également une étiquette inscriptible lors de prise de photos et de vidéos. Elle coûte 13.98 dollars sur Amazon.
 
 \textbf{Décision :} Rejeté.
 
-\textbf{Justification :} Cette carte est très intéressante pour ce projet car elle est étanche, donc, résistante à l’eau et aux chocs et il serait également possible de récupérer les données même en cas de bris de la machine. La carte SD est très intéressante aussi pour sa vitesse de transferts. En effet, elle pourrait transférer ses informations à une vitesse très rapide pour la transmission d’une photographie. Enfin, grâce à l’étiquette inscriptible, il sera plus facile de concevoir la vignette. Cependant, on ne peut pas utiliser la carte SD car elle ne possède pas une capacité suffisante.
+\textbf{Justification :} Cette carte est très intéressante pour ce projet car elle est étanche, donc, résistante à l’eau et aux chocs et il serait également possible de récupérer les données même en cas de bris de la machine. La carte SD est très intéressante aussi pour sa vitesse de transfert. En effet, elle pourrait transférer ses informations à une vitesse très rapide pour la transmission d’une photographie. Enfin, grâce à l’étiquette inscriptible, il sera plus facile de concevoir la vignette. Cependant, on ne peut pas utiliser la carte SD car elle ne possède pas une capacité suffisante.
 
 \textbf{Références :} \cite{casd} \cite{amsd}
 
 \subsubsection{Cloud de hubiC}
-\textbf{Description :} La plateforme Cloud de hubiC est un système informatique en nuage disponible sur la plateforme internet de Google. Un système d’informatique en nuage est un concept permettant d’enregistrer des données sur des ordinateurs localisés à distance grâce à une connexion en ligne et de pouvoir utiliser ces mêmes données à distance des ordinateurs. HubiC est une compagnie qui propose un service de stockage de données par nuage gratuitement jusqu’à 25 Go. Deux autres forfaits sont offert : 10 euros par an pour 100 Go et 50 euros par an pour 10 To. Pour assurer le transfert de données vers les serveurs de hubiC une connexion Internet est nécessaire puis il sera possible de suivre l’évolution des données à partir d’une grande diversité d’appareils (tablette, ordinateurs, téléphones intelligents…). 
+\textbf{Description :} La plateforme Cloud de hubiC est un système informatique en nuage disponible sur la plateforme internet de Google. Un système d’informatique en nuage est un concept permettant d’enregistrer des données sur des ordinateurs localisés à distance grâce à une connexion en ligne et de pouvoir utiliser ces mêmes données à distance des ordinateurs. HubiC est une compagnie qui propose un service de stockage de données par nuage gratuitement jusqu’à 25 Go. Deux autres forfaits sont offert : 15\$ par an pour 100 Go et 75\$ par an pour 10 To. Pour assurer le transfert de données vers les serveurs de hubiC une connexion Internet est nécessaire puis il sera possible de suivre l’évolution des données à partir d’une grande diversité d’appareils (tablette, ordinateurs, téléphones intelligents…). 
 
 \textbf{Décision :} Retenu.
 
-\textbf{Justification :} Grâce à ce système nous pourrions facilement utiliser les données à partir d’un ordinateur. En effet, les données seront directement transmises par Internet, les photographies seraient transférées jusqu’à un ordinateur qui traitera alors les images. On choisit hubiC car il s’agit du système qui garantit gratuitement la plus grande capacité de données en nuage.  En acheminant l’information jusqu’au serveur, on pourra alors traiter les informations très rapidement. Pour 50 euros par an, on pourrait parfaitement sauvegarder toutes les données pendant 2 ans et on pourrait y accéder avec n’importe quel ordinateur.
+\textbf{Justification :} Grâce à ce système nous pourrions facilement utiliser les données à partir d’un ordinateur. En effet, les données seront directement transmises par Internet, les photographies seraient transférées jusqu’à un ordinateur qui traitera alors les images. On choisit hubiC car il s’agit du système qui garantit gratuitement la plus grande capacité de données en nuage. En acheminant l’information jusqu’au serveur, on pourra alors traiter les informations très rapidement. Pour 75\$ par an, on pourrait parfaitement sauvegarder toutes les données pendant 2 ans et on pourrait y accéder avec n’importe quel ordinateur.
 
 \textbf{Références :} \cite{hubic} \cite{clgo} \cite{incl}
 
 \subsubsection{Disque dur sur SSD Kingston Digital SSD A400 SATA 3 }
-\textbf{Description :} Un disque dur sur SSD (Solid State Drive) est un type de disque dur utilisant une mémoire électronique (en opposition aux disque dur mécaniques). Les disques durs représentent un intérêt pour plusieurs raisons : ils sont plus rapides, ils sont silencieux, ils consomment moins d’énergie et ils sont plus résistants aux chocs. Ainsi, cela permet de sauvegarder une quantité importante de données tout en étant très discret et autonome. Cependant, comme c’est un outil de sauvegarde de données fait à base d’électronique, on remarque une usure progressive du système. Le disque dur SSD Kingston Digital SSD A400 SATA 3 proposé par Kingston nous propose 240 Go de données disponible pour 39.99 dollars sur Amazon. 
+\textbf{Description :} Un disque dur sur SSD (Solid State Drive) est un type de disque dur utilisant une mémoire électronique (en opposition aux disque dur mécaniques). Les disques durs représentent un intérêt pour plusieurs raisons : ils sont plus rapides, ils sont silencieux, ils consomment moins d’énergie et ils sont plus résistants aux chocs. Ainsi, cela permet de sauvegarder une quantité importante de données tout en étant très discret et autonome. Cependant, comme c’est un outil de sauvegarde de données fait à base d’électronique, on remarque une usure progressive du système. Le disque dur SSD Kingston Digital SSD A400 SATA 3 proposé par Kingston nous propose 240 Go de données disponible pour 40\$ sur Amazon. 
 
 \textbf{Décision :} Retenu.
 
-\textbf{Justification :} Le disque dur SSD Kingston Digital SSD A400 SATA 3 est un outil pratique pour sauvegarder beaucoup de données. En effet, 240 GB représentent une quantité de données disponible amplement suffisante pour le stockage des données sur la durée établie par le client. Le prix entre également amplement dans les frais matériel établie par le client. Malgré tout, même si l’usure affecte normalement les disques durs, ici, un seul client présente un mécontentement sérieux et ne concerne pas la durée de vie du disque dur.
+\textbf{Justification :} Le disque dur SSD Kingston Digital SSD A400 SATA 3 est un outil pratique pour sauvegarder beaucoup de données. En effet, 240 Go représentent une quantité de données disponible amplement suffisante pour le stockage des données sur la durée établie par le client. Le prix entre également amplement dans les frais matériel établie par le client. Malgré tout, même si l’usure affecte normalement les disques durs, ici, un seul client présente un mécontentement sérieux et ne concerne pas la durée de vie du disque dur.
 
 \textbf{Références :} \cite{AMSSD} \cite{DESSD}
 
 \subsubsection{Disque dur sur HDD Western Digital SATA III }
 
-\textbf{Description :} Les disques durs HDD (Hard Disk Drive) sont des disques durs mécaniques servant à la sauvegarde des données. Ce sont des disques durs mécaniques où l’information est gravée sur des disques tournant à une grande vitesse. Ainsi, on peut accéder aux données gravées même après la fermeture de l’ordinateur qui traite les données. On remarque que les HDD sont moins coûteux que les SSD dans le ratio : données par dollars. Cependant, les HDD sont plus lents que les SSD. Celui proposé par Western Digital permet de stocker 1 To de données pour 54,99\$ sur Amazon. Il a une capacité de 200 000 photographies numériques et il a une garantie de deux ans. 
+\textbf{Description :} Les disques durs HDD (Hard Disk Drive) sont des disques durs mécaniques servant à la sauvegarde des données. Ce sont des disques durs mécaniques où l’information est gravée sur des disques tournant à une grande vitesse. Ainsi, on peut accéder aux données gravées même après la fermeture de l’ordinateur qui traite les données. On remarque que les HDD sont moins coûteux que les SSD dans le ratio : données par dollars. Cependant, les HDD sont plus lents que les SSD. Celui proposé par Western Digital permet de stocker 1 To de données pour 54.99\$ sur Amazon. Il a une capacité de 200 000 photographies numériques et il a une garantie de deux ans. 
 
 \textbf{Décision :} Retenu.
 
@@ -446,7 +446,7 @@ Comme mentionné à la section \ref{subsection:capacite_stockage}, ces données 
 \begin{table}[!htb]
 \footnotesize
 \centering
-\scalebox{1.2}{
+\scalebox{0.90}{
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
     \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
@@ -466,7 +466,7 @@ Comme mentionné à la section \ref{subsection:capacite_stockage}, ces données 
 
 
 \subsection{Afficher les données}
-Cette composante devra afficher les données d'une manière efficace et conviviale pour les employés du MFA. Cette interface assurera la communication avec l'utilisateur pour visualiser les données et configurer les différents paramètres. \vspace{5mm}
+Cette composante devra afficher les données d'une manière efficace et conviviale pour les employés du MFA. Cette interface assurera la communication avec l'utilisateur pour visualiser les données et configurer les différents paramètres de la caméra comme le focus, l'ISO et le shutter speed. C'est aussi cette fonction qui se chargera de communiquer avec l'utilisateur en cas d'alarme. \vspace{5mm}
 
 \textbf{Aspects physiques:}
 \begin{itemize} [label = {--}]
@@ -491,33 +491,33 @@ Cette composante devra afficher les données d'une manière efficace et convivia
 
 \subsubsection{Application web avec Ajax}
 
-\textbf{Description:} Ajax est une série de techniques de développement web qui utilise une combinaison de langage tel que JavaScript, XML, HTML pour créer des applications web. La page web performe automatiquement un appel JavaScript à l'engin Ajax, ce qui correspond à une requête XMLHttpRequest. Puis, une requête HTTP est envoyé au serveur afin de retrouver la donnée appropriée. Cette donnée est ensuite retourner à Ajax sous forme HTML, XML ou Javascript pour être livrée à la page web. La compagnie Csoft Technology offre leur service de développement web avec la solution Ajax. Csoft Technology sont reconnu pour leur faibles coûts, l'agilité et la qualité de leur produit. L'équipe de développeur de Csoft Technology s'occupe de l'implantation de l'application web. Le prix relié à cette collaboration dépends de la complexité du site web et du temps de conception.
+\textbf{Description:} Ajax est une série de techniques de développement web qui utilise une combinaison de langage tel que JavaScript, XML, HTML pour créer des applications web. La page web performe automatiquement un appel JavaScript à l'engin Ajax, ce qui correspond à une requête XMLHttpRequest. Puis, une requête HTTP est envoyé au serveur afin de retrouver la donnée appropriée. Cette donnée est ensuite retourner à Ajax sous forme HTML, XML ou Javascript pour être livrée à la page web. La compagnie Csoft Technology offre leur service de développement web avec la solution Ajax. L'équipe de développeur de Csoft Technology s'occupe de l'implantation de l'application web. Pour communiquer l'alarme avec l'utilisateur, la plateforme Pushover est utilisée. Elle permet d'envoyer des notifications sur des appareils mobiles et s'intègre bien sur une application web. Le prix relié à cette collaboration dépends de la complexité du site web et du temps de conception.
 
 \textbf{Décision:} Retenu.
 
-\textbf{Justification:} L'avantage d'Ajax est qu'il crée des applications web dites asynchrones. Ainsi, les applications web peuvent envoyer et retourner des données d'un serveur sans affecter l'affichage de la page web courante. Les requêtes au serveur se font sans attendre la demande de l'utilisateur, ce qui optimise la performance de l'interface. En d'autres mots, le contenu de la page peut changer dynamiquement sans que l'utilisateur ait besoin de rafraîchir la page. De cette manière, il serait possible de voir en temps réels les données des population de poissons.
+\textbf{Justification:} L'avantage d'Ajax est qu'il crée des applications web dites asynchrones. Ainsi, les applications web peuvent envoyer et retourner des données d'un serveur sans affecter l'affichage de la page web courante. Les requêtes au serveur se font sans attendre la demande de l'utilisateur, ce qui optimise la performance de l'interface. De cette manière, il serait possible de voir en temps réels les données des population de poissons.
 
-\textbf{Références:} \cite{Ajax_wiki} \cite{Ajax} \cite{Csoft}
+\textbf{Références:} \cite{Ajax_wiki} \cite{Ajax} \cite{Csoft} \cite{Pushover}
 
 \subsubsection{Application web et mobile avec PrimeFaces}
 
-\textbf{Description:} L'affichage des données serait effectué en langage Java accompagné de librairies de PrimeFaces pour faciliter la création de l'application web et mobile. PrimeFaces offre plusieurs modèles d'application web à l'aide de serveur Java. Ces modèles comprennent également l'interaction avec plusieurs autres appareil, comme les tablettes et les téléphones intelligents. PrimeFaces permet ainsi la création d'application web et mobile. Par exemple, le modèle Roma propose plus de 1000 variations de dispositions afin de produire le design désiré. Il comprend le support SaSS avec la syntaxe scss pour présenter des documents HTML et XML. Les licenses de base sont appropriés pour les besoins du client. Les prix des licences varient entre 50\$ et 105\$ dépendamment du modèle choisis. L'implantation d'une telle application nécessite un développeur web ayant des connaissances en Java. Il est impossible de déterminer le prix de l'implantation d'un tel logiciel, puisqu'il est impossible de calculer le temps de conception. Cependant, on assume que plus le temps de conception (et le prix) est élevé, plus l'application web sera de qualité. Le salaire moyen d'un développeur web au Canada est de 33\$ par heure.
+\textbf{Description:} L'affichage des données serait effectué en langage Java accompagné de librairies de PrimeFaces pour faciliter la création de l'application web et mobile. PrimeFaces offre plusieurs modèles d'application web à l'aide de serveur Java. Ces modèles comprennent également l'interaction avec plusieurs autres appareil, comme les tablettes et les téléphones intelligents. PrimeFaces permet ainsi la création d'application web et mobile. Par exemple, le modèle Roma propose plus de 1000 variations de dispositions afin de produire le design désiré. Il comprend le support SaSS avec la syntaxe scss pour présenter des documents HTML et XML. Les licenses de base sont appropriés pour les besoins du client. Les prix des licences varient entre 50\$ et 105\$ dépendamment du modèle choisis. L'implantation d'une telle application nécessite un développeur web ayant des connaissances en Java. Pour communiquer l'alarme avec l'utilisateur, l'API de Google Chrome Alarms est utilisée. Elle permet d'envoyer des notifications l'application web et est optimisée pour une telle application. Il est impossible de déterminer le prix de l'implantation d'un tel logiciel, puisqu'il est impossible de calculer le temps de conception. Cependant, on assume que plus le temps de conception (et le prix) est élevé, plus l'application web sera de qualité. Le salaire moyen d'un développeur web au Canada est de 33\$ par heure.
 
 \textbf{Décision:} Retenu, mais.
 
 \textbf{Justification:} PrimeFaces comprends une variété de modèles d'application web de haute qualité. Plusieurs thèmes et personnalisations sont disponible. De plus, certains des modèles de pages d'erreurs et de connexion pour créer l'interface web. L'utilisation de PrimeFaces est efficace et robuste. Elle promet également une expérience facile d'utilisation.
 
-\textbf{Références:} \cite{PF} \cite{PF_Roma} \cite{PF_exemple} \cite{Dev_salary}
+\textbf{Références:} \cite{PF} \cite{PF_Roma} \cite{PF_exemple} \cite{Dev_salary} \cite{Chrome_Alarm}
 
 \subsubsection{Application web avec Comentum}
 
-\textbf{Description:} Cette solution propose d'utiliser les services de la compagnie de développement Comentum. Comentum est spécialisé dans la création d'application web. Elle utilise des modules, des libraires et des outils afin de produire une application rapide et efficace. La compagnie a créer son propre modèle (Framework) et promets une architecture avancé et performante. Comentum travail auprès du client afin de choisir le modèle, les libraires, les outils et le langage le plus approprié pour le projet. Les coûts reliés aux servicex de Comentum dépendent du projet.
+\textbf{Description:} Cette solution propose d'utiliser les services de la compagnie de développement Comentum. Comentum est spécialisé dans la création d'application web. Elle utilise des modules, des libraires et des outils afin de produire une application rapide et efficace. La compagnie a créer son propre modèle (Framework) et promets une architecture avancé et performante. Comentum travaille auprès du client afin de choisir le modèle, les libraires, les outils et le langage le plus approprié pour le projet. Pour communiquer l'alarme avec l'utilisateur, la plateforme Tizen pour applications web serait demandée. Les coûts reliés aux service de Comentum dépendent du projet.
 
 \textbf{Décision:} Retenu.
 
 \textbf{Justification:} Comentum comporte de nombreux avantages. La compagnie comprend une équipe de développeur ayant plus de 21 ans d'expérience. Ils promettent une application structurée, dont le code respecte les normes. Ils utilisent également les dernières technologies pour assurer une utilisation facile et performante par le client. Le langage et les librairies sont spécifiques aux besoins du client. De plus, Comentum utilise des procédures de sécurité afin de protéger les données du client.
 
-\textbf{Références:} \cite{Comentum}
+\textbf{Références:} \cite{Comentum} \cite{Tizen}
 
 \subsubsection{Application mobile avec CodeCreators}
 
@@ -551,7 +551,27 @@ Cette composante devra afficher les données d'une manière efficace et convivia
 
 
 \subsection{Assurer un accès sécurisé}
-Cette fonction est présente dans le but de garder les données confidentielles et de limiter le contrôle du capteur seulement aux utilisateurs autorisés. % Il faudra donc déterminer une méthode d'identification.
+Cette fonction est présente dans le but de garder les données confidentielles et de limiter le contrôle du capteur seulement aux utilisateurs autorisés.
+
+\textbf{Aspects physiques:}
+\begin{itemize}[label = {--}]
+    \item Doit assurer la sécurité du système et protéger la base de données en tout temps.
+\end{itemize}
+
+\textbf{Aspects économiques:}
+\begin{itemize}[label = {--}]
+    \item Les couches de sécurités proposées doivent être les moins dispendieuses possible.
+\end{itemize}
+
+\textbf{Aspects temporels:}
+\begin{itemize}[label = {--}]
+    \item Le temps de développement du système de sécurité doit être minimisé.
+\end{itemize}
+
+\textbf{Aspects socio-environnementaux:}
+\begin{itemize}[label = {--}]
+    \item N/A % Le système de sécurité doit être conforme aux normes des protocoles
+\end{itemize}
 
 
 \subsubsection{Protocoles d’encryption des données}
@@ -592,7 +612,7 @@ Cette fonction est présente dans le but de garder les données confidentielles 
 
 \textbf{Justification :}  Toute couche de sécurité ne vaudra rien si l’opérateur ne sait pas comment sécuriser ses appareils d’accès au serveur et ne saura pas comment les conserver à l’abris des attaques informatiques. Pour assurer la complète sécurité de la base de données, quelques centaines de dollars additionnels ne sont pas gaspillés.
 
-\textbf{Références :}
+\textbf{Références :} \cite{itspecialist}
 \cite{itspecialist}
 
 \begin{table}[!htb]
@@ -604,15 +624,15 @@ Cette fonction est présente dans le but de garder les données confidentielles 
     \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
     & Physiques & Économiques & Temporels & Socio-envir & \\
     \hline\hline
-    Protocole d'encryptage des données & Oui  & Oui & Oui & Oui & Retenu \\
-    Connexion virtuelle privée (VPN) & Oui & Oui & Oui & Oui & Retenu \\
-    Accès internet sécurisé & Oui & Oui & Oui & Oui & Retenu \\
-    Formation des opérateurs & Oui & Oui & Oui & Oui & Retenu \\
+    Protocole d'encryptage des données & Oui  & Oui & Oui & N/A & Retenu \\
+    Connexion virtuelle privée (VPN) & Oui & Oui & Oui & N/A & Retenu \\
+    Accès internet sécurisé & Oui & Oui & Oui & N/A & Retenu \\
+    Formation des opérateurs & Oui & Oui & Oui & N/A & Retenu \\
     \hline
     \end{tabular}
 }
 \caption{Faisabilité des concepts pour assurer un accès sécurisé}
-\label{t:Decision_réguler}
+\label{t:Decision_re8guler}
 \end{table}
 
 
@@ -642,58 +662,58 @@ Tel que voulu par le client, notre capteur doit être capable de mesurer la temp
 \subsubsection{Thermomètre de cuisson intelligent d’Accu-Temp :}
 \label{subsubsection:accu-temp}
 
-\textbf{Description:} Le Thermomètre de cuisson intelligent d’Accu-Temp est un thermomètre d’abord conçu pour la cuisson dans un four par la compagnie Accu-temp, une entreprise spécialisée dans l’équipement commercial de cuisine. De ce fait, ce thermomètre est conçu pour résister à des températures extrêmes. Ainsi, il est admis qu’il peut résister à des températures allant de -25 à 300 degrés Celsius. Également, le but de ce thermomètre est de prévenir l’utilisateur lorsque le temps de cuisson est élevé et il est possible d’y voir la température. Pour mieux utiliser ce thermomètre de cuisson, il est compatible avec une application disponible gratuitement permettant de voir le temps de cuisson ainsi que la température et le moment. Le prix le moins cher est celui de 49,99 dollars canadiens (avant taxes).\vspace{5mm}
-
-\textbf{Références}: \cite{Ares} \cite{AmAc} \cite{CaAc} \vspace{5mm}
+\textbf{Description:} Le Thermomètre de cuisson intelligent d’Accu-Temp est un thermomètre d’abord conçu pour la cuisson dans un four par la compagnie Accu-temp, une entreprise spécialisée dans l’équipement commercial de cuisine. De ce fait, ce thermomètre est conçu pour résister à des températures extrêmes. Ainsi, il est admis qu’il peut résister à des températures allant de -25 à 300 degrés Celsius. Également, le but de ce thermomètre est de prévenir l’utilisateur lorsque le temps de cuisson est élevé et il est possible d’y voir la température. Pour mieux utiliser ce thermomètre de cuisson, il est compatible avec une application disponible gratuitement permettant de voir le temps de cuisson ainsi que la température et le moment. Le prix le moins cher est celui de 49,99 dollars canadiens (avant taxes).
 
 \textbf{Décision}: Retenu, mais.
 
-\textbf{Justification}: Le thermomètre reste fonctionnel dans l’écart de température établie par le client. Théoriquement, ce thermomètre intelligent serait capable de transmettre ses informations jusqu’à une distance de 30 mètres par Bluetooth. Cependant, en se fiant sur les différents commentaires sur le site de Canadian Tire, on voit que certains des consommateurs qui se sont procuré le thermomètre affichent leur mécontentement. Un des points soulevés est son inaptitude réelle à transmettre l’information par Bluetooth. En effet, un de ces consommateurs écrit qu’en réalité, le thermomètre ne pouvait en réalité ne fonctionner qu’à une portée maximale de 5 mètres en pratique. De ce fait, on peut se demander si on peut réellement faire confiance au thermomètre concernant ce critère. De plus, ce thermomètre nécessitant une alimentation par piles, sa durée de vie semble être limitée.
+\textbf{Justification}: Le thermomètre reste fonctionnel dans l’écart de température établie par le client. Théoriquement, ce thermomètre intelligent serait capable de transmettre ses informations jusqu’à une distance de 30 mètres par Bluetooth. Cependant, en se fiant sur les différents commentaires sur le site de Canadian Tire, on voit que certains des consommateurs qui se sont procuré le thermomètre affichent leur mécontentement. Un des points soulevés est son inaptitude réelle à transmettre l’information par Bluetooth. En effet, d'après un consommateur, le thermomètre ne peut en réalité ne fonctionner qu’à une portée maximale de 5 mètres en pratique et on doit le considérer.
 
 Exemple: on a déjà présenté ce concept au point \ref{subsubsection:accu-temp} et les mêmes critères s'appliquent.
+
+\textbf{Références}: \cite{Ares} \cite{AmAc} \cite{CaAc}
 
 \subsubsection{Thermistance NTCLE100E3103JT2 placée à l’extérieur reliée à un Arduino Uno:}
 \label{thermis}
 
 \textbf{Description :} Une thermistance est un outil résistif au courant qui varie en fonction de la température environnante. La NTCLE100E3103JT2 est une de ces thermistances de la gamme NTCLE100E3possédant une zone d’efficacité allant de -40 à 125 °C et atteignant une valeur de 10 000 ohms à 25 °C. On peut se procurer cette thermistance pour 1.21 dollars sur Digikey. Un Arduino Uno est un microcontrôleur conçu par Arduino pouvant être utilisé comme ampèremètre et pouvant transmettre ses informations via un câble USB. De ce fait, grâce à la loi d’Ohm, on sait que U=R*I et on peut grâce au microcontrôleur programmer une fonction capable de transformer la valeur du courant en valeur de la température puis de transmettre ces informations à une commande centrale via le câble USB. Ce microcontrôleur coûte 20.69 dollars sur amazon. 
 
-\textbf{Références :} \cite{TuAr} \cite{DaTh} \cite{AmAr}
-
 \textbf{Décision :} Retenu.
 
-\textbf{Justification :} Grâce à un circuit rudimentaire et un code simple, ce concept pourrait tout à fait remplir sa fonction. En effet, ce circuit n’est composé que de deux éléments. En mesurant le courant grâce à l’Arduino, on tire l’expression mathématique liée à la résistance en fonction de la température de la thermistance. Étant donné que l’Arduino peut fournir une source de tension continue, il est très simple d’exprimer la température en fonction du courant. Ces transformations seront effectuées à l’aide d’un code dans l’Arduino (l’Arduino pouvant déjà être utilisé comme voltmètre, on n’a plus qu’à établir des équations mathématiques simples). Enfin, ces données pourront être transmises grâce à l’Arduino et de son câble USB. Il faut également penser à ne placer que la partie de la thermistance dans l'eau sans que le reste du circuit y touche, sinon, il pourrait y avoir des problèmes en cas de submersion.
+\textbf{Justification :} Ce circuit n’est composé que de deux éléments. En mesurant le courant grâce à l’Arduino, on tire l’expression mathématique liée à la résistance en fonction de la température de la thermistance. Étant donné que l’Arduino peut fournir une source de tension continue, il est très simple d’exprimer la température en fonction du courant. Ces transformations seront effectuées à l’aide d’un code dans l’Arduino (l’Arduino pouvant déjà être utilisé comme voltmètre, on n’a plus qu’à établir des équations mathématiques simples). Enfin, ces données pourront être transmises grâce à l’Arduino et de son câble USB. Pour éviter les problèmes, il faudrait qu'uniquement la thermistance touche à l'eau.
+
+\textbf{Références :} \cite{TuAr} \cite{DaTh} \cite{AmAr}
 
 \subsubsection{Thermomètre intelligent Thermo de Withings:}
 
 \textbf{Description :} Le thermomètre intelligent Thermo de Withings est un thermomètre médical utilisé pour mesurer par le toucher les parois d’un être humain. Il s’agit d’un thermomètre intelligent capable, grâce à une application mobile, d’informer l’utilisateur de la température actuelle et mesurer à chaque fois. Il prévient des moments opportuns pour prendre certains médicaments spécifiques pour soigner. Il est précis à 0.2 °C près. Il nécessite une connexion Wi-Fi. Il peut également conserver les données de plusieurs cibles simultanément. Il atteint un coût de 99,95 dollars américains.
 
-\textbf{Références :} \cite{Thermo}
-
 \textbf{Décision :} Rejeté.
 
 \textbf{Justification :} Ce thermomètre est conçu pour mesurer des parois humaines. Donc, il doit être capable de mesurer des températures situées autour de 37 °C. De ce fait, comme aucunes mesures de températures extrêmes ne sont marquées, on ne peut pas affirmer qu’il sera capable de mesurer des températures allant de -4 à 25 °C. De plus, ce concept est beaucoup plus coûteux que les autres proposés précédemment. Pour cette raison, nous ne pouvons pas nous permettre de présenter ce concept au client. 
+
+\textbf{Références :} \cite{Thermo}
 
 \subsubsection{Diode 1n4148 avec un Arduino Uno : }
 \label{1n4}
 
 \textbf{ Description :} La diode 1n4148 est un semi-conducteur fait à partir de silicone. LE but premier d’une diode est d’assurer le passage du courant lorsque la différence de potentielle dépasse la tension de seuil et que le courant circule dans le même sens que ce semi-conducteur. Une des caractéristiques de la diode 1n4148 est le fait que la tension entre l’anode et la cathode diminue lorsque la température augmente. On observe alors un ratio de 2,2 millivolts par °C. À partir de cette information, on peut établir un rapport pour la mesure de la température ambiante autour de la diode. Cela est rendu possible grâce à un microcontrôleur de type Arduino Uno, présenté précédemment. Il faut payer 0.018 dollars pour un paquet de 10 sur alliedelec.com. La diode reste efficace entre -30 et 120 °C.
 
-\textbf{Références :} \cite{Allie} \cite{Tu1n}  \cite{Da1n}
-
 \textbf{Décision :} Retenu.
 
 \textbf{Justification :} Tel que vu avec la thermistance, on peut utiliser un Arduino Uno avec une programmation simple et un circuit simple afin de parvenir à mesurer la température ambiante. De surcroît, le circuit reste fonctionnel dans l’écart de température établit par le client. Il faut toutefois considérer le fait que seulement la diode doit toucher l'eau.
 
+\textbf{Références :} \cite{Allie} \cite{Tu1n}  \cite{Da1n}
+
 \begin{table}[!htb]
 \footnotesize
 \centering
-\scalebox{1.0}{
+\scalebox{0.95}{
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
     \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
     & Physiques & Économiques & Temporels & Socio-envir & \\
     \hline\hline
-    Thermomètre d'Accu-Temp & Oui mais  & Oui & Oui mais & Oui & Retenu mais \\
+    Thermomètre d'Accu-Temp & Oui, mais  & Oui & Oui, mais & Oui & Retenu, mais \\
     Thermistance & Oui & Oui & Oui & Oui & Retenu \\
     Thermo de Withings & Non & Oui mais & Oui & Oui & Rejeté \\
     Diode 1n4148 avec un Arduino Uno & Oui & Oui & Oui & Oui & Retenu \\
@@ -731,43 +751,43 @@ Le capteur est essentiellement construit de composantes électroniques. Ainsi, �
 \subsubsection{HP2W Hyperfire 2 Professionnal White Flash Camera}
 \textbf{Description :} Cet élément a déjà été présenté au point \ref{subsubsectionHyperfire}
 
-\textbf{Références :} \ref{subsubsectionHyperfire}
-
 \textbf{Décision :} Retenu.
 
 \textbf{Justification :} Certes, l'outil est dispendieux et prend de l'espace. Cependant, considérant qu'il peut être utilisé comme capteur pour les photographies, on pourrait économiser, car tout en prenant les photographies, on pourrait avoir la température intérieure du capteur. Ainsi, on le retient car malgré son coût et son volume, il peut remplir plusieurs tâches simultanément.
 
+\textbf{Références :} \ref{subsubsectionHyperfire}
+
 \subsubsection{Thermomètre au mercure H-B instrument 2/1110 Durac}
 \textbf{Description :} Un thermomètre au mercure est un outil de mesure de la température. Lorsque la température monte, le mercure prend l'expension jusqu'à indiquer la température mesurée. Celui-ci coûte 24,96 \$ sur Amazon. Il a une incertitude de 2°C et peut mesurer des températures allant de -20 °C jusqu'à 110°C.
-
-\textbf{Références :} \cite{mercure}
 
 \textbf{Décision :} Rejeté.
 
 \textbf{Justification :} Certes, ce thermomètre a la capacité de mesurer la température estimée du capteur. Cependant, cet outil n'étant aucunement relié à un outil numérique, il faudrait trouver un moyen de transmettre l'information détenue par le thermomètre jusqu'à la vignette. Ainsi, il faudrait surveiller constamment la température inscrite par le thermomètre afin de savoir la température du capteur, une opération qui peut s'avérer très complexes. Ainsi, on ne choisira pas cette option afin de mesurer la température interne du capteur.
 
+\textbf{Références :} \cite{mercure}
+
 \subsubsection{Diode 1n4148 avec un Arduino Uno :}
 \textbf{Description :} Ce concept a déjà été présenté au point \ref{1n4}
-
-\textbf{Référence :} \ref{1n4}
 
 \textbf{Décision :} Retenu.
 
 \textbf{Justification :} Tel qu'expliqué précédemment, on pourra facilement mesurer la température dans l'écart de température voulu et transmettre les informations facilement pour un prix réduit. Ainsi cette option sera considérée. 
 
+\textbf{Référence :} \ref{1n4}
+
 \subsubsection{Thermistance NTCLE100E3103JT2 placée à l’extérieur reliée à un Arduino Uno :}
 \textbf{Description :} Le concept a déjà été présenté au point \ref{thermis}
-
-\textbf{Références :} \ref{thermis}
 
 \textbf{Décision :} Retenu.
 
 \textbf{Justification :} Comme on l'a vu auparavant, on pourrait facilement mesurer la température interne du capteur avec ce système et transférer les informations pour la vignette. L'écart de température toléré couvre celui désiré par le client. Cette option est donc gardée.
 
+\textbf{Références :} \ref{thermis}
+
 \begin{table}[!htb]
 \footnotesize
 \centering
-\scalebox{1.0}{
+\scalebox{0.95}{
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
     \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
@@ -912,7 +932,7 @@ Lors de la collecte d'information, plusieurs systèmes seront en activité et ce
 \textbf{Références :} \cite{rad1} \cite{rad2}
 
 \subsubsection{Pâte thermique NT-H1 et radiateur HS00012K}
-\textbf{Description :} Les pâtes thermiques sont des graisses qui facilitent le transfert de chaleur. Le but de ces pâtes est de faciliter la conduction thermique d'une surface séparant deux milieux. Ainsi, un milieu plus froid comme l'air à température ambiante ou l'eau d'un lac pourra plus facilement refroidir un plus petit système dégageant beaucoup de chaleur. La pâte ici présentée est une pâte thermique pouvant opéré dans des températures allant de -50°C à 110°C pour 15,20 euros sur cdiscount par tube de 1,4 mL. Cette pâte doit être associée avec un radiateur électronique pour faciliter l'ex filtration de la chaleur. Ces radiateurs concentrent la chaleur à leur surface pour ensuite la sortir du système. On utilisera le radiateur HS00012K disponible pour 10.00\$ l'unité sur Solid-Run et pèse 100g par unité. Ce radiateur à ordinateur facilitera la dissipation de chaleur.
+\textbf{Description :} Les pâtes thermiques sont des graisses qui facilitent le transfert de chaleur sur une interface. La pâte NT-H1 est une pâte thermique pouvant opérer dans des températures allant de -50°C à 110°C pour 15,20 euros sur cdiscount par tube de 1,4 mL. Cette pâte doit être associée avec un radiateur électronique pour faciliter la dissipation de la chaleur. On utilisera le radiateur HS00012K disponible pour 10.00\$ l'unité sur Solid-Run et a une masse de 100g par unité.
 
 \textbf{Décision :} Retenu.
 
@@ -932,7 +952,7 @@ Lors de la collecte d'information, plusieurs systèmes seront en activité et ce
 \begin{table}[!htb]
 \footnotesize
 \centering
-\scalebox{1.2}{
+\scalebox{0.9}{
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
     \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
