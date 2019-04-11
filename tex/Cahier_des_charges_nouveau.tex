@@ -13,13 +13,13 @@ Cette section est destinée à la présentation des critères par rapport aux ob
 \begin{table}[htp]
    \footnotesize
    \centering
-   \scalebox{0.85}{
+   \scalebox{0.8}{
    \begin{tabular}{|c|c|c|c|c|}
         \hline
         Critères & Pondération & Barème & Min. & Max.\\
         \hline
         \hline
-        Qualité du produit & 50\% & & &\\
+        Qualité du produit & 55\% & & &\\
         \hline
         Résolution du capteur [Mpx] & 10\% & Éq. \ref{eq:bareme_res} & 10000 & $\infty$ \\
         Identification des poissons [poissons] & 10\% & Éq.  \ref{eq:bareme_identification} & 5 & $\infty$ \\
@@ -28,29 +28,31 @@ Cette section est destinée à la présentation des critères par rapport aux ob
         Durée de vie de l'alimentation du système [jours] & 5\% & Éq. \ref{eq:bareme_duree_batterie}  & 14  & $\infty$\\
         Acheminement des informations [m] & 5\% & Éq. \ref{eq:bareme_acheminement_infos} & 53 & 284 \\
         Fiabilité du système de sécurité & 5\% & Éq. \ref{eq:bareme_sécurité} & & \\
-        Utilisation de l'interface graphique & 5\% & Table \ref{t:bareme_interface} & & \\
+        Résistance à la profondeur [m] & 2\% & Éq. \ref{eq:bareme_profondeur} & 15.25 & 280 \\
+        Taille des spécimens observés [cm] & 2\% & Éq. \ref{eq:bareme_taille_poisson} & 6 & 140 \\
+        Nombre de fonctionnalités de l'alarme & 2\% & Éq. \ref{eq:bareme_etat_systeme} & 0 & $\infty$\\
+        Puissance de calcul & 2\% & Éq. \ref{eq:bareme_gpu} & 0 & 198 \\
+        Utilisation de l'interface graphique & 2\% & Table \ref{t:bareme_interface} & & \\
         \hline\hline
         Performance & 20\% & & & \\
         \hline
         Précision du logiciel de reconnaissance [\%] & 15\% & Éq. \ref{eq:bareme_precision} & 0 & 100\\
-        Précision de la régulation [$\%_\text{écart}$] & 2\% & Éq. \ref{eq:bareme_regul} & $\infty$ & 0\\
-        Précision de la mesure de température [$\%_\text{écart}$] & 2\% & Éq. \ref{eq:bareme_precision_temperature} & $\infty$ & 0 \\
-        Précision de la mesure du temps [s] & 1\% & Éq. \ref{eq:bareme_precision_temps} & $\infty$ & 0\\ \hline\hline
-        Respect des contraintes & 15\% & & & \\
-        \hline
-        Prise de mesure passive & 2\% & Table \ref{t:bareme_systeme_passif} & & \\
-        Masse du capteur [kg] & 2\% & Éq. \ref{eq:bareme_masse_capteur} & 0 & 5 \\
-        Volume du capteur [m$^3$] & 2\% & Éq. \ref{eq:bareme_volume_capteur} & 0 & 0.3\\
-        Résistance à la profondeur [m] & 2\% & Éq. \ref{eq:bareme_profondeur} & 15.25 & 280\\
-        Résistance à la température [°C] & 2\% & Éq. \ref{eq:bareme_res_temperature} & -6 & 30\\
-        Taille des spécimens observés [cm] & 2\% & Éq. \ref{eq:bareme_taille_poisson} & 6 & 140\\
-        Nombre de fonctionnalités de l'alarme & 2\% & Éq. \ref{eq:bareme_etat_systeme} & 0 & $\infty$\\
-        Température mesurable [°C] & 1\% & Éq. \ref{eq:bareme_mesure_temperature} & -6 & 30\\
+        Précision de la régulation [$\%_\text{écart}$] & 2\% & Éq. \ref{eq:bareme_regul} & 0 & $\infty$\\
+        Précision de la mesure de température [$\%_\text{écart}$] & 2\% & Éq. \ref{eq:bareme_precision_temperature} & 0 & $\infty$\\
+        Précision de la mesure du temps [s] & 1\% & Éq. \ref{eq:bareme_precision_temps} & 0 & $\infty$\\
         \hline\hline
         Coûts & 15\% & & &\\
         \hline
         Coût de main d'oeuvre [\$] & 12\% & Éq. \ref{eq:bareme_cout_logiciel} & 0 & 40 000\\
         Coûts du matériel [\$] & 3\% & Éq. \ref{eq:bareme_cout_materiel} & 0 & 10 000 \\
+        \hline\hline
+        Respect des contraintes & 10\% & & & \\
+        \hline
+        Prise de mesure passive & 2\% & Table \ref{t:bareme_systeme_passif} & & \\
+        Masse du capteur [kg] & 2\% & Éq. \ref{eq:bareme_masse_capteur} & 0 & 5 \\
+        Volume du capteur [m$^3$] & 2\% & Éq. \ref{eq:bareme_volume_capteur} & 0 & 0.3\\
+        Résistance à la température [°C] & 2\% & Table \ref{t:bareme_resistance_temperature} & -6 & 30\\
+        Température mesurable [°C] & 2\% & Éq. \ref{eq:bareme_mesure_temperature} & -6 & 30\\
         \hline
    \end{tabular}}
     \caption{Table des critères du projet Fish \& Chips}
@@ -183,6 +185,81 @@ La confidentialité et l'authenticité des données est primordiale dans un tel 
     \label{eq:bareme_sécurité}
 \end{equation}
 
+\subsection{Résistance à la profondeur du capteur}
+
+La pondération attribuée à ce critère est de 2\%. Le MFA demande un capteur submersible jusqu'à 15.25m de profondeur au minimum. Sachant que le lac le plus profond au Québec est le Lac Walker avec une profondeur de 280m \cite{Lac_walker}, il est possible de déterminer un barème linéaire entre 15.25 et 280m tel que présenté à l'équation \ref{eq:bareme_profondeur}.
+
+\begin{equation}
+y(x) = \begin{cases}
+        0.003777x-0.0557 & \text{ si } x \geq 15.25\\
+        \text{Rejeté} & \text{ si } x < 15.25
+    \end{cases}
+    \label{eq:bareme_profondeur}
+\end{equation}
+où $x$ est la profondeur maximale à laquelle le capteur peut être submergé en mètres.
+
+\subsection{Plage de température opérationnelle du capteur}
+
+Une pondération de 2\% est attribuée à ce critère. Le MFA demande que le capteur opère dans une plage de +5°C et -10°C par rapport à l'eau. La température de l'eau peut varier de 4 à 25°C. Le capteur doit donc être opérationnel entre -6 et 30°C. Le barème pour ce critère est montré à la table \ref{t:bareme_resistance_temperature}.
+
+\begin{table}[htp]
+   \footnotesize
+   \centering
+   \begin{tabular}{|c|c|}
+        \hline
+        Résistance à la température & Barème\\
+        \hline
+        \hline
+        Le capteur est opérationnel sur la plage de -6° à 30°C & 1.0 \\
+        \hline
+        Le capteur n'est pas opérationnel sur la plage de -6° à 30°C & Rejeté \\
+        \hline
+   \end{tabular}
+   \caption{Barème de la plage de température opérationnelle du capteur}
+   \label{t:bareme_resistance_temperature}
+\end{table}
+
+
+\subsection{Taille maximale des spécimens observables}
+Taille des spécimens observés [cm]:
+
+La pondération attribuée à ce critère est de 2\%. Le MFA demande de pouvoir imager des espèces qui ont une taille minimum de 6 cm. De plus, le plus gros poissons d'eau douce au Canada est l'esturgeon jaune \cite{Esturgeon} et il a une taille maximale de 140cm. Le barème à l'équation \ref{eq:bareme_taille_poisson} est donc établie selon une fonction linéaire entre 5 et 140 cm.
+
+\begin{equation}
+y(x) = \begin{cases}
+        \frac{x}{134}- \frac{6}{134} & \text{ si } 6 \leq x \leq 140\\
+        1 & \text{ si } x \geq 140\\
+        \text{Rejeté} & \text{ si } x < 6
+    \end{cases}
+    \label{eq:bareme_taille_poisson}
+\end{equation}
+où $x$ est la taille maximale des spécimens observables en cm.
+
+Le capteur optique doit posséder une masse inférieure à 5kg sous l'eau. Le volume du capteur sous l'eau se doit de ne pas dépasser 0.3m$^{3}$. Le capteur doit être fonctionnel jusqu'à une profondeur de 50 pieds. Le système doit supporter une température entre +5°C et -10°C par rapport à la température de l'eau où le capteur sera situé.
+
+
+\subsection{Nombre de fonctionnalités reliées à l'alarme}
+
+La pondération associée à ce critère est de 2\%. En cas de problème au niveau du transfert de donnée ou de l'opération du capteur, le système doit envoyer une alarme à un responsable. Le nombre de fonctionnalités reliées à l'envoie de l'alarme différencie la qualité entre chaque concept d'alarme. Le dispositif de génération d'alarme doit avoir au minimum 1 fonctionnalité d'alarme. Il est convenu qu'au delà de 10 fonctionnalités, les concepts deviennent équivalents et qu'ils ont une note de 1. Le barème est présenté à l'équation \ref{eq:bareme_etat_systeme}.
+
+\begin{equation}
+    y(x) = \begin{cases}
+    \frac{x-1}{9} & \text{ si } x \leq 10\\
+    1 & \text{ si } x \geq 10\\
+    0 & \text{ si } x < 1
+    \end{cases}
+    \label{eq:bareme_etat_systeme}
+\end{equation}
+où $x$ est le nombre de fonctionnalités reliées à l'alarme.
+
+\subsection{Puissance de calcul}
+
+La pondération de ce critère est de 2\%. La puissance de calcul sera déterminée par la performance de la carte graphique (source). Le barème est construit à partir d'un score qui prend compte de la performance génrale de la carte graphique \cite{User_Benchmark_score}. La meilleure carte graphique a un score de 198 alors une note de 1 lui sera attribuée. Le barème sera établi de manière linéaire tel que montré à l'équation \ref{eq:bareme_gpu}.
+
+\begin{equation}
+    y = \frac{x}{198}
+    \label{eq:bareme_gpu}
+\end{equation}
 
 \subsection{Utilisation de l'interface graphique}
 
@@ -262,117 +339,6 @@ La pondération attribuée à la précision de la mesure du temps est de 1$\%$. 
 \end{equation}
 où $x$ est l'écart absolue entre l'heure mesurée et l'heure réelle en secondes.
 
-\section{Respect des contraintes}
-
-Afin que le concept de solution soit intéressant pour le client, il est nécessaire que chacun des critères concernant les mesures physiques soient respectés. Les critères présent dans cette section représente de nombreux besoins du client. Ainsi, une pondération de 15\% y est attribué. 
-
-\subsection{Prise de mesure passive}
-
-Bien que l'objectif principal du capteur est d'identifier une variété de poissons dans un milieu aquatique, il est nécessaire que cette identification n'affecte pas le mode de vie des poissons. En effet, l'une des principales motivations du client à l'égard du projet Fish \& Chips est d'assurer une mesure passive. Le capteur optique ne doit en aucun cas perturber l'environnement des poissons évoluant sur le site. Une importance relative de 2\% est donc accordée à ce critère. En cas de perturbation de l'environnement, le design est automatiquement rejeté, comme le précise la table \ref{t:bareme_systeme_passif}.
-
-\begin{table}[htp]
-   \footnotesize
-   \centering
-   \begin{tabular}{|c|c|}
-        \hline
-        Degré de passivité du système & Barème\\
-        \hline
-        \hline
-        Le système assure une mesure passive & 1.0 \\
-        \hline
-        Le système n'assure pas une mesure passive & Rejeté \\
-        \hline
-   \end{tabular}
-   \caption{Évaluation du barème du degré de passivité du système}
-   \label{t:bareme_systeme_passif}
-\end{table}
-
-\subsection{Contraintes mécaniques}
-
-Le capteur optique doit respecter certaines contraintes physiques et mécaniques. Le non respect de ces contraintes ne doit en aucun cas affecter les fonctionnalités du système. De plus, l'aspect physique du capteur optique ne doit pas être un facteur pouvant perturber l'environnement des poissons. C'est dans cette optique qu'on attribue aux contraintes mécaniques une pondération de 5\% de l'ensemble du projet. Ce barème a été calculé considérant le tableau \ref{eq:bareme_volume_capteur} et les caractéristiques suivantes:
-
-\subsubsection{Masse du capteur}
-
-Le MFA spécifie que le capteur optique doit posséder une masse inférieure à 5kg sous l'eau. Pour cette raison, un capteur ayant une masse supérieure à 5 kg sera rejeté. Le barème présenté à l'équation \ref{eq:bareme_masse_capteur} prend la forme d'une fonction cosinus pour que le barème ne varie pas beaucoup près de 0 et 5 kg puisqu'un design de capteur ayant une masse de 0 à 1 kg serait très bon et que deux designs de capteur ayant une masse entre 4 et 5 kg seraient presque équivalents. Par contre, le barème varie à peu près linéairement entre 1 et 4 kg. La fréquence du cosinus est ajustée de manière à ce qu'il y ait une demie période entre 0 et 5kg. La pondération attribuée à ce critère est de 2$\%$ étant donné que le plus important est tout simplement d'avoir une masse respectant la demande du client.
-
-\begin{equation}
-y(x) = \begin{cases}
-        0.5 \cos{\frac{\pi x}{5}} + 0.5 & \text{ si } 0 \le x \leq 5\\
-        \text{Rejeté} & \text{ si } x > 5
-    \end{cases}
-    \label{eq:bareme_masse_capteur}
-\end{equation}
-où $x$ est la masse du capteur submergé en kg.
-
-\subsubsection{Volume du capteur}
-
-
-Selon la demande du client, le volume du capteur doit être inférieur à 0.3 m$^3$. L'équation \ref{eq:bareme_volume_capteur} pour le barème du volume du capteur a la même forme que l'équation \ref{eq:bareme_masse_capteur} pour les mêmes raisons citées ci-dessus. La seule différence est que les paramètres sont ajustés de manière à ce qu'un volume de 0.3m$^3$ donne une note de 0. La pondération attribuée à ce critère est de 2$\%$ puisqu'il est surtout important d'avoir un volume inférieur à 0.3m$^3$.
-
-\begin{equation}
-y(x) = \begin{cases}
-        0.5 \cos{\frac{\pi x}{0.3}} + 0.5 & \text{ si }0 \le x \leq 0.3\\
-        \text{Rejeté} & \text{ si } x > 0.3
-    \end{cases}
-    \label{eq:bareme_volume_capteur}
-\end{equation}
-où $x$ est le volume du capteur submergé en m$^3$.
-
-\subsubsection{Résistance à la profondeur du capteur}
-Profondeur [m]:
-Profondeur maximale: 280m Lac Walker \cite{Lac_walker}, y(280)=1
-\begin{equation}
-y(x) = \begin{cases}
-        0.003777x-0.0557 & \text{ si } x \geq 15.25\\
-        \text{Rejeté} & \text{ si } x < 15.25
-    \end{cases}
-    \label{eq:bareme_profondeur}
-\end{equation}
-
-\subsubsection{Résistance à la température du capteur}
-Résistance température [$\degree$C]: table ici
-\begin{equation}
-    y(x) = 1
-    \label{eq:bareme_res_temperature}
-\end{equation}
-
-\subsubsection{Taille maximale des spécimens observables}
-Taille des spécimens observés [cm]:
-Le plus gros poissons d'eau douce au Canada est l'esturgeon jaune \cite{Esturgeon} et il a une taille maximale de 140cm.
-
-\begin{equation}
-y(x) = \begin{cases}
-        \frac{x}{134}- \frac{6}{134} & \text{ si } 6 \leq x \leq 140\\
-        1 & \text{ si } x \geq 140\\
-        \text{Rejeté} & \text{ si } x < 6
-    \end{cases}
-    \label{eq:bareme_taille_poisson}
-\end{equation}
-
-Le capteur optique doit posséder une masse inférieure à 5kg sous l'eau. Le volume du capteur sous l'eau se doit de ne pas dépasser 0.3$m^{3}$. Le capteur doit être fonctionnel jusqu'à une profondeur de 50 pieds. Le système doit supporter une température entre +5°C et -10°C par rapport à la température de l'eau où le capteur sera situé.
-
-
-\subsubsection{Mesure de l'état du système/Nb de fonctionnalités}
-
-État du système (table)
-\begin{equation}
-    y(x) = \begin{cases}
-    \frac{x}{10} & \text{ si } x \leq 10\\
-    1 & \text{ si } x \geq 10
-    \end{cases}
-    \label{eq:bareme_etat_systeme}
-\end{equation}
-
-\subsubsection{Intervalle de température mesurable}
-Intervalle de température mesurable [$\degree$C] (table)
-\begin{equation}
-y(x) = \begin{cases}
-    1 & \text{ si } -6 \leq x \leq 30\\
-    \text{Rejeté} & \text{Autrement}
-    \end{cases}
-    \label{eq:bareme_mesure_temperature}
-\end{equation}
-
 \section{Coûts}
 
 Une limite des coûts a été établie : on ne peut dépasser 10 000 dollars de frais matériel et 40 000 dollars de coûts de main d'oeuvre. 
@@ -411,6 +377,75 @@ y(x) = \begin{cases}
 Un système ne respectant pas la limite de 10000\$ en coûts de matériel sera rejeté. Considérant l'importance du respect des coûts de conception, une pondération de 4\% a donc été attribué à ce critère.
 
 
+\section{Respect des contraintes}
+
+Afin que le concept de solution soit intéressant pour le client, il est nécessaire que chacun des critères concernant les mesures physiques soient respectés. Les critères présent dans cette section représente de nombreux besoins du client. Ainsi, une pondération de 15\% y est attribué. 
+
+\subsection{Prise de mesure passive}
+
+Bien que l'objectif principal du capteur est d'identifier une variété de poissons dans un milieu aquatique, il est nécessaire que cette identification n'affecte pas le mode de vie des poissons. En effet, l'une des principales motivations du client à l'égard du projet Fish \& Chips est d'assurer une mesure passive. Le capteur optique ne doit en aucun cas perturber l'environnement des poissons évoluant sur le site. Une importance relative de 2\% est donc accordée à ce critère. En cas de perturbation de l'environnement, le design est automatiquement rejeté, comme le précise la table \ref{t:bareme_systeme_passif}.
+
+\begin{table}[htp]
+   \footnotesize
+   \centering
+   \begin{tabular}{|c|c|}
+        \hline
+        Degré de passivité du système & Barème\\
+        \hline
+        \hline
+        Le système assure une mesure passive & 1.0 \\
+        \hline
+        Le système n'assure pas une mesure passive & Rejeté \\
+        \hline
+   \end{tabular}
+   \caption{Évaluation du barème du degré de passivité du système}
+   \label{t:bareme_systeme_passif}
+\end{table}
+
+% \subsection{Contraintes mécaniques}
+
+% Le capteur optique doit respecter certaines contraintes physiques et mécaniques. Le non respect de ces contraintes ne doit en aucun cas affecter les fonctionnalités du système. De plus, l'aspect physique du capteur optique ne doit pas être un facteur pouvant perturber l'environnement des poissons. C'est dans cette optique qu'on attribue aux contraintes mécaniques une pondération de 5\% de l'ensemble du projet. Ce barème a été calculé considérant le tableau \ref{eq:bareme_volume_capteur} et les caractéristiques suivantes:
+
+\subsection{Masse du capteur}
+
+Le MFA spécifie que le capteur optique doit posséder une masse inférieure à 5kg sous l'eau. Pour cette raison, un capteur ayant une masse supérieure à 5 kg sera rejeté. Le barème présenté à l'équation \ref{eq:bareme_masse_capteur} prend la forme d'une fonction cosinus pour que le barème ne varie pas beaucoup près de 0 et 5 kg puisqu'un design de capteur ayant une masse de 0 à 1 kg serait très bon et que deux designs de capteur ayant une masse entre 4 et 5 kg seraient presque équivalents. Par contre, le barème varie à peu près linéairement entre 1 et 4 kg. La fréquence du cosinus est ajustée de manière à ce qu'il y ait une demie période entre 0 et 5kg. La pondération attribuée à ce critère est de 2$\%$ étant donné que le plus important est tout simplement d'avoir une masse respectant la demande du client.
+
+\begin{equation}
+y(x) = \begin{cases}
+        1 & \text{ si } 0 \le x \leq 5\\
+        \text{Rejeté} & \text{ si } x > 5
+    \end{cases}
+    \label{eq:bareme_masse_capteur}
+\end{equation}
+où $x$ est la masse du capteur submergé en kg.
+
+\subsection{Volume du capteur}
+
+
+Selon la demande du client, le volume du capteur doit être inférieur à 0.3 m$^3$. L'équation \ref{eq:bareme_volume_capteur} pour le barème du volume du capteur a la même forme que l'équation \ref{eq:bareme_masse_capteur} pour les mêmes raisons citées ci-dessus. La seule différence est que les paramètres sont ajustés de manière à ce qu'un volume de 0.3m$^3$ donne une note de 0. La pondération attribuée à ce critère est de 2$\%$ puisqu'il est surtout important d'avoir un volume inférieur à 0.3m$^3$.
+
+\begin{equation}
+y(x) = \begin{cases}
+        1 & \text{ si }0 \le x \leq 0.3\\
+        \text{Rejeté} & \text{ si } x > 0.3
+    \end{cases}
+    \label{eq:bareme_volume_capteur}
+\end{equation}
+où $x$ est le volume du capteur submergé en m$^3$.
+
+
+\subsection{Intervalle de température mesurable}
+
+
+\begin{equation}
+y(x) = \begin{cases}
+    1 & \text{ si } -6 \leq x \leq 30\\
+    \text{Rejeté} & \text{Autrement}
+    \end{cases}
+    \label{eq:bareme_mesure_temperature}
+\end{equation}
+
+
 %\begin{enumerate}
 %    \item Le capteur optique doit posséder une masse inférieure à 5kg sous l'eau.
 %    \item Le volume du capteur sous l'eau se doit de ne pas dépasser 0.3$m^{3}$. 
@@ -442,7 +477,7 @@ Un système ne respectant pas la limite de 10000\$ en coûts de matériel sera r
 
 \begin{figure}[htb!]
     \centering
-    \includegraphics[width=0.90\linewidth]{fig/maison_de_qualite.pdf}
+    \includegraphics[width=\linewidth]{fig/MQ2.pdf}
     \caption{Maison de qualité du projet Fish \& Chips}
     \label{fig:maison_qualite}
 \end{figure}
