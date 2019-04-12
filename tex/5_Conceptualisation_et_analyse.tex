@@ -381,6 +381,95 @@ L’automatisation de la prise de données sur les poissons étant au cœur du p
 \end{table}
 
 
+\subsection{Compiler les données}
+Ce dispositif a pour fonction d'accueillir le logiciel de reconnaissance et la base de données. Il devra donc avoir une puissance de calcul considérablement élevée puisque l'entraînement d'un logiciel de reconnaissance nécessite une quantité énorme de calculs à effectuer. De plus, c'est à partir de cet appareil que les données sont transmises sur le serveur. Il est aussi établi qu'une source de tension autre que l'alimentation du capteur est fournie et que ce dispositif se situe en dehors de l'eau. \vspace{5mm}
+
+
+\textbf{Aspects physiques:}
+\begin{itemize}[label = {--}]
+    \item La solution doit accueillir le logiciel de reconnaissance et la base de données.
+    \item La solution doit entraîner le logiciel de reconnaissance le plus rapidement possible.
+\end{itemize}
+
+\textbf{Aspects économiques:}
+\begin{itemize}[label = {--}]
+    \item La solution doit être la moins dispendieuse possible.
+\end{itemize}
+
+\textbf{Aspects temporels:}
+\begin{itemize}[label = {--}]
+    \item N/A
+\end{itemize}
+
+\textbf{Aspects socio-environnementaux:}
+\begin{itemize}[label = {--}]
+    \item N/A
+\end{itemize}
+
+\subsubsection{Raspeberry Pi}
+
+\textbf{Description :} Le Rapsberry Pi 3 Modèle B+ est un microprocesseur opérant sur Raspbiant, un système d'exploitation se rapportant à une branche de Linux. Il est muni d'un port WiFi intégré qui suit la norme 802.11.b/g/n/ac à 2.4 et 5GHz de l'IEEE ainsi qu'un microprocesseur ARM Cortex-A53 lui permettant d'atteindre une vitesse de 1.4 GHz. Il a aussi un port GPIO avec 40 tiges. Son coût est de 46.50\$.
+
+\textbf{Décision :} Rejeté.
+
+\textbf{Justification :}  Le port GPIO présente un aspect pratique important: il serait possible de brancher les capteurs de température directement sur le Raspberry Pi si il est submergé avec le capteur. Il faudrait cependant s'assurer que la batterie puisse alimenter le capteur ainsi que le Raspberry Pi. Par contre, ce microprocesseur n'a pas de carte graphique. La puissance de calcul repose donc entièrement sur le processeur et celui-ci n'est pas assez performant pour une telle application. Pour cette raison, le concept est rejeté malgré son coût très peu élevé.
+
+\textbf{Références :} \cite{Raspberry_Pi_Specs}
+ 
+ 
+\subsubsection{Alienware Aurora R7}
+
+\textbf{Description:} Cet ordinateur propose des composantes coûteuses mais performantes. Il est doté d'un processeur Intel Core i7-8700 à 3.2 GHz, une mémoire vive de 16 Go, un disque dur intégrée de 1 To ainsi qu'une carte graphique NVIIDIA GeForce GTX 1060-6Go. Il a aussi un port de connexion WiFi 802.11ac. Il est possible de l'acquérir au prix de 1700\$ chez BestBuy.
+
+\textbf{Décision:} Retenu.
+
+\textbf{Justification:} Le disque dur interne intégré de 1 To peut être avantageux puisqu'il serait possible de l'utiliser afin de stocker les données. De plus, sa carte graphique est très performante ce qui lui permettrait d'effectuer l'entraînement du logiciel de reconnaissance assez rapidement. Sa connexion WiFi lui permettrait aussi de communiquer avec le capteur via un réseau WiFi et ainsi faire le transfert de données lorsque possible. Il rempli donc les critères physiques imposés et propose même un avantage pratique. Finalement, son coût de 1700\$ est raisonnable puisque le budget alloué en matériel est de 10000\$.
+
+\textbf{Références:} \cite{User_Benchmark_score} \cite{Alienware_R7} 
+
+
+\subsubsection{Hp Pavilion Power 580-130}
+
+\textbf{Description:} Le HP Pavilion Power 580-130 a une mémoire vive de 8 Go, un disque dur interne de 1 To ainsi que la possibilité d'une connexion WiFi. Il a un processeur Ryzen 5 d'AMD qui lui permet d'atteindre une vitesse de 3.2 GHz. Avec une carte graphiqe d'AMD Radeon RX 580, il est possible de l'acheter pour la somme de 950\$ chez Walmart.
+
+\textbf{Décision:} Retenu.
+
+\textbf{Justification:} Malgré des composantes plus modestes, cet ordinateur serait capable d'offrir une bonne puissance calcul à un prix moins élevé. En effet, sa carte graphique fait tout de même partie des meilleures disponibles sur le marché et elle serait amplement suffisante pour la charge computationnelle. Son disque dur interne et sa connexion WiFi procurent eux aussi un avatage pratique poru les besoins du projet. Avec un prix de 950\$, le HP Pavilion remplit tous les critères émis.
+
+\textbf{Références:} \cite{AMD_RX} \cite{HP_hardware}
+
+
+\subsubsection{Ordinateur personnalisé}
+
+\textbf{Description:} Il est aussi possible de personnaliser l'ordinateur afin de mieux s'adapter aux besoins. L'ordinateur personnalisé choisi a une carte mère Asus Prime Z370-P à 178\$, un processeur Intel Core i5-8400 à 280\$, une carte graphique RTX GeForce 2070 d'Asus à 737\$, un disque dur de 2 To Barracuda de Seagate à 73\$ et une mémoire vive de 16 Go Vengeance LPX de Corsair à 118\$. La carte mère peut recevoir une connexion WiFi par un fil via un routeur. La somme totale de cet ordinateur serait de 1386\$.
+
+\textbf{Décision:} Retenu.
+
+\textbf{Justification:} L'avantage principal de la personnalisation de l'ordinateur est qu'il peut être optimisé selon les besoins du MFA. En effet, puisque la puissance de calcul est surtout dépendante de la carte graphique, il est possible d'acheter des composantes moins dispendieuses pour allouer plus d'argent sur la carte graphique. Avec la carte graphique RTX GeForce 2070 d'Asus, l'ordinateur remplit largement son mandat. De plus, son coût d'environ 1400\$ est acceptable par rapport au budget de 10000\$ alloué en matériel.
+
+\textbf{Références:} \cite{Custom_R7} \cite{Amazon_RTX} \cite{Amazon_i5}
+
+\begin{table}[!htb]
+\footnotesize
+\centering
+\scalebox{1.0}{
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
+    & Physiques & Économiques & Temporels & Socio-envir & \\
+    \hline\hline
+    Raspberry Pi & Non & Oui & N/A & N/A & Rejeté \\
+    Alienware Aurora R7 & Oui & Oui & N/A& N/A& Retenu \\
+    HP Pavilion Power 580-130 & Oui & Oui & N/A& N/A & Retenu \\
+    Ordinateur personnalisé & Oui & Oui & N/A & N/A & Retenu \\
+    \hline
+    \end{tabular}
+}
+\caption{Faisabilité des concepts pour la compilation des données}
+\label{t:Decision_compilation}
+\end{table}
+
+
 \subsection{Stocker les données}
 La composante qui occupera cette fonction devra enregistrer toutes les données pertinentes pour la base de données, c'est-à-dire les vignettes et les commentaires, les statistiques, les paramètres de configuration, les alarmes  qui ont été envoyées, les données de poissons de référence et les images originales prises par le capteur.
 Comme mentionné à la section \ref{subsection:capacite_stockage}, ces données totaliseront un minimum de 200Go.
@@ -466,7 +555,7 @@ Comme mentionné à la section \ref{subsection:capacite_stockage}, ces données 
 
 
 \subsection{Afficher les données}
-Cette composante devra afficher les données d'une manière efficace et conviviale pour les employés du MFA. Cette interface assurera la communication avec l'utilisateur pour visualiser les données et configurer les différents paramètres de la caméra comme le focus, l'ISO et le shutter speed. C'est aussi cette fonction qui se chargera de communiquer avec l'utilisateur en cas d'alarme. \vspace{5mm}
+Cette composante devra afficher les données d'une manière efficace et conviviale pour les employés du MFA. Cette interface assurera la communication avec l'utilisateur pour visualiser les données et configurer les différents paramètres de la caméra comme le focus, l'ISO et la durée d'exposition. \vspace{5mm}
 
 \textbf{Aspects physiques:}
 \begin{itemize} [label = {--}]
@@ -491,13 +580,13 @@ Cette composante devra afficher les données d'une manière efficace et convivia
 
 \subsubsection{Application web avec Ajax}
 
-\textbf{Description:} Ajax est une série de techniques de développement web qui utilise une combinaison de langage tel que JavaScript, XML, HTML pour créer des applications web. La page web performe automatiquement un appel JavaScript à l'engin Ajax, ce qui correspond à une requête XMLHttpRequest. Puis, une requête HTTP est envoyé au serveur afin de retrouver la donnée appropriée. Cette donnée est ensuite retourner à Ajax sous forme HTML, XML ou Javascript pour être livrée à la page web. La compagnie Csoft Technology offre leur service de développement web avec la solution Ajax. L'équipe de développeur de Csoft Technology s'occupe de l'implantation de l'application web. Pour communiquer l'alarme avec l'utilisateur, la plateforme Pushover est utilisée. Elle permet d'envoyer des notifications sur des appareils mobiles et s'intègre bien sur une application web. Le prix relié à cette collaboration dépends de la complexité du site web et du temps de conception.
+\textbf{Description:} Ajax est une série de techniques de développement web qui utilise une combinaison de langage tel que JavaScript, XML, HTML pour créer des applications web. La page web performe automatiquement un appel JavaScript à l'engin Ajax, ce qui correspond à une requête XMLHttpRequest. Puis, une requête HTTP est envoyé au serveur afin de retrouver la donnée appropriée. Cette donnée est ensuite retourner à Ajax sous forme HTML, XML ou Javascript pour être livrée à la page web. La compagnie Csoft Technology offre leur service de développement web avec la solution Ajax. L'équipe de développeur de Csoft Technology s'occupe de l'implantation de l'application web.Le prix relié à cette collaboration dépends de la complexité du site web et du temps de conception.
 
 \textbf{Décision:} Retenu.
 
 \textbf{Justification:} L'avantage d'Ajax est qu'il crée des applications web dites asynchrones. Ainsi, les applications web peuvent envoyer et retourner des données d'un serveur sans affecter l'affichage de la page web courante. Les requêtes au serveur se font sans attendre la demande de l'utilisateur, ce qui optimise la performance de l'interface. De cette manière, il serait possible de voir en temps réels les données des population de poissons.
 
-\textbf{Références:} \cite{Ajax_wiki} \cite{Ajax} \cite{Csoft} \cite{Pushover}
+\textbf{Références:} \cite{Ajax_wiki} \cite{Ajax} \cite{Csoft}
 
 \subsubsection{Application web et mobile avec PrimeFaces}
 
@@ -887,7 +976,6 @@ Le MFA demande que la date et l'heure de chaque mesure soit inscrite sur les vig
 \end{table}
 
 
-
 \subsection{Réguler la température à l'intérieur du capteur}
 
 Lors de la collecte d'information, plusieurs systèmes seront en activité et cela va nécessairement dégager de l'énergie. Cette énergie sera alors convertie en chaleur. Cette chaleur va alors s'accumuler dans le capteur ce qui va augmenter la température. Pour éviter une trop grande augmentation de la température, ce qui pourrait endommager certains éléments, on cherchera alors à refroidir le système pour qu'il reste à un écart de température -10°C et 5°C au delà de la température de l'eau.
@@ -971,12 +1059,12 @@ Lors de la collecte d'information, plusieurs systèmes seront en activité et ce
 
 
 \subsection{Générer une alarme}
-
+Le système se doit d'informer un responsable lorsque son bon fonctionnement est compromis. Une alarme est générée lorsqu'il y a une erreur dans le dispositif d'identification, lorsque qu'il est impossible d'imager l'environnement aquatique, lorsque le système est autonome depuis plus de 2 semaines et lorsque la température interne ou externe sort de la plage normale de température.  \vspace{5mm}
 
 
 \textbf{Aspects physiques:}
 \begin{itemize}[label = {--}]
-    \item La solution doit réguler la température du système entre +5°C et -10°C par rapport à la température de l'eau.
+    \item La solution doit informer l'utilisateur lorsque le bon fonctionnement du système est compromis.
 \end{itemize}
 
 \textbf{Aspects économiques:}
@@ -991,46 +1079,52 @@ Lors de la collecte d'information, plusieurs systèmes seront en activité et ce
 
 \textbf{Aspects socio-environnementaux:}
 \begin{itemize}[label = {--}]
-    \item La solution doit assurer une régulation la plus discrète possible.
+    \item N/A
 \end{itemize}
 
-\subsubsection{Système de refroidissement à eau EK-KIT S120}
+\subsubsection{Pushover message API}
 
-\textbf{Description :} 
+\textbf{Description :} Pour communiquer l'alarme avec l'utilisateur, la plateforme Pushover est utilisée. Elle permet d'envoyer des notifications sur des appareils mobiles et s'intègre bien sur une application web. 
 
 \textbf{Décision :} Retenu.
 
 \textbf{Justification :}
 
-\textbf{Références :}
+\textbf{Références :} \cite{Pushover}
+ 
+ 
+\subsubsection{Google Chrome Alarms}
 
-\subsubsection{Radiateur de moteur de voiture ABAKUS}
-\textbf{Description :} 
+\textbf{Description:} Pour communiquer l'alarme avec l'utilisateur, l'API de Google Chrome Alarms est utilisée. Elle permet d'envoyer des notifications l'application web et est optimisée pour une telle application.
 
-\textbf{Décision :} Rejeté.
+\textbf{Décision:} Retenu
 
-\textbf{Justification :} 
+\textbf{Justification:} 
 
-\textbf{Références :} 
+\textbf{Références:} \cite{Chrome_Alarm}
 
-\subsubsection{Pâte thermique NT-H1 et radiateur HS00012K}
 
-\textbf{Description :} 
 
-\textbf{Décision :} Retenu.
+\subsubsection{Tizen Alarm API}
 
-\textbf{Justification :} 
+\textbf{Description:} Pour communiquer l'alarme avec l'utilisateur, la plateforme Tizen pour applications web serait demandée.
 
-\textbf{Références :} 
+\textbf{Décision:} Retenu.
 
-\subsubsection{Module Peltier Tec1-12706}
-\textbf{Description :} 
+\textbf{Justification:} 
 
-\textbf{Décision :} Retenu.
+\textbf{Références:} \cite{Tizen}
 
-\textbf{Justification :} 
+\subsubsection{Intégration avec CodeCreators}
 
-\textbf{Références :} 
+\textbf{Description:} 
+
+\textbf{Décision:} Retenu.
+
+\textbf{Justification:} 
+
+\textbf{Références:} \cite{CodeCreators} \cite{CodeCreators2}
+
 
 \begin{table}[!htb]
 \footnotesize
@@ -1041,13 +1135,15 @@ Lors de la collecte d'information, plusieurs systèmes seront en activité et ce
     \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
     & Physiques & Économiques & Temporels & Socio-envir & \\
     \hline\hline
-    Refroidissement à eau & Oui & Oui & Oui & Oui & Retenu\\
-    Radiateur automobile & Non & Oui & Oui & Oui & Rejeté \\
-    Pâte thermique et Radiateur & Oui & Oui & Oui & Oui & Retenu \\
-    Module Peltier & Oui & Oui & Oui & Oui & Retenu \\
+    Pushover message API & Oui & Oui & Oui & Oui & Retenu\\
+    Google Chrome Alarms & Oui & Oui & Oui & Oui & Retenu \\
+    Tizen Alarm API & Oui & Oui & Oui & Oui & Retenu \\
+    Intégration avec CodeCreators & Oui & Oui & Oui & Oui & Retenu \\
     \hline
     \end{tabular}
 }
 \caption{Faisabilité des concepts pour la génération de l'alarme}
 \label{t:Decision_alarme}
 \end{table}
+
+
