@@ -724,12 +724,12 @@ Cette fonction est présente dans le but de garder les données confidentielles 
 \end{table}
 
 
-\subsection{Mesurer la température externe} 
-Tel que voulu par le client, notre capteur doit être capable de mesurer la température de l’eau, c’est-à-dire la température de l’environnement à l’extérieur du capteur. Il est importé de mesurer cette température car le ministère a précisé que le capteur devait fonctionner dans des températures de l’eau allant de -4 °C jusqu’à 25 °C. Ainsi, on doit être capable de transférer l’information de la température de l’eau dans la vignette. La température influe sur le milieu de vie des poissons et il est important de savoir si la température n’atteint pas un point critique, un point à partir duquel le capteur pourrait rencontrer un dysfonctionnement. 
+\subsection{Mesurer la température externe et interne} 
+Tel que voulu par le client, notre capteur doit être capable de mesurer la température de l’eau, c’est-à-dire la température de l’environnement à l’extérieur du capteur et de l'intérieur de la machine. Il est importé de mesurer cette température car le ministère a précisé que le capteur devait fonctionner dans des températures de l’eau allant de -4 °C jusqu’à 25 °C. Ainsi, on doit être capable de transférer l’information de la température de l’eau dans la vignette. La température influe sur le milieu de vie des poissons et il est important de savoir si la température n’atteint pas un point critique, un point à partir duquel le capteur pourrait rencontrer un dysfonctionnement. 
 
 \textbf{Aspects physiques:}
 \begin{itemize}[label = {--}]
-    \item La solution doit mesurer la température externe du système.
+    \item La solution doit mesurer la température externe et interne du système.
 \end{itemize}
 
 \textbf{Aspects économiques:}
@@ -763,7 +763,7 @@ Exemple: on a déjà présenté ce concept au point \ref{subsubsection:accu-temp
 \subsubsection{Thermistance NTCLE100E3103JT2 placée à l’extérieur reliée à un Arduino Uno:}
 \label{thermis}
 
-\textbf{Description :} Une thermistance est un outil résistif au courant qui varie en fonction de la température environnante. La NTCLE100E3103JT2 est une de ces thermistances de la gamme NTCLE100E3possédant une zone d’efficacité allant de -40 à 125 °C et atteignant une valeur de 10 000 ohms à 25 °C. On peut se procurer cette thermistance pour 1.21 dollars sur Digikey. Un Arduino Uno est un microcontrôleur conçu par Arduino pouvant être utilisé comme ampèremètre et pouvant transmettre ses informations via un câble USB. De ce fait, grâce à la loi d’Ohm, on sait que U=R*I et on peut grâce au microcontrôleur programmer une fonction capable de transformer la valeur du courant en valeur de la température puis de transmettre ces informations à une commande centrale via le câble USB. Ce microcontrôleur coûte 20.69 dollars sur amazon. 
+\textbf{Description :} Une thermistance est un outil résistif au courant qui varie en fonction de la température environnante. La NTCLE100E3103JT2 est une de ces thermistances variant entre -40 et 125 °C et atteignant une valeur de 10 000 ohms à 25 °C. On peut se procurer cette thermistance pour 1.21\$. Un Arduino Uno est un microcontrôleur conçu par Arduino pouvant être utilisé comme ampèremètre et pouvant transmettre ses informations via un câble USB. De ce fait, grâce à la loi d’Ohm, on sait que U=R*I et on peut grâce au microcontrôleur programmer une fonction capable de transformer la valeur du courant en valeur de la température puis de transmettre ces informations à une commande centrale via le câble USB. Ce microcontrôleur coûte 20.69 dollars sur amazon. 
 
 \textbf{Décision :} Retenu.
 
@@ -808,88 +808,8 @@ Exemple: on a déjà présenté ce concept au point \ref{subsubsection:accu-temp
     \hline
     \end{tabular}
 }
-\caption{Faisabilité des concepts pour mesurer la température externe}
+\caption{Faisabilité des concepts pour mesurer la température externe et interne}
 \label{t:Decision_thermo_ext}
-\end{table}
-
-
-\subsection{Mesurer la température interne}
-Le capteur est essentiellement construit de composantes électroniques. Ainsi, à des températures extrêmes, il pourrait rencontrer des dysfonctionnements si jamais le capteur atteignait des températures capables de s'attaquer aux composantes électroniques. De ce fait, le client a exigé que le capteur ait une température intérieure entre -10°C et 5°C au delà de la température de l'eau. Ainsi, à des cas extrêmes, le capteur doit posséder une température entre -14°C et 30°C.
-
-\textbf{Aspects physiques:}
-\begin{itemize}[label = {--}]
-    \item La solution doit mesurer la température interne du système.
-\end{itemize}
-
-\textbf{Aspects économiques:}
-\begin{itemize}[label = {--}]
-    \item La solution doit être la moins dispendieuse possible.
-\end{itemize}
-
-\textbf{Aspects temporels:}
-\begin{itemize}[label = {--}]
-    \item Le temps de développement de la solution doit être minimisé.
-\end{itemize}
-
-\textbf{Aspects socio-environnementaux:}
-\begin{itemize}[label = {--}]
-    \item La solution doit assurer une mesure passive.
-\end{itemize}
-
-\subsubsection{HP2W Hyperfire 2 Professionnal White Flash Camera}
-\textbf{Description :} Cet élément a déjà été présenté au point \ref{subsubsectionHyperfire}
-
-\textbf{Décision :} Retenu.
-
-\textbf{Justification :} Certes, l'outil est dispendieux et prend de l'espace. Cependant, considérant qu'il peut être utilisé comme capteur pour les photographies, on pourrait économiser, car tout en prenant les photographies, on pourrait avoir la température intérieure du capteur. Ainsi, on le retient car malgré son coût et son volume, il peut remplir plusieurs tâches simultanément.
-
-\textbf{Références :} \ref{subsubsectionHyperfire}
-
-\subsubsection{Thermomètre au mercure H-B instrument 2/1110 Durac}
-\textbf{Description :} Un thermomètre au mercure est un outil de mesure de la température. Lorsque la température monte, le mercure prend l'expension jusqu'à indiquer la température mesurée. Celui-ci coûte 24,96 \$ sur Amazon. Il a une incertitude de 2°C et peut mesurer des températures allant de -20 °C jusqu'à 110°C.
-
-\textbf{Décision :} Rejeté.
-
-\textbf{Justification :} Certes, ce thermomètre a la capacité de mesurer la température estimée du capteur. Cependant, cet outil n'étant aucunement relié à un outil numérique, il faudrait trouver un moyen de transmettre l'information détenue par le thermomètre jusqu'à la vignette. Ainsi, il faudrait surveiller constamment la température inscrite par le thermomètre afin de savoir la température du capteur, une opération qui peut s'avérer très complexes. Ainsi, on ne choisira pas cette option afin de mesurer la température interne du capteur.
-
-\textbf{Références :} \cite{mercure}
-
-\subsubsection{Diode 1n4148 avec un Arduino Uno :}
-\textbf{Description :} Ce concept a déjà été présenté au point \ref{1n4}
-
-\textbf{Décision :} Retenu.
-
-\textbf{Justification :} Tel qu'expliqué précédemment, on pourra facilement mesurer la température dans l'écart de température voulu et transmettre les informations facilement pour un prix réduit. Ainsi cette option sera considérée. 
-
-\textbf{Référence :} \ref{1n4}
-
-\subsubsection{Thermistance NTCLE100E3103JT2 placée à l’extérieur reliée à un Arduino Uno :}
-\textbf{Description :} Le concept a déjà été présenté au point \ref{thermis}
-
-\textbf{Décision :} Retenu.
-
-\textbf{Justification :} Comme on l'a vu auparavant, on pourrait facilement mesurer la température interne du capteur avec ce système et transférer les informations pour la vignette. L'écart de température toléré couvre celui désiré par le client. Cette option est donc gardée.
-
-\textbf{Références :} \ref{thermis}
-
-\begin{table}[!htb]
-\footnotesize
-\centering
-\scalebox{0.95}{
-    \begin{tabular}{|c|c|c|c|c|c|}
-    \hline
-    \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
-    & Physiques & Économiques & Temporels & Socio-envir & \\
-    \hline\hline
-    Camera Hyperfire & Oui  & Oui & Oui & Oui & Retenu \\
-    Thermomètre au mercure & Non & Oui & Oui & Oui & Rejeté \\
-    Thermistance & Oui & Oui & Oui & Oui & Retenu \\
-    Diode 1n4148 avec un Arduino Uno & Oui & Oui & Oui & Oui & Retenu \\
-    \hline
-    \end{tabular}
-}
-\caption{Faisabilité des concepts pour mesurer la température interne}
-\label{t:Decision_thermo_int}
 \end{table}
 
 \subsection{Mesurer la date et l'heure}
