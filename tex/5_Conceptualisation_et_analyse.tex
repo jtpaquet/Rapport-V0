@@ -18,7 +18,7 @@
 
 La figure \ref{fig:diagramme_fonctionnel} présente le diagramme fonctionnel du design pour le projet Fish \& Chips. Les intrants y sont présentés en jaune, les fonctions en bleu et les extrants en rouge.
 
-Les intrants constituent toutes les données nécessaires au projet que l'on extrait de l'environnement. Les poissons sont au coeur du projet: à l'aide d'une mesure passive, ils devront être analysés et identifiés par un système de reconnaissance. Le MFA souhaite comptabiliser les espèces de poissons d'eau douce du Québec qui font plus de 6 cm de long. Pour ce faire, des données de poissons seront fournies au système de reconnaissance. Elles seront sous une forme de base de données qui comprendra plusieurs photos de poissons de chaque espèce sous différents angles de vue avec leur espèce correspondante. Cela servira à l'entraînement ou de référence au système d'identification. Ensuite, une source d'énergie sera tirée de l'environnement ou d'une composante pour alimenter le dispositif qui sera chargé de capter les données brutes sur les poissons. La température interne du dispositif de mesure des poissons, la température de l'eau ainsi que la date et l'heure sont nécessaires à la création de la vignette. De plus, certaines de ces données serviront à déterminer s'il y a une erreur dans le système pour avertir un utilisateur.
+Les intrants constituent toutes les données nécessaires au projet que l'on extrait de l'environnement. Les poissons sont au coeur du projet: à l'aide d'une mesure passive, ils devront être analysés et identifiés par un système de reconnaissance. Le MFA souhaite comptabiliser les espèces de poissons d'eau douce du Québec qui font plus de 6 cm de long. Pour ce faire, des données de poissons seront fournies au système de reconnaissance. Elles seront sous une forme de base de données qui comprendra plusieurs photos de poissons de chaque espèce sous différents angles de vue avec leur espèce correspondante. Ensuite, une source d'énergie sera tirée de l'environnement ou d'une composante pour alimenter le dispositif qui sera chargé de capter les données brutes sur les poissons. La température interne du dispositif de mesure des poissons, la température de l'eau ainsi que la date et l'heure sont nécessaires à la création de la vignette. De plus, certaines de ces données serviront à déterminer s'il y a une erreur dans le système pour avertir un utilisateur.
 
 Les extrants sont les produits du système. Le point central du design est de produire une base de données contenant toutes les vignettes de poissons identifiés, les statistiques sur les populations des différentes espèces, les images originales enregistrées pour une durée de 2 ans ainsi que d'autres informations connexes comme les commentaires, les paramètres de configuration et les alarmes. Les alarmes seront envoyées à un responsable sous la forme d'un message lui avertissant que le fonctionnement du système peut être compromis.
 
@@ -57,15 +57,13 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 
 \subsubsection{GoPro Hero7 Black Edition}
 
-\textbf{Description:} La GoPro Hero7 Black comporte plusieurs fonctionnalités. Elle peut prendre des images de 12 méga-pixels à grande gamme dynamique (HDR) et des vidéos allant de 720p à 4K. La GoPro peut également prendre entre 24 et 240 images par secondes. Elle comprend un système de stabilisation d'images idéal pour la détection de poissons et un mode pour la vision nocturne. Sa fonctionnalité « Live Streaming » ainsi que son système de connexion Wi-Fi et Bluetooth intégré permettraient également de relever les données sur les poissons en temps réels. Un système intégré GPS permet de la localisé en tout temps. La GoPro est livrable entre 3 et 6 jours à des frais d'environ 560\$. Pour la luminosité, on utilisera une petite lumière Dell blanche compatible avec un Rasberry Pi au coût de 2\$.
-
-ici
+\textbf{Description:} La GoPro Hero7 Black comporte plusieurs fonctionnalités. Elle peut prendre des images de 12 méga-pixels. Elle comprend un système de stabilisation d'images idéal pour la détection de poissons et un mode pour la vision nocturne. Sa fonctionnalité « Live Streaming » ainsi que son système de connexion Wi-Fi et Bluetooth intégré permettraient également de relever les données sur les poissons en temps réels. Un système intégré GPS permet de la localisé en tout temps. La GoPro coûte 560\$. Pour la luminosité, on utilisera une petite lumière DEL Everlight 334-15/T2C1-1WYA blanche compatible avec un Rasberry Pi au coût de 2\$.
 
 \textbf{Décision:} Retenu, mais.
 
-\textbf{Justification:} La GoPro Hero7 Black Edition comporte de nombreux avantages et réponds aux exigences du client. En effet, la masse de la caméra est de 0,116kg et son volume est de 9,2309x10$^{-5}$m$^3$. Il s'agit d'une caméra très fiable et utilisée dans des conditions climatiques extrêmes. Cependant, la GoPro peut seulement atteindre une profondeur de 33 pieds. Des frais additionnels d'environ 67\$ sont donc nécessaire pour l'achat d'un boîtier de plongée permettant à la caméra d'atteindre une profondeur de 196 pieds. Malgré les coûts supplémentaires, la GoPro reste abordable comparé à ses concurrents sur le marché.
+\textbf{Justification:} La GoPro Hero7 Black Edition comporte de nombreux avantages et réponds aux exigences du client. En effet, la masse de la caméra est de 0,116kg et son volume est de 9,2309x10$^{-5}$m$^3$. Il s'agit d'une caméra très fiable et utilisée dans des conditions climatiques extrêmes. Cependant, la GoPro peut seulement atteindre une profondeur de 33 pieds. Des frais additionnels d'environ 67\$ sont donc nécessaire pour l'achat d'un boîtier de plongée permettant à la caméra d'atteindre une profondeur de 196 pieds.
 
-\textbf{Références:} \cite{GoPro_Specs} \cite{GoPro_Waterproof}
+\textbf{Références:} \cite{GoPro_Specs} \cite{GoPro_Waterproof} \cite{DEL}
 
 
 \subsubsection{HP2W Hyperfire 2 Professionnal White Flash Camera}
@@ -82,7 +80,7 @@ ici
 
 \subsubsection{GoFishCam}
 
-\textbf{Description:} La GoFishCam est une caméra utilisée pour la pêche. Elle peut enregistrer des vidéos de haute définition de 720p et de 1080p. La résolution peut ainsi atteindre environ 2 Mégapixels. Elle peut prendre entre 30 et 60 images par seconde. Cette caméra est conçue avec du matériel militaire et sa forme aérodynamique permet une stabilisation d'image lors de l'enregistrement. La GoFishCam comprend des diodes électroluminescentes (LEDs) efficace pour la vision de nuit. Son prix s'élève à environ 325\$ et est livrable entre 10 et 15 jours.
+\textbf{Description:} La GoFishCam est une caméra utilisée pour la pêche. Elle peut enregistrer des vidéos de 1080p. La résolution peut ainsi atteindre environ 2 Mégapixels. Elle peut prendre entre 30 et 60 images par seconde. Cette caméra est conçue avec du matériel militaire et sa forme aérodynamique permet une stabilisation d'image lors de l'enregistrement. La GoFishCam comprend des diodes électroluminescentes (LEDs) efficace pour la vision de nuit. Son prix s'élève à environ 325\$ et est livrable entre 10 et 15 jours.
 
 \textbf{Décision:} Retenu.
 
@@ -94,9 +92,7 @@ ici
 \subsubsection{Capteur d'image OV5640}
 \label{subsubsection:camera_custom}
 
-\textbf{Description:} Cette solution permet de créer notre propre caméra à l'aide du capteur d'image CMOS OV5640 (modèle ELP-USB500W02M-AF60). Ce capteur permet d'enregistrer des images de 5 méga-pixel, dont la résolution maximale est de 2592x1944 pixels. Il peut prendre entre 15 et 30 images par seconde, et ce, en couleur et en haute définition. Le capteur peut prendre des images des objets situés entre 5cm et 100m de la lentille. Ce capteur peut être opérationnel à des températures variant entre -20°C et 70°C. Un tel système est composé d'un senseur et d'une lentille pour imager sur le senseur. Ainsi, il s'agit d'un système simple, léger et complètement programmable par port USB. Par ailleurs, puisque le capteur ne peut être submergé, il aurait un boîtier fait en aluminium 2014-T6 et une fenêtre en PMMA\footnote{Communément appelé Plexiglas™} encastrée pour permettre de voir au travers comme montré à la figure \ref{fig:boitier_camera_custom}. Il serait contenu dans un volume de 0.04m$^3$ et il aurait une masse totale de 2.25kg avec les données de l'annexe \ref{annexe:equation_boitier}.
-
-ici
+\textbf{Description:} Cette solution permet de créer notre propre caméra à l'aide du capteur d'image CMOS OV5640 (modèle ELP-USB500W02M-AF60). Ce capteur permet d'enregistrer des images de 5 méga-pixel. Le capteur peut prendre des images des objets situés entre 5cm et 100m de la lentille. Ce capteur peut être opérationnel à des températures variant entre -20°C et 70°C. Il s'agit d'un système complètement programmable par port USB. Par ailleurs, puisque le capteur ne peut être submergé, il aurait un boîtier fait en aluminium 2014-T6 et une fenêtre en PMMA (comme montré à la figure \ref{fig:boitier_camera_custom}). Il serait contenu dans un volume de 0.04m$^3$ et il aurait une masse totale de 2.25kg avec les données de l'annexe \ref{annexe:equation_boitier}.
 
 \textbf{Décision:} Retenu, mais.
 
@@ -364,8 +360,6 @@ L’automatisation de la prise de données sur les poissons étant au cœur du p
 \textbf{Références :} \cite{fishverify}
 
 
-
-
 \begin{table}[!htb]
 \footnotesize
 \centering
@@ -388,8 +382,7 @@ L’automatisation de la prise de données sur les poissons étant au cœur du p
 
 
 \subsection{Compiler les données}
-Ce dispositif a pour fonction d'accueillir le logiciel de reconnaissance et la base de données. Il devra donc avoir une puissance de calcul considérablement élevée puisque l'entraînement d'un logiciel de reconnaissance nécessite une quantité énorme de calculs à effectuer. De plus, c'est à partir de cet appareil que les données sont transmises sur le serveur. Il est aussi établi qu'une source de tension autre que l'alimentation du capteur est fournie et que ce dispositif se situe en dehors de l'eau. \vspace{5mm}
-
+Ce dispositif a pour fonction d'accueillir le logiciel de reconnaissance et la base de données. Il devra donc avoir une puissance de calcul considérablement élevée puisque l'entraînement d'un logiciel de reconnaissance nécessite une quantité énorme de calculs à effectuer. De plus, c'est à partir de cet appareil que les données sont transmises sur le serveur. Il est aussi établi qu'une source de tension autre que l'alimentation du capteur est fournie et que ce dispositif se situe en dehors de l'eau.
 
 \textbf{Aspects physiques:}
 \begin{itemize}[label = {--}]
@@ -561,7 +554,7 @@ Comme mentionné à la section \ref{subsection:capacite_stockage}, ces données 
 
 
 \subsection{Afficher les données}
-Cette composante devra afficher les données d'une manière efficace et conviviale pour les employés du MFA. Cette interface assurera la communication avec l'utilisateur pour visualiser les données et configurer les différents paramètres de la caméra comme le focus, l'ISO et la durée d'exposition. \vspace{5mm}
+Cette composante devra afficher les données d'une manière efficace et conviviale pour les employés du MFA. Cette interface assurera la communication avec l'utilisateur pour visualiser les données et configurer les différents paramètres de la caméra comme le focus, l'ISO et la durée d'exposition. \
 
 \textbf{Aspects physiques:}
 \begin{itemize} [label = {--}]
@@ -614,7 +607,7 @@ Cette composante devra afficher les données d'une manière efficace et convivia
 
 \textbf{Références:} \cite{Comentum} \cite{Tizen}
 
-\subsubsection{Application mobile avec CodeCreators}
+\subsubsection{Application web avec CodeCreators}
 
 \textbf{Description:} Afin d'afficher les données récoltées par le capteur, il est possible d'utiliser une application web. Les applications mobiles sont destinées à s'exécuter sur des téléphones ou des tablettes intelligentes. Les deux principales applications mobiles sont les natives et les hybrides. Les applications natives sont des applications destinées à une plateforme spécifique, tel que iOS ou Android, alors que les applications hybrides sont disponible sur toute les plateformes. CodeCreators est une compagnie qui offre ses services au développement d'application mobiles natives et hybrides. Les frais de leur service dépendent de l'ampleur du projet.
 
@@ -1065,7 +1058,7 @@ Lors de la collecte d'information, plusieurs systèmes seront en activité et ce
 
 
 \subsection{Générer une alarme}
-Le système se doit d'informer un responsable lorsque son bon fonctionnement est compromis. Une alarme est générée lorsqu'il y a une erreur dans le dispositif d'identification, lorsque qu'il est impossible d'imager l'environnement aquatique, lorsque le système est autonome depuis plus de 2 semaines et lorsque la température interne ou externe sort de la plage normale de température.  \vspace{5mm}
+Le système se doit d'informer un responsable lorsque son bon fonctionnement est compromis. Une alarme est générée lorsqu'il y a une erreur dans le dispositif d'identification, lorsque qu'il est impossible d'imager l'environnement aquatique, lorsque le système est autonome depuis plus de 2 semaines et lorsque la température interne ou externe sort de la plage normale de température.
 
 
 \textbf{Aspects physiques:}

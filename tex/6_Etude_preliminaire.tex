@@ -51,12 +51,12 @@
     Acheminer les informations & Manuel & Filaire & Manuel & Connexion intégrée \\ \hline
     Identifier les poissons & Réseau de neurones & Développé par un tiers & Réseau de neurones & Réseau de neurones \\ \hline
     Compiler les données & Ordinateur personnalisé & Alienware Aurora R7 & HP Pavilion & Hp Pavilion\\ \hline
-    Stocker les données & Cloud HubiC & Carte SD & Disque Dur HDD & Cloud HubiC\\ \hline
+    Stocker les données & Cloud HubiC & SSD & Disque Dur HDD & Cloud HubiC\\ \hline
     Afficher les données & CodeCreators & Primefaces & Commentum & Ajax\\ \hline
     Assurer une accès sécurisé & Encryption & VPN & Partenariat & Accès sécurisé\\ \hline
     Mesurer la température & Diode & Thermistance & HP2W Hyperfire & Accu-Temp\\ \hline
-    Mesurer la date et l'heure & Librairie Python & Librairie Python & HP2W Hyperfire & Utilisation capteur \\ \hline
-    Réguler la température & Module Peltier & Refroidissement à l'eau & Radiateur et pâte thermique & Module Peltier\\ \hline
+    Mesurer la date et l'heure & Méta-données & Librairie Python & HP2W Hyperfire & Utilisation capteur \\ \hline
+    Réguler la température & Module Peltier & Refroidisse-ment à l'eau & Radiateur et pâte thermique & Module Peltier\\ \hline
     Avertir l'utilisateur & Amazon SNS & Urban Airship  & Pushover API & Urban Airship\\
     \hline
     \end{tabular}
@@ -66,13 +66,11 @@
 
 \section{Concepts de solutions proposées}
 
-\subsection{Concept 1}
+\subsection{Concept 1 : Performance}
 
 Ce concept assemble les solutions axées sur la performance.
 
 \subsubsection{Qualité du produit}
-
-
 
 \textbf{Résolution du capteur:}
 Le capteur d'image la résolution maximale est de 2592x1944 pixels et un capacité d'enregistrement de 5 Mpx. Avec l'équation \ref{eq:bareme_res}:
@@ -85,7 +83,7 @@ D'après cette équation, le capteur obtient une note de 0,49 pour sa résolutio
 
 
 \textbf{Identification des poissons:}
-Pour ce qui est de la section logicielle, un réseau neural convolutionnel devrait assurer un nombre de poissons dans élevés sans problèmes. Avec un réseau de neurones convolutionnel de haute qualité et avec un entraînement de avec le nombre de poissons demandés, on peut quand même s’attendre à un taux de détection dans les hauts 90\%. De plus, avec un léger réapprentissage machine, le logiciel de détection sera prêt pour un déploiement dans un autre site si le besoin se présente. Puisque le nombre de poisson n'est pas un problème pour un logiciel de la sorte, on accordera la note de 1 à ce barème. Selon l’équation \ref{eq:bareme_precision}, on obtient une note de 0.99 avec une pondération de 10\%, c’est pourquoi on obtient le taux de satisfaction de 9.9\%. \cite{neural_yt}.
+Pour ce qui est de la section logicielle, un réseau neural convolutionnel devrait assurer un nombre de poissons dans élevés sans problèmes. Avec un réseau de neurones convolutionnel de haute qualité et avec un entraînement de avec le nombre de poissons demandés,  De plus, avec un léger réapprentissage machine, le logiciel de détection sera prêt pour un déploiement dans un autre site si le besoin se présente. Puisqu'on estime le nombre de poissons identifiables à 30, on accordera la note de 0.99 selon l’équation \ref{eq:bareme_identification}. Avec une pondération de 10\%, c’est pourquoi on obtient le taux de satisfaction de 9.9\%. \cite{neural_yt}.
 \vspace{5mm}
 
 
@@ -122,13 +120,13 @@ On utilisera un type d’encryptage hybride pour ce qui est de la sécurité du 
 \vspace{5mm}
 
 \textbf{Taille des spécimens observés:}
-Avec son volume d'imagerie, le capteur OV5640 est capable d'observer des poissons 1.36 cm de long jusqu'à une distance de 2.350 m. D'après l'équation \ref{eq:bareme_taille_poisson}, on a une note de 0.92 pour la taille minimale des spécimens observés. Ainsi, avec sa pondération de 4\%, on obtient un taux de satisfaction de 3.70\% avec le capteur d'image OV5640.
+Avec son volume d'imagerie, le capteur OV5640 est capable d'observer des poissons 1.36 cm de long jusqu'à une distance de 2.350 m. L'éclairage de la DEL Everlight 334-15/T2C1-1WYA suffit pour éclairer jusqu'à cette distance \cite{DEL}. D'après l'équation \ref{eq:bareme_taille_poisson}, on a une note de 0.92 pour la taille minimale des spécimens observés. Ainsi, avec sa pondération de 4\%, on obtient un taux de satisfaction de 3.70\% avec le capteur d'image OV5640.
 \vspace{5mm}
 
 \textbf{Nombre de fonctionnalité de l'alarme:} Amazon simple notification service, un service capable d'envoyer des notifications presque gratuitement (gratuit pour < 1 millions d'alertes) et capable de s'adapter à 3 plateformes (téléphone cellulaire, email et ordinateur de bureau), sera le gestionnaire d'alarmes pour ce design. Avec le calcul présenté pour ce critère au chapitre 4 et avec la valeur x=3, on obtient la note de 22\%, donc un taux de satisfaction de 0.88\%.
 \vspace{5mm}
 
-\textbf{Puissance de calcul:} Afin de déterminer la puissance de calcul de la machine, on détermine le note obtenue par la carte graphique. Dans le concept 1, on utilise un ordinateur personnalisé à nos besoins qui contient une RTX GeForce 2070. Cette carte graphique obtient une note de 131. D'après l'équation \ref{eq:bareme_gpu}:
+\textbf{Puissance de calcul:} Afin de déterminer la puissance de calcul de la machine, on détermine le note obtenue par la carte graphique. Dans le concept 1, on utilise un ordinateur personnalisé à nos besoins qui contient une RTX GeForce 2070. Cette carte graphique obtient une performance de 130. D'après l'équation \ref{eq:bareme_gpu}:
 
 \begin{equation}
     y = \frac{130}{219}
@@ -148,14 +146,14 @@ On utilisera l’interface confectionnée par la compagnie CodeCreators. On s’
 \vspace{5mm}
 
 
-\textbf{Précision de la régulation de la température:} Avec la diode 1n4148, la précision donnée par le fabricant est de 2 millièmes. Lorsqu'on incorpore cette valeur dans l'équation \ref{eq:bareme_precision_temperature}, le taux de satisfaction en sortie est de 2\% en raison de la note parfaite au calcul.
+\textbf{Précision de la régulation de la température:} L'efficacité du module Peltier est excellente. Étant donné la bonne précision de la température, on assume que l'erreur sera déterminée par la mesure de température. Lorsqu'on incorpore cette valeur dans l'équation \ref{eq:bareme_precision_temperature}, le taux de satisfaction en sortie est de 2\% en raison de la note parfaite au calcul.
 \vspace{5mm}
 
-\textbf{Précision de la mesure de la température:} Avec la diode 1n4148 gérée par le Rasberry Pi, la précision donnée par le fabricant est de 2 millièmes. Lorsqu'on incorpore cette valeur dans l'équation \ref{eq:bareme_precision_temperature}, le taux de satisfaction en sortie est de 2\% en raison de la note parfaite au calcul.
+\textbf{Précision de la mesure de la température:} Avec la diode 1n4148 gérée par le Raspberry Pi, la précision donnée par le fabricant est de 2 millièmes. Lorsqu'on incorpore cette valeur dans l'équation \ref{eq:bareme_precision_temperature}, le taux de satisfaction en sortie est de 2\% en raison de la note parfaite au calcul.
 \vspace{5mm}
 
 \textbf{Précision de la mesure du temps:}
-L’implantation logicielle de la prise de mesure de temps reste parmi les meilleures options qui s’offrent dans un tel projet. Avec une librairie aussi simple que « datetime » en langage python, on obtient une précision incroyable (allant aux milisecondes près). Pour cette raison, on accordera la note de 100\% à cette prise de mesure, donc un taux de satisfaction de 1\%.
+L’implantation logicielle de la prise de mesure de temps reste parmi les meilleures options qui s’offrent dans un tel projet. Avec une implémentation par méta-données, on obtient une précision allant à miliseconde près. Pour cette raison, on accordera la note de 100\% à cette prise de mesure, donc un taux de satisfaction de 1\%.
 
 \subsubsection{Coûts}
 
@@ -164,12 +162,12 @@ Pour cette solution, le développement de la plateforme sera prise en charge par
 \vspace{5mm}
 
 \textbf{Coûts du matériel:}
-L’instrumentation nécessaire du produit de performance peut s’avérer considérablement plus coûteuse qu'un design économique : on aura évidemment besoin d’une caméra OV5640 (16\$), deux paquets de batteries au lithium rechargeables energizer (160\$), d'un Raspberry Pi (46.50\$), d'un module Peltier (6.77\$), deux diodes, d'une DEL luminescente (2\$), d'un boîtier protecteur (20\$), d'électroniques divers (10\$) et d'un ordinateur personnalisé (1700\$). On considère environ le prix d'une douzaine de batteries aux deux semaines. On estimera le coût total du produit aux alentours de 1951.27 \$ selon les prix listés dans les sections précédentes. Cela nous laisse avec une note de 80.05\% pour ce critère, donc un taux de satisfaction de 2.41\%. 
+L’instrumentation nécessaire du produit de performance peut s’avérer considérablement plus coûteuse qu'un design économique : on aura évidemment besoin d’une caméra OV5640 (16\$), deux paquets de batteries au lithium rechargeables energizer (160\$), d'un Raspberry Pi (46.50\$), d'un module Peltier (6.77\$), deux diodes, d'une DEL luminescente (2\$), d'un boîtier protecteur (20\$), d'électroniques divers (10\$) et d'un ordinateur personnalisé (1386\$). On considère environ le prix d'une douzaine de batteries aux deux semaines. On estimera le coût total du produit aux alentours de 1647.27 \$ selon les prix listés dans les sections précédentes. Cela nous laisse avec une note de 83.52\% pour ce critère, donc un taux de satisfaction de 2.51\%. 
 
 
 
 
-\subsection{Concept 2}
+\subsection{Concept 2 : Simplicité}
 Ce concept assemble les solutions les plus simples et faciles d'utilisations.
 
 \subsubsection{Qualité du produit}
@@ -194,7 +192,7 @@ Le capteur d'images GoPro a une résolution de calibre 4K et fournit la résolut
 
 
 \textbf{Capacité de stockage des données:}
-Pour stocker les données, on utilise la carte SD Kingston de 240 Go. La carte SSD a une capacité de stockage de 240 Go. Donc, d'après l'équation \ref{eq:bareme_stockage}, on a :
+Pour stocker les données, on utilise le SSD Kingston de 240 Go. Le SSD a une capacité de stockage de 240 Go. Donc, d'après l'équation \ref{eq:bareme_stockage}, on a :
 \begin{equation}
     y(240) = -1.5e^{-0.002012*240} + 1
 \end{equation}
@@ -298,17 +296,14 @@ Pour cette solution, le développement du logiciel de reconnaissance est fait pa
 \vspace{5mm}
 
 \textbf{Coûts du matériel:}
-Au total, on utilise le capteur d'image GoPro (459 \$), une alimentation filaire à 39,00 \$, un câble optique à 782,00 \$, une carte SD à 240 \$, une licence Primefaces à 105 \$, un VPN à 240 \$ pour 2 ans, une thermistance, un HP Pavilion Power Desktop - 580-130 à un coût de 950 \$ et un Arduino estimé à 20,69\$. On a donc un coût matériel près de 2730,69 \$. D'après l'équation \ref{eq:bareme_cout_materiel}, on a:
+Au total, on utilise le capteur d'image GoPro (459 \$), une alimentation filaire à 39,00 \$, un câble optique à 782,00 \$, une carte SD à 240 \$, une licence Primefaces à 105 \$, un VPN à 240 \$ pour 2 ans, une thermistance, un HP Pavilion Power Desktop - 580-130 à un coût de 950 \$ et un Arduino estimé à 20,69\$. On a donc un coût matériel près de 2835,69 \$. D'après l'équation \ref{eq:bareme_cout_materiel}, on a:
 
 \begin{equation}
-y(2730,69) =  \frac{-2730,69}{10000} +1 \end{equation}
+y(2835,69) =  \frac{-2835,69}{10000} +1 \end{equation}
 
-on a donc une note de 0.73 pour cette solution. Avec la pondération de 3\%, cette solution a un taux de satisfaction de 2,18\%.
+on a donc une note de 0.71 pour cette solution. Avec la pondération de 3\%, cette solution a un taux de satisfaction de 2,1\%.
 
-
-
-
-\subsection{Concept 3}
+\subsection{Concept 3 : Polyvalence}
 
 Ce concept assemble les solutions ayant le plus de fonctionnalités.
 
@@ -409,7 +404,7 @@ Le coût du matériel est calculé en faisant la somme de tout matériel nécess
 La somme de tous ces coûts nous donne un total de 2056.98\$. Ainsi en se servant de l’équation \ref{eq:bareme_cout_materiel} la note de 0.79 est obtenue ce qui vaut donc à un pourcentage de 2.38\%.
 
 
-\subsection{Concept 4}
+\subsection{Concept 4 : Économique}
 
 Ce concept assemble les solutions les plus économiques.
 
@@ -480,26 +475,26 @@ Le tableau \ref{t:synthese_resultat} ci-dessous résume les valeurs obtenues lor
 \hline
 Critères & Concept 1  & Concept 2 & Concept 3 & Concept 4 \\ \hline
 \ref{Asssqualite} Qualité du produit & & & & \\ \hline
-\ref{Rdc} Résolution du capteur [Mpx]& 5 & 12 & 3 & 2,07 \\ \hline
-\ref{Idp} Identification des poissons & 0.6 & 0.99 & 0.99 & 1 \\ \hline
-\ref{Vdi} Volume d'analyse [m$^3$] & 1.672m$^3$ & 2 & 19,5 & 4 \\ \hline
-\ref{subsection:capacite_stockage} Capacité de stockage [Go] & 10 To & 240 & 1 To      & 10 To \\ \hline
-\ref{subsection:dureeviealim} Durée de vie de l'alimentation [jours] & 16,33 & $\infty$ & 8 mois & 16,33 \\ \hline
-\ref{Adi} Acheminement des informations [m] & 250 & 76,2 & 200 & 250 \\ \hline
-\ref{syssecu} Fiabilité du système de sécurité [couches] & 2 & 2 & 3 & 3 \\ \hline
-\ref{Respro} Résistance à la profondeur du capteur [m] & 57,21 & 4588 & 50 & 150 \\ \hline
-\ref{tmdso} Taille maximale des spécimens observés [cm] & 136 & 140 & 140 & 140 \\ \hline
-\ref{nombrefonc} Nombre de fonctionnalités liées à l'alarme & 0,22 & & 1 & 0,11 \\ \hline
-\ref{puisca} Puissance de calcul & 0,77 & & 0,6 & 0,6 \\ \hline
-\ref{UIG} Utilisation de l'interface graphique & 1 & 0,8 & & 0,6 \\ \hline
-Performances & & & & \\ \hline
-\ref{Pldr} Précision du logiciel de reconnaissance & 1 & 1 & 0.37 & 0,47 \\ \hline
-\ref{Ptree} Précision de la température régulée                      & 1          & 0,96      & 0,5       & 1         \\ \hline
-\ref{Pdlmdt} Précision de la mesure de la température régulée        & 1          & 0,96      & 0,2       & 1         \\ \hline
-\ref{Pdlmdtasd} Précision de la mesure du temps & 1 & 1 & 0,96 & 0,99 \\ \hline
+\ref{Rdc} Résolution du capteur [Mpx]& 5 & 12 & 3 & 2,1 \\ \hline
+\ref{Idp} Identification des poissons & 30 & 30 & 30 & 30 \\ \hline
+\ref{Vdi} Volume d'analyse [m$^3$] & 1.672 & 1,672 & 19,5 & 4 \\ \hline
+\ref{subsection:capacite_stockage} Capacité de stockage [Go] & 20 000 & 240 & 1 000 & 20 000 \\ \hline
+\ref{subsection:dureeviealim} Durée de vie de l'alimentation [jours] & 16,33 & $\infty$ & 240 & 16,33 \\ \hline
+\ref{Adi} Acheminement des informations [m] & $\infty$ & 76,2 & $\infty$ & $\infty$ \\ \hline
+\ref{syssecu} Fiabilité du système de sécurité [couches] & 2 & 2 & 3 & 1 \\ \hline
+\ref{Respro} Résistance à la profondeur du capteur [m] & 57,21 & 57,21 & 50 & 150 \\ \hline
+\ref{tmdso} Taille minimale des spécimens observés [cm] & 1,36 & 1,82 & 6 & 2,24 \\ \hline
+\ref{nombrefonc} Nombre de fonctionnalités liées à l'alarme & 3 & 2 & 1 & 2 \\ \hline
+\ref{puisca} Puissance de calcul [\%] & 130 & 71 & 70,4 & 70,4 \\ \hline
+\ref{UIG} Utilisation de l'interface graphique & 1 & 0,8 & 0,8 & 0,6 \\ \hline
+\ref{s:performance} Performances & & & & \\ \hline
+\ref{Pldr} Précision du logiciel de reconnaissance [\%] & 98 & 99 & 80 & 70 \\ \hline
+\ref{Ptree} Précision de la régulation de la température [\%] & 99,8 & 99 & 98 & 99 \\ \hline
+\ref{Pdlmdt} Précision de la mesure de la température [\%] & 99,8 & 99 & 99 & 99,8 \\ \hline
+\ref{Pdlmdtasd} Précision de la mesure du temps [\%] & 100 & 100 & 100 & 100 \\ \hline
 \ref{Coutsgloba} Coûts & & & & \\ \hline
-\ref{cenmaindo} Coût de main d'oeuvre [\$] & 40 000 & 40 000 & 35 000 & 37 000 \\ \hline
-\ref{ccdpsdsfsd} Coût du matériel [\$] & & 2436,69 & 2058,96 & 1426,79 \\ \hline
+\ref{cenmaindo} Coût de main d'oeuvre [\$] & 40 000 & 40 000 & 39 400 & 37 000 \\ \hline
+\ref{ccdpsdsfsd} Coût du matériel [\$] & 1647,27 & 2835,69 & 2056,98 & 1426,79 \\ \hline
 \end{tabular}}
 \caption{Synthèse des résultats des concepts}
 \label{t:synthese_resultat}
