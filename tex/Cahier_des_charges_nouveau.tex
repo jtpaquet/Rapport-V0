@@ -94,7 +94,6 @@ où $x$ est la résolution du capteur en Mpx.
 \end{figure}
 
 
-
 \subsection{Identification des poissons}
 
 \begin{figure}[!htb]
@@ -178,10 +177,10 @@ Le système doit être capable de fonctionner à des profondeurs pouvant atteind
 %    \label{fig:bareme_securite}
 %\end{wrapfigure}
 
-La confidentialité et l'authenticité des données est primordiale dans un tel projet: c'est pourquoi une grande partie de la cote associée à la qualité du design dépendra de la sécurité du produit. C'est pourquoi un 5\% de la note sera accordée à la sécurité. Plusieurs protocoles de conservation et de transfert des données devront être mis en place, et ce seront justement ici le nombre et la qualité des couches de sécurité offertes par le produit qui permettront une véritable quantification de ce critère. Puisque le système à livrer est fortement axé sur l'autonomie et l'accès à distance, un système qui est facilement compromis est à proscrire à tout prix. Une fonction exponentielle représente parfaitement l'enjeu ici: la moindre faiblesse du système de sécurité peut rendre le produit complètement inutilisable. Le niveau de sécurité $x$ est une combinaison du nombre de couches de sécurité pondéré par leurs qualités respectives.
+La confidentialité et l'authenticité des données est primordiale dans un tel projet: c'est pourquoi une grande partie de la cote associée à la qualité du design dépendra de la sécurité du produit. C'est pourquoi un 5\% de la note sera accordée à la sécurité. Plusieurs protocoles de conservation et de transfert des données devront être mis en place, et ce seront justement ici le nombre et la qualité des couches de sécurité offertes par le produit qui permettront une véritable quantification de ce critère. Puisque le système à livrer est fortement axé sur l'autonomie et l'accès à distance, un système qui est facilement compromis est à proscrire à tout prix. Une fonction exponentielle représente parfaitement l'enjeu ici: la moindre faiblesse du système de sécurité peut rendre le produit complètement inutilisable. Le niveau de sécurité $x$ est une combinaison du nombre de couches de sécurité pondéré par leurs qualités respectives. La courbe est ajustée de manière à ce qu'elle passe par (1,0) et (5,0) et le paramètre $b$ est fixé à 1 comme le montre la section \ref{annexe:baremes_securite}.
 
 \begin{equation}
-    y = 0.849 e^{0.014x}
+    y =\frac{e^{x-1}-1}{e^4-1}
     \label{eq:bareme_sécurité}
 \end{equation}
 

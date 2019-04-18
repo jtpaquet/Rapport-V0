@@ -29,7 +29,7 @@
         Puissance de calcul & Évaluation selon l'échelle de performance de la carte graphique sur UserBenchmark. & Toutes les cartes graphiques sont notés sur UserBenchmark. \\\hline
         Utilisation de l'interface graphique  & Évaluer selon la méthode de Nielsen-Mulich \cite{nielsen}. & \\
         \hline\hline
-        Précision du logiciel de reconnaissance & La comparaison des modèles sera évaluée selon l'échelle Log Loss. & Plusieurs projets semblables présentent leurs résultats de précision sur Google. \\\hline
+        Précision du logiciel de reconnaissance & La comparaison des modèles sera évaluée selon la précision de l'identification en se basant sur la matrice de confusion. & Plusieurs projets semblables présentent leurs résultats de précision sur Google. \\\hline
         Précision de la régulation de la température & Évaluation selon les spécifications des fabricants. &  \\\hline
         Précision de la mesure de température & Évaluation selon les spécifications des fabricants. & \\\hline
         Précision de la mesure du temps & Évaluation selon les spécifications des fabricants. & \\
@@ -41,21 +41,32 @@
 \label{t:plan_dev}
 \end{longtable}
 
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|p{3cm}|p{3cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+    \hline
+    \textbf{Fonction} & \textbf{Concept 1} & \textbf{Concept 2} & \textbf{Concept 3} & \textbf{Concept 4}\\ \hline
+    Capter les informations sur les poissons & GoPro Hero7 & Capteur OV5640 & HP2W Hyperfire & GoFishCam \\ \hline
+    Alimenter le capteur & Batteries & Filaire & Solaire \ref{wut} & Batteries \\ \hline
+    Acheminer les informations & Connexion intégrée & Filaire & Manuel & Connexion intégrée \\ \hline
+    Identifier les poissons & Réseau de neurones & Développé par un tiers & Réseau de neurones & Réseau de neurones \\ \hline
+    Compiler les données & & HP Pavilion & & Hp Pavilion\\ \hline
+    Stocker les données & Cloud HubiC & Carte SSD & Disque Dur HDD & Cloud HubiC\\ \hline
+    Afficher les données & CodeCreators & Primefaces & Commentum & Ajax\\ \hline
+    Assurer une accès sécurisé & Encryption & VPN & Partenariat & Accès sécurisé\\ \hline
+    Mesurer la température & Diode & Thermistance & HP2W Hyperfire & Accu-Temp\\ \hline
+    Mesurer la date et l'heure & Librairie Python & Librairie Python & HP2W Hyperfire & Utilisation capteur \\ \hline
+    Réguler la température & Module Peltier & Refroidissement à l'eau & Radiateur et pâte thermique & Module Peltier\\ \hline
+    Avertir l'utilisateur &  &  &  & Urban Airship\\
+    \hline
+    \end{tabular}
+    \caption{Les quatre concepts pour le projet Fish \& Chips}
+    \label{tab:4_concepts}
+\end{table}
+
 \section{Concepts de solutions proposées}
 
 \subsection{Concept 1 : Performance}
-Concept 1:
-Gopro (Résolution-volume d’analyse)
-Batterie lithium
-Rasberry pi
-Réseau de neurones
-Cloud
-Codecreators
-Encryption
-Diode + pi
-Diode +pi
-Compteur + pi
-Module peltier
 
 
 Critères :
@@ -67,7 +78,8 @@ TODO : ajouter les taux de satisfaction!!!!
 \textbf{Résolution du capteur: } La caméra sur la GoPro Hero 7 a une résolution de 12 mégapixels. La caméra peut capter des images avec une qualité 4k et est capable de traiter une image vidéo en 60 fps, ce qui peut s’avérer très utile lors de la détection du type de poisson et l’enclenchement de la prise de photo. Cela donne un taux de satisfaction de 0.8 selon l'équation \ref{eq:bareme_res}.
 
 \textbf{Identification des poissons :}
-Pour ce qui est de la section logicielle, un réseau neural convolutionnel devrait assurer une précision dans les hauts pourcentages avec un entraînement adéquat. 
+Pour ce qui est de la section logicielle, un réseau neural convolutionnel devrait assurer une précision dans les hauts pourcentages avec un entraînement adéquat. Avec un réseau de neurones convolutionnel de haute qualité et avec un entraînement de qualité avec le nombre de poissons demandés, on peut s’attendre à un taux de détection dans les hauts 90\%. De plus, avec un léger réapprentissage machine, le logiciel de détection sera prêt pour un déploiement dans un autre site si le besoin se présente. Selon l’équation \ref{eq:bareme_precision}, on obtient une note de 0.6 avec une pondération de 15\%, c’est pourquoi on obtient le taux de satisfaction de 9.10\%. \cite{neural_yt}.
+
 
 \textbf{Volume d'analyse:} La distance focale de la caméra GoPro Hero7 pouvant être grandement ajustée, on peut assurer un volume d’imagerie de 1.672m$^3$, qui convient parfaitement au critère de 1m$^3$ de volume \ref{annexe:volume_imagerie}.  On obtient la note de 0.24 selon l'équation \ref{eq:bareme_volume_analyse}.
 
@@ -83,29 +95,23 @@ Des batteries au lithium Energizer L91 AA seront utilisées pour le présent con
 \textbf{Acheminement des informations :}
 Puisque la caméra GoPro Hero7 possède des fonctionnalités de transfert de données intrinsèques à son design, on favorisera la connectivité avec l’application GoPro elle-même. Avec le routeur Synology RT2600ac, on atteindra une distance de connexion dans les 250 mètres au mieux, ce qui représente un taux de satisfaction de 0.85 selon l'équation \ref{eq:bareme_acheminement_infos}.
 
+
 \textbf{Fiabilité du système de sécurité :}
 On utilisera un type d’encryptage hybride pour ce qui est de la sécurité du présent design. Étant un système utilisé par les grandes organisations partout à travers le monde, on dira que l’encryptage des données comporte deux coches de sécurité (encryptage symétrique pour les données et asymétrique pour la connexion au serveur). 
 
-\textbf{Coûts en main d’œuvre :}
-Pour cette solution, le développement du logiciel de reconnaissance sera pris en charge par une compagnie tierce CodeCreators. Leur expertise assurera un produit de qualité commerciale, qui est évidemment recherchée dans un design de performance, mais les coûts reliés au développement seront de l’ordre du 40k \$.
-
-\textbf{Coût de matériel : }
-
-
-\textbf{Coûts de matériel :}
-L’instrumentation nécessaire du produit de performance peut s’avérer considérablement plus coûteuse qu'un design économique : on aura évidemment besoin d’une caméra GoPro Hero7, de batteries au lithium, un Raspberry Pi, un module Peltier, deux diodes. On estimera le coût total du produit aux alentours de XXXX \$, ce qui nous laisse avec un taux de performance de XXXX. 
-
+\textbf{Résistance à la profondeur du capteur : } Avec le boîtier présenté à l'annexe \ref{annexe:equation_boitier}, on détermine qu'il peut être submergé jusqu'à une profondeur de 57.21 m sans céder. La solution obtient donc une note de 0.14 selon l'équation \ref{eq:bareme_profondeur}.
 
 \textbf{Utilisation de l’interface graphique :}
-On utilisera l’interface confectionnée par la compagnie CodeCreators. On s’assurera d’une qualité à la hauteur des meilleurs de l’industrie et une utilisation simple et efficace. D’après l’équation XXX, on obtient une note de XXX avec un tauc de satisfaction de XXX%.
-
-\textbf{Précision du logiciel de reconnaissance :}
-Avec un réseau de neurones convolutionnel de haute qualité et avec un entraînement de qualité avec le nombre de poissons demandés, on peut s’attendre à un taux de détection dans les hauts 90\%. De plus, avec un léger réapprentissage machine, le logiciel de détection sera prêt pour un déploiement dans un autre site si le besoin se présente. Selon l’équation qui suit XXXXX, on obtient une note de XXX avec une pondération de XXX, c’est pouquoi on obtient le taux de satisfaction de XXX. https://www.youtube.com/watch?v=KkJQ6qUoEPk
+On utilisera l’interface confectionnée par la compagnie CodeCreators. On s’assurera d’une qualité à la hauteur des meilleurs de l’industrie et une utilisation simple et efficace. D’après l'évaluation heuristique de Nielsen-Mulich, tous les critères sont remplis. En se fiant à la table \ref{t:bareme_interface}, une note de 1 est donc attribuée.
 
 
 \textbf{Taille maximale des spécimens observables :}
 Avec la distance focale ajustable de la caméra GoPro Hero7, le design de performance aura la capacité de détecter tout poisson ayant une taille supérieure à 1.36 cm. Selon le calcul 
-\ref{annexe:taille_poissons} , 
+\ref{annexe:taille_poissons} ,
+
+\subsubsection{Performances}
+
+\textbf{Précision de l'identification des poissons:} Pour ce qui est de la section logicielle, un réseau neural convolutionnel devrait assurer une précision dans les hauts pourcentages avec un entraînement adéquat. Avec un réseau de neurones convolutionnel de haute qualité et avec un entraînement de qualité avec le nombre de poissons demandés, on peut s’attendre à un taux de détection dans les hauts 90\%. De plus, avec un léger réapprentissage machine, le logiciel de détection sera prêt pour un déploiement dans un autre site si le besoin se présente. Selon l’équation \ref{eq:bareme_precision}, on obtient une note de 0.6 avec une pondération de 15\%, c’est pourquoi on obtient le taux de satisfaction de 9.10\%. \cite{neural_yt}.
 
 
 \textbf{Précision de la régulation de la température:}
@@ -117,17 +123,14 @@ Avec la diode 1n4148 liée avec le Arduino Uno, il
 \textbf{Précision de la mesure du temps :}
 L’implantation logicielle de la prise de mesure de temps reste parmi les meilleures options qui s’offrent dans un tel projet. Avec une librairie aussi simple que « datetime » en langage python, on obtient une précision incroyable (allant aux milisecondes près). Pour cette raison, le calcul suivant accordera la note de 100\% à cette prise de mesure : (insérer calcul ici XXX)
 
-\textbf{Résolution du capteur : }La GoPro Hero7 possède une caméra de 12 mégapixels et est capable de capter des images en qualité 4K. Au final, on obtient une note de XXX selon le calcul qui suit :
-
-\textbf{Résistance à la profondeur du capteur : } Avec la caméra GoPro Hero7, il est possible d’aller à des profondeurs de 50 pieds sans aucune protection. Avec l’achat d’un protecteur dans les alentours de 67 dollars, on allonge la portée jusqu’à (calcul par jay talbot) 51 mètres. La solution obtient donc une note de XXX selon le calcul suivant, soit un taux de satisfaction de XXXX. (insérer calcul)
-
-
-
-
-\subsubsection{Performances}
-
-
 \subsubsection{Coûts}
+
+\textbf{Coûts en main d’œuvre :}
+Pour cette solution, le développement du logiciel de reconnaissance sera pris en charge par une compagnie tierce CodeCreators. Leur expertise assurera un produit de qualité commerciale, qui est évidemment recherchée dans un design de performance, mais les coûts reliés au développement seront de l’ordre du 40k \$.
+
+
+\textbf{Coûts de matériel :}
+L’instrumentation nécessaire du produit de performance peut s’avérer considérablement plus coûteuse qu'un design économique : on aura évidemment besoin d’une caméra GoPro Hero7, de batteries au lithium, un Raspberry Pi, un module Peltier, deux diodes. On estimera le coût total du produit aux alentours de XXXX \$, ce qui nous laisse avec un taux de performance de XXXX. 
 
 
 
@@ -250,8 +253,7 @@ Dans la globalité du système, toutes les composantes assurent une prise de mes
 \textbf{Résistance à la profondeur du capteur:}	
 En utilisant le capteur OV5640, il est nécessaire d'utiliser 6 plaques d'aluminium ensemble dont l'une ayant un vitre en PMMA encastrée. Cette protection est nécessaire pour protéger le capteur de la pression et qu'il puisse toujours prendre des images. Avec cette protection, le capteur pourrait résister jusqu'à une pression extérieur de 45MPa. 45 Mpa correspond à une profondeur atteignable maximale de 4 588 mètres sous l'eau. Ainsi, d'après l'équation \ref{eq:bareme_profondeur}, on a :
 \begin{equation}
-y(4588) =
-        0.003777 *4588-0.0557
+    y(4588) = 0.003777\cdot4588-0.0557
 \end{equation}
 La note maximale pouvant être attribuée étant de 1, on confère la note de 1 à ce concept. Avec sa pondération de 2 \%, on obtient au final un taux de satisfaction de 2\%.
 
@@ -265,7 +267,7 @@ Afin de déterminer la puissance de calcul de la machine, on détermine le note 
     y = \frac{131}{219}
 \end{equation}
 
-Cet ordinateur obitent donc une note de 0.6. Avec sa pondération de 2\%, ce concept obtient une note de 1,2 \%.
+Cet ordinateur obtient donc une note de 0.6. Avec sa pondération de 2\%, ce concept obtient une note de 1,2 \%.
 
 \textbf{Nombre de fonctionnalités reliées à l'alarme:}
 
@@ -372,7 +374,7 @@ La somme de tous ces couts nous donne un total de 2056.98  .Ainsi en se servant 
 
 \textbf{Identification des poissons:} L'utilisation du réseaux de neurones avec la librairie Tensorflow est adéquate dans le cadre du projet. En effet, avec les milliers de photos dans la banque de données, il sera facile d'identifier les poissons malgré la faible résolution du capteur. Cette solution permet de satisfaire amplement le critère de 10\%. \vspace{5mm}
 
-\textbf{Volume d'analyse:} Le capteur utilisé pour ce concept permet 
+\textbf{Volume d'analyse:} Le capteur utilisé pour ce concept permet d'obtenir un volume d'analyse d'environ 4m$^3$. En effet, avec une résolution d'environ 2 Mégapixels, il a été calculé que le volume d'imagerie donnerait environ 4m$^3$ (voir \ref{annexe:eq_gofishcam}). Avec un tel volume, le critère obtient une note de 0,7 à l'aide de l'équation \ref{eq:bareme_volume_analyse}.
 \vspace{5mm}
 
 \textbf{Capacité de stockage des données:} La plateforme Cloud de hubiC offre un service de stockage à faible coût. En effet, pour seulement 75\$, il sera possible d'offrir 10 000 Go de stockage pour le client. Pour sa grande efficacité et son faible coût, le critère obtient le taux de satisfaction de 5\%. \vspace{5mm}
@@ -386,7 +388,7 @@ La somme de tous ces couts nous donne un total de 2056.98  .Ainsi en se servant 
 
 \textbf{Résistance à la profondeur:} Le capteur optique de la GoFishCam peut atteindre une profondeur de 150 mètres. Avec une telle résistance à la profondeur, la solution obtient une note de 0,5, soit un taux de satisfaction de 1\%. \vspace{5mm}
 
-\textbf{Taille des spécimens observés:} 
+\textbf{Taille des spécimens observés:} La GoFishCam permet d'enregistrer des poissons ayant une taille minimale de 2,24 cm. Cette donnée a été calculée à l'aide des équations fournies à l'annexe \ref{annexe:taille_poissons}. Ainsi, grâce à son capteur optique, le concept permet d'obtenir une note de 0,85 pour ce critère. L'équation \ref{eq:bareme_taille_poisson} permet de déterminer que la solution offre un taux de satisfaction de 1,7\%.
 \vspace{5mm}
 
 \textbf{Nombre de fonctionnalités de l'alarme:} La plateforme Urban Airship offre un système d'alarme idéal pour le concept. En effet, cette solution est avantageuse puisqu'elle est gratuite. De plus, il est possible d'implanter ce système sur l'ordinateur Hp Pavilion Power 580-130 choisis pour ce concept. Urban Airship propose 2 principales fonctionnalités, ce qui attribue une note de 0,11 pour ce critère.
@@ -420,15 +422,15 @@ La somme de tous ces couts nous donne un total de 2056.98  .Ainsi en se servant 
 \vspace{5mm}
 
 
-section requin marteau:
-\ref{annexe:equation_boitier}
 
-résistance à la profondeur: avec la caméra Gopro, il est possible d'aller 
-à des profondeurs de 50 pieds sans aucune protection. Avec l'achat d'un protecteur dans les alentours de 67\$ dollars, on allonge la portée jusqu'à (calcul par jay talbot) XXXX. La solution obtient une note de XXX, soit un taux de satisfaction de XXXX. 
+%section requin marteau:
+%\ref{annexe:equation_boitier}
 
-Taille des spécimens observés: avec la lentille intégrée dans la caméra GoPro, la taille minimale détectable (à terminer pour Jay Talbot)
+%résistance à la profondeur: avec la caméra Gopro, il est possible d'aller à des profondeurs de 50 pieds sans aucune protection. Avec l'achat d'un protecteur dans les alentours de 67\$ dollars, on allonge la portée jusqu'à (calcul par jay talbot) XXXX. La solution obtient une note de XXX, soit un taux de satisfaction de XXXX. 
 
-Nombre de fonctionnalités de l'alarme: 
+%Taille des spécimens observés: avec la lentille intégrée dans la caméra GoPro, la taille minimale détectable (à terminer pour Jay Talbot)
 
-Utilisation de l'interface graphique: déjà fait?
+%Nombre de fonctionnalités de l'alarme: 
+
+%Utilisation de l'interface graphique: déjà fait?
 
