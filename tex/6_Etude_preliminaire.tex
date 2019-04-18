@@ -46,18 +46,18 @@
     \begin{tabular}{|p{3cm}|p{3cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
     \hline
     \textbf{Fonction} & \textbf{Concept 1} & \textbf{Concept 2} & \textbf{Concept 3} & \textbf{Concept 4}\\ \hline
-    Capter les informations sur les poissons & GoPro Hero7 & Capteur OV5640 & HP2W Hyperfire & GoFishCam \\ \hline
-    Alimenter le capteur & Batteries & Filaire & Solaire \ref{wut} & Batteries \\ \hline
-    Acheminer les informations & Connexion intégrée & Filaire & Manuel & Connexion intégrée \\ \hline
+    Capter les informations sur les poissons & Capteur OV5640 & GoPro Hero7 & HP2W Hyperfire & GoFishCam \\ \hline
+    Alimenter le capteur & Batteries & Filaire & Panneaux Solaire & Batteries \\ \hline
+    Acheminer les informations & Manuel & Filaire & Manuel & Connexion intégrée \\ \hline
     Identifier les poissons & Réseau de neurones & Développé par un tiers & Réseau de neurones & Réseau de neurones \\ \hline
-    Compiler les données & & HP Pavilion & & Hp Pavilion\\ \hline
+    Compiler les données & Ordinateur  & Ordinateur personnalisé & HP Pavilion & Hp Pavilion\\ \hline
     Stocker les données & Cloud HubiC & Carte SSD & Disque Dur HDD & Cloud HubiC\\ \hline
     Afficher les données & CodeCreators & Primefaces & Commentum & Ajax\\ \hline
     Assurer une accès sécurisé & Encryption & VPN & Partenariat & Accès sécurisé\\ \hline
     Mesurer la température & Diode & Thermistance & HP2W Hyperfire & Accu-Temp\\ \hline
     Mesurer la date et l'heure & Librairie Python & Librairie Python & HP2W Hyperfire & Utilisation capteur \\ \hline
     Réguler la température & Module Peltier & Refroidissement à l'eau & Radiateur et pâte thermique & Module Peltier\\ \hline
-    Avertir l'utilisateur &  &  &  & Urban Airship\\
+    Avertir l'utilisateur & Amazon SNS &  & Pushover API & Urban Airship\\
     \hline
     \end{tabular}
     \caption{Les quatre concepts pour le projet Fish \& Chips}
@@ -66,78 +66,128 @@
 
 \section{Concepts de solutions proposées}
 
-\subsection{Concept 1 : Performance}
+\subsection{Concept 1}
 
-
-Critères :
-TODO : ajouter les taux de satisfaction!!!!
+Ce concept assemble les solutions axées sur la performance.
 
 \subsubsection{Qualité du produit}
 
 
-\textbf{Résolution du capteur: } La caméra sur la GoPro Hero 7 a une résolution de 12 mégapixels. La caméra peut capter des images avec une qualité 4k et est capable de traiter une image vidéo en 60 fps, ce qui peut s’avérer très utile lors de la détection du type de poisson et l’enclenchement de la prise de photo. Cela donne un taux de satisfaction de 0.8 selon l'équation \ref{eq:bareme_res}.
+\textbf{Résolution du capteur:} La caméra sur la GoPro Hero 7 a une résolution de 12 mégapixels. La caméra peut capter des images avec une qualité 4k et est capable de traiter une image vidéo en 60 fps, ce qui peut s’avérer très utile lors de la détection du type de poisson et l’enclenchement de la prise de photo. Cela donne une note de de 0.8 selon l'équation \ref{eq:bareme_res} et donc un taux de satisfaction de 8\%.
+\vspace{5mm}
 
-\textbf{Identification des poissons :}
-Pour ce qui est de la section logicielle, un réseau neural convolutionnel devrait assurer une précision dans les hauts pourcentages avec un entraînement adéquat. Avec un réseau de neurones convolutionnel de haute qualité et avec un entraînement de qualité avec le nombre de poissons demandés, on peut s’attendre à un taux de détection dans les hauts 90\%. De plus, avec un léger réapprentissage machine, le logiciel de détection sera prêt pour un déploiement dans un autre site si le besoin se présente. Selon l’équation \ref{eq:bareme_precision}, on obtient une note de 0.6 avec une pondération de 15\%, c’est pourquoi on obtient le taux de satisfaction de 9.10\%. \cite{neural_yt}.
+\textbf{Identification des poissons:}
+Pour ce qui est de la section logicielle, un réseau neural convolutionnel devrait assurer une précision dans les hauts pourcentages avec un entraînement adéquat. Avec un réseau de neurones convolutionnel de haute qualité et avec un entraînement de qualité avec le nombre de poissons demandés, on peut s’attendre à un taux de détection dans les hauts 90\%. De plus, avec un léger réapprentissage machine, le logiciel de détection sera prêt pour un déploiement dans un autre site si le besoin se présente. Selon l’équation \ref{eq:bareme_precision}, on obtient une note de 0.6 avec une pondération de 10\%, c’est pourquoi on obtient le taux de satisfaction de 6\%. \cite{neural_yt}.
+\vspace{5mm}
 
+\textbf{Volume d'analyse:} La distance focale de la caméra GoPro Hero7 pouvant être grandement ajustée, on peut assurer un volume d’imagerie de 1.672m$^3$, qui convient parfaitement au critère de 1m$^3$ de volume \ref{annexe:volume_imagerie}.  On obtient la note de 0.24 selon l'équation \ref{eq:bareme_volume_analyse}, ce qui nous laisse avec un taux de satisfaction de 1.2\%.
+\vspace{5mm}
 
-\textbf{Volume d'analyse:} La distance focale de la caméra GoPro Hero7 pouvant être grandement ajustée, on peut assurer un volume d’imagerie de 1.672m$^3$, qui convient parfaitement au critère de 1m$^3$ de volume \ref{annexe:volume_imagerie}.  On obtient la note de 0.24 selon l'équation \ref{eq:bareme_volume_analyse}.
-
-
-\textbf{Capacité de stockage de données :}
-L’utilisation de plateforme Cloud hubiC sera utilisée en raison de sa convenance et de ses fonctionnalités à distance. De plus, les tarifs sont très avantageux pour la quantité de stockage en retour sans avoir besoin de stockage physique pour la base de données. Par contre, on aura besoin d’une carte SD pour entreposer les données pendant l’espace du deux semaines d’autonomie de l’appareil. Les prix se chiffreraient autour du \$ et le taux de satisfaction dans les XXXX. 
-
-
-\textbf{Durée de vie de l’alimentation du système :}
-Des batteries au lithium Energizer L91 AA seront utilisées pour le présent concept. Celles-ci peuvent fournir jusqu'à 3500 mAh chacune \cite{Energizer}. De cette manière, on s’assure d’une source d’énergie fiable, efficace, sans-dangers pour l’environnement et pouvant supporter les écarts de températures sans problèmes. Avec 16 batteries mises en série dans un boîtier connecté par cable USB-C à la caméra, il sera possible de garder le système alimenté pendant une durée de 16.33 jours ce qui donne un taux de satisfaction de 0.26 selon l'équation \ref{eq:bareme_duree_batterie}.
+\textbf{Capacité de stockage des données :}
+L’utilisation de plateforme Cloud hubiC sera utilisée en raison de sa convenance et de ses fonctionnalités à distance. De plus, les tarifs sont très avantageux pour la quantité de stockage en retour sans avoir besoin de stockage physique pour la base de données. Par contre, on aura besoin d’une carte SD pour entreposer les données pendant l’espace du deux semaines d’autonomie de l’appareil. Les prix se chiffreraient dans les 160\$ pour les deux espaces mémoires et la note attribuée à ce concept est de 1 selon le barème \ref{eq:bareme_stockage}. Le taux de satisfaction donc de 5\%.
+\vspace{5mm}
 
 
-\textbf{Acheminement des informations :}
-Puisque la caméra GoPro Hero7 possède des fonctionnalités de transfert de données intrinsèques à son design, on favorisera la connectivité avec l’application GoPro elle-même. Avec le routeur Synology RT2600ac, on atteindra une distance de connexion dans les 250 mètres au mieux, ce qui représente un taux de satisfaction de 0.85 selon l'équation \ref{eq:bareme_acheminement_infos}.
+\textbf{Durée de vie de l’alimentation du système:}
+Des batteries au lithium Energizer L91 AA seront utilisées pour le présent concept. Celles-ci peuvent fournir jusqu'à 3500 mAh chacune \cite{Energizer}. De cette manière, on s’assure d’une source d’énergie fiable, efficace, sans-dangers pour l’environnement et pouvant supporter les écarts de températures sans problèmes. Avec 16 batteries mises en série dans un boîtier connecté par cable USB-C à la caméra, il sera possible de garder le système alimenté pendant une durée de 16.33 jours ce qui donne une de 0.26 selon l'équation \ref{eq:bareme_duree_batterie} et un taux de satisfaction de 1.3\%.
+\vspace{5mm}
+
+\textbf{Acheminement des informations:}
+Puisque la caméra GoPro Hero7 possède des fonctionnalités de transfert de données intrinsèques à son design, on favorisera la connectivité avec l’application GoPro elle-même. Avec le routeur Synology RT2600ac, on atteindra une distance de connexion dans les 250 mètres au mieux, ce qui représente une de 0.85 selon l'équation \ref{eq:bareme_acheminement_infos} et taux de satisfaction de 4.25\%.
+\vspace{5mm}
+
+\textbf{Fiabilité du système de sécurité:}
+On utilisera un type d’encryptage hybride pour ce qui est de la sécurité du présent design. Étant un système utilisé par les grandes organisations partout à travers le monde, on dira que l’encryptage des données comporte deux couches de sécurité ((1) encryptage symétrique pour les données et (2) asymétrique pour la connexion au serveur). Le critère obtient donc un score de 4.36\% en raison d'une note de 87\% à l'équation \ref{eq:bareme_sécurité}.
+\vspace{5mm}
 
 
-\textbf{Fiabilité du système de sécurité :}
-On utilisera un type d’encryptage hybride pour ce qui est de la sécurité du présent design. Étant un système utilisé par les grandes organisations partout à travers le monde, on dira que l’encryptage des données comporte deux coches de sécurité (encryptage symétrique pour les données et asymétrique pour la connexion au serveur). 
+\textbf{Résistance à la profondeur du capteur:} Avec le boîtier présenté à l'annexe \ref{annexe:equation_boitier}, on détermine qu'il peut être submergé jusqu'à une profondeur de 57.21 m sans céder. La solution obtient donc une note de 0.14 selon l'équation \ref{eq:bareme_profondeur}. Le taux de satisfaction est alors de 0.56\%.
+\vspace{5mm}
 
-\textbf{Résistance à la profondeur du capteur : } Avec le boîtier présenté à l'annexe \ref{annexe:equation_boitier}, on détermine qu'il peut être submergé jusqu'à une profondeur de 57.21 m sans céder. La solution obtient donc une note de 0.14 selon l'équation \ref{eq:bareme_profondeur}.
+\textbf{Taille des spécimens observés:} Avec la distance focale ajustable de la caméra GoPro Hero7, le design de performance aura la capacité de détecter tout poisson ayant une taille supérieure à 1.36 cm. Selon le calcul 
+\ref{annexe:taille_poissons}, la solution du concept permet d'obtenir une note de 0,92, donc un taux de satisfaction de 3.68\% en raison de la pondération de 4\%.
+\vspace{5mm}
 
-\textbf{Utilisation de l’interface graphique :}
-On utilisera l’interface confectionnée par la compagnie CodeCreators. On s’assurera d’une qualité à la hauteur des meilleurs de l’industrie et une utilisation simple et efficace. D’après l'évaluation heuristique de Nielsen-Mulich, tous les critères sont remplis. En se fiant à la table \ref{t:bareme_interface}, une note de 1 est donc attribuée.
+\textbf{Nombre de fonctionnalité de l'alarme:} Amazon simple notification service, un service capable d'envoyer des notifications presque gratuitement (gratuit pour < 1 millions d'alertes) et capable de s'adapter à 3 plateformes (téléphone cellulaire, email et ordinateur de bureau), sera le gestionnaire d'alarmes pour ce design. Avec le calcul présenté pour ce critère au chapitre 4 et avec la valeur x=3, on obtient la note de 22\%, donc un taux de satisfaction de 0.88\%.
+\vspace{5mm}
 
+\textbf{Puissance de calcul:} Avec l'ordinateur Alienware Aurora R7, on peut espérer des vitesses de calculs dans le 99$^{ième}$ percentile avec une note d'utilisateur de 169. On reçoit une note de 77\% pour le calcul \ref{eq:bareme_gpu}. On a un taux de satisfaction de 3.08\% pour une pondération de 4\% de ce critère.
+\vspace{5mm}
 
-\textbf{Taille maximale des spécimens observables :}
-Avec la distance focale ajustable de la caméra GoPro Hero7, le design de performance aura la capacité de détecter tout poisson ayant une taille supérieure à 1.36 cm. Selon le calcul 
-\ref{annexe:taille_poissons} ,
+\textbf{Utilisation de l’interface graphique:}
+On utilisera l’interface confectionnée par la compagnie CodeCreators. On s’assure d’une qualité parmi les meilleurs de l’industrie et une utilisation simple et efficace. D’après l'évaluation heuristique de Nielsen-Mulich, tous les critères sont remplis. En se fiant à la table \ref{t:bareme_interface}, une note de 1 est donc attribuée, donc un taux de satisfaction de 4\%.
+
 
 \subsubsection{Performances}
 
-\textbf{Précision de l'identification des poissons:} Pour ce qui est de la section logicielle, un réseau neural convolutionnel devrait assurer une précision dans les hauts pourcentages avec un entraînement adéquat. Avec un réseau de neurones convolutionnel de haute qualité et avec un entraînement de qualité avec le nombre de poissons demandés, on peut s’attendre à un taux de détection dans les hauts 90\%. De plus, avec un léger réapprentissage machine, le logiciel de détection sera prêt pour un déploiement dans un autre site si le besoin se présente. Selon l’équation \ref{eq:bareme_precision}, on obtient une note de 0.6 avec une pondération de 15\%, c’est pourquoi on obtient le taux de satisfaction de 9.10\%. \cite{neural_yt}.
+\textbf{Précision du logiciel de reconnaissance:} Pour ce qui est de la section logicielle, un réseau neural convolutionnel devrait assurer une précision dans les hauts pourcentages avec un entraînement adéquat. Avec un réseau de neurones convolutionnel de haute qualité et avec un entraînement de qualité avec le nombre de poissons demandés, on peut s’attendre à un taux de détection dans les hauts 90\%. De plus, avec un léger réapprentissage machine, le logiciel de détection sera prêt pour un déploiement dans un autre site si le besoin se présente. Selon l’équation \ref{eq:bareme_precision}, on obtient une note de 0.6 avec une pondération de 15\%, c’est pourquoi on obtient le taux de satisfaction de 9\%. \cite{neural_yt}.
+\vspace{5mm}
 
 
-\textbf{Précision de la régulation de la température:}
-Oufff
+\textbf{Précision de la régulation de la température:} Avec la diode 1n4148, la précision donnée par le fabricant est de 2 millièmes. Lorsqu'on incorpore cette valeur dans l'équation \ref{eq:bareme_precision_temperature}, le taux de satisfaction en sortie est de 2\% en raison de la note parfaite au calcul.
+\vspace{5mm}
 
-\textbf{Précision de la mesure de la température:}
-Avec la diode 1n4148 liée avec le Arduino Uno, il 
+\textbf{Précision de la mesure de la température:} Avec la diode 1n4148 gérée par le Rasberry Pi, la précision donnée par le fabricant est de 2 millièmes. Lorsqu'on incorpore cette valeur dans l'équation \ref{eq:bareme_precision_temperature}, le taux de satisfaction en sortie est de 2\% en raison de la note parfaite au calcul.
+\vspace{5mm}
 
-\textbf{Précision de la mesure du temps :}
-L’implantation logicielle de la prise de mesure de temps reste parmi les meilleures options qui s’offrent dans un tel projet. Avec une librairie aussi simple que « datetime » en langage python, on obtient une précision incroyable (allant aux milisecondes près). Pour cette raison, le calcul suivant accordera la note de 100\% à cette prise de mesure : (insérer calcul ici XXX)
+\textbf{Précision de la mesure du temps:}
+L’implantation logicielle de la prise de mesure de temps reste parmi les meilleures options qui s’offrent dans un tel projet. Avec une librairie aussi simple que « datetime » en langage python, on obtient une précision incroyable (allant aux milisecondes près). Pour cette raison, on accordera la note de 100\% à cette prise de mesure, donc un taux de satisfaction de 1\%.
 
 \subsubsection{Coûts}
 
-\textbf{Coûts en main d’œuvre :}
-Pour cette solution, le développement du logiciel de reconnaissance sera pris en charge par une compagnie tierce CodeCreators. Leur expertise assurera un produit de qualité commerciale, qui est évidemment recherchée dans un design de performance, mais les coûts reliés au développement seront de l’ordre du 40k \$.
+\textbf{Coûts de main d’œuvre:}
+Pour cette solution, le développement de la plateforme sera prise en charge par la compagnie tierce CodeCreators. Leur expertise assurera un produit de qualité commerciale, qui est évidemment recherchée dans un design de performance. Le logiciel de reconnaissance par réseau de neurones s'avèrera coûteux pour l'accès à la base de données, le temps  et les technologies requises pour faire l'apprentissage. On estimera les coûts reliés au développement du produit final à 40k \$, ce qui donne un taux de satisfaction de 0\% pour ce critère.
+\vspace{5mm}
 
+\textbf{Coûts du matériel:}
+L’instrumentation nécessaire du produit de performance peut s’avérer considérablement plus coûteuse qu'un design économique : on aura évidemment besoin d’une caméra GoPro Hero7, de batteries au lithium, un Raspberry Pi, un module Peltier, deux diodes et un ordinateur Alienware. On considère environ le prix d'une douzaine de batteries aux deux semaines. On estimera le coût total du produit aux alentours de 4600 \$ selon les prix listés dans les sections précédentes. Cela nous laisse avec un 55\% pour ce critère, . 
 
-\textbf{Coûts de matériel :}
-L’instrumentation nécessaire du produit de performance peut s’avérer considérablement plus coûteuse qu'un design économique : on aura évidemment besoin d’une caméra GoPro Hero7, de batteries au lithium, un Raspberry Pi, un module Peltier, deux diodes. On estimera le coût total du produit aux alentours de XXXX \$, ce qui nous laisse avec un taux de performance de XXXX. 
 
 
 
 \subsection{Concept 2}
-Cette solution assemble les concepts les plus simples et faciles d'utilisations.
+Ce concept assemble les solutions les plus simples et faciles d'utilisations.
 
-\subsubsection{Performances}
+\subsubsection{Qualité du produit}
+
+\textbf{Résolution du capteur:}
+Le capteur d'image la résolution maximale est de 2592x1944 pixels et un capacité d'enregistrement de 5 Mpx. Avec l'équation \ref{eq:bareme_res}:
+\begin{equation}
+    y(5) = - e^{-0.134(5-0.01)}+1
+\end{equation}
+
+D'après cette équation, le capteur obtient une note de 0,49 pour sa résolution. Donc, pour le capteur d,image OV5640, on a une note de 4,9\% car il a une pondération de 10\%.
+\vspace{5mm}
+
+
+\textbf{Identification des poissons:}
+Le capteur d'images OV5640 a une résolution de 2592 x 1944 pixels. Cela permet amplement la résolution très suffisante à l'identification de la totalité des poissons des lacs du Québec avec le logiciel de reconnaissance développé par un tiers. Ainsi, on peut dire qu'il a une reconnaissance de 30 poissons. Ainsi, d'après l'équation \ref{eq:bareme_identification}, le concept obtient une note de 0,99. Avec une pondération de 10\%, il obtient un taux de satisfaction de 9,9\%.
+
+\begin{equation}
+    y(30) = -e^{-0.2(30-5)} + 1  \end{equation}
+\vspace{5mm}
+
+
+\textbf{Volume d'analyse:}
+Le capteur d'image OV5640 peut détecter des objets situés jusqu'à 100 cm du capteur. On a donc un volume estimé à 2 mètres cubes d'après la formule de calcul de volume de calotte sphérique. Ainsi, d'après l'équation \ref{eq:bareme_volume_analyse} :
+
+\begin{equation}
+y(2) =
+        -e^{-0.4024(2-1)}+1 
+\end{equation}
+Le capteur obtient une note de 0,33. Avec une pondération de 5\%, on obtient un taux de satisfaction de 1,7\%.
+\vspace{5mm}
+
+
+\textbf{Capacité de stockage des données:}
+Pour stocker les données, on utilise la carte SSD Kingston de 240 Go. La carte SSD a une capacité de stockage de 240 Go. Donc, d'après l'équation \ref{eq:bareme_stockage}, on a :
+\begin{equation}
+    y(240) = -1.5e^{-0.002012*240} + 1
+\end{equation}
+
+Donc on a une note de 7\%. De ce fait, d'après sa pondération de 5\%, il obtient un taux de satisfaction de 0,35\%.
+\vspace{5mm}
+
 
 \textbf{Durée de vie de l'alimentation du système:} Afin de disposer des éléments les plus simples d'utilisations, il serait nécessaire de disposer d'une alimentation filaire. De ce fait, l'entretien serait beaucoup plus basique car il suffirait de brancher le fil à la machine pour qu'elle soit alimentée et n'aurait jamais à être changée. On pourra se procurer une rallonge filaire pour 39,00\$ sur uline.ca. Étant donné que le fil ne sera pas exposé à des conditions très difficiles et que l'on peut considérer que l'électricité sera toujours fournie dans l'avenir. On peut supposer la durée de vie de l'alimentation comme infinie.
 D'après l'équation \ref{eq:bareme_duree_batterie}:
@@ -145,7 +195,9 @@ D'après l'équation \ref{eq:bareme_duree_batterie}:
     y(x) = -1.5e^{-0.002012x} + 1 
         \end{equation}
 
-on a une durée de vie de l'alimentation (x) proche de l'infini,c ela lui donne une note de 1, donc, d'après notre tableau \ref{t:criteres}, cette proposition reçoit une taux de satisfaction de 5\%.
+on a une durée de vie de l'alimentation (x) proche de l'infini, cela lui donne une note de 1, donc, d'après notre tableau \ref{t:criteres}, cette proposition reçoit une taux de satisfaction de 5\%.
+\vspace{5mm}
+
 
 \textbf{Acheminement des informations:}
 Pour acheminer les informations, on fait cela par voie filaire (à l'aide d'une fibre optique). Le fil 50m Fibre Optic USB 3.0 Câble de Lindy, avec une protection afin d'isoler le câble, a une longueur maximale de 76,2m. Ce qui, d'après notre équation \ref{eq:bareme_acheminement_infos},
@@ -156,33 +208,7 @@ Pour acheminer les informations, on fait cela par voie filaire (à l'aide d'une 
 \end{equation}
 
 lui donne une note de 0,1. Avec une pondération de 5\%, ce concept a un taux de satisfaction de 0,5\% pour un prix de 782,50 \$.
-
-\subsubsection{Coûts}
-\textbf{Coûts en main d'oeuvre:}
-Pour cette solution, le développement du logiciel de reconnaissance est fait par un tiers ce qui occupe la totalité du coût en main d'oeuvre (40 000\$). D'après l'équation \ref{eq:bareme_cout_materiel} pour les prix en main d'oeuvre, cette solution obtient donc une note de 0 à un critère évalué à une pondération de 12\%. Ainsi, on obtient un taux de satisfaction nul vis à vis de cette solution.
-
-\textbf{Coûts de conception du produit:}
-Au total, on utilise le capteur d'imae OV5640 (60 \$), une alimentation filaire à 39,00 \$, un câble optique à 782,00 \$, une carte SSD à 240 \$, une licence Primefaces à 105 \$, un VPN à 240 \$ pour 2 ans, une thermistance, un HP Pavilion Power Desktop - 580-130 à un coût de 950 \$ et un Arduino estimé à 20,69\$. On a donc un coût matériel près de 2436,69 \$. D'après l'équation \ref{eq:bareme_cout_materiel}, on a:
-
-\begin{equation}
-y(2436,69) =  \frac{-2436,69}{10000} +1 \end{equation}
-
-on a donc une note de 0.76 pour cette solution. Avec la pondération de 3\%, cette solution a un taux de satisfaction de 2,27\%.
-
-\subsubsection{Qualité du produit}
-\textbf{Identification des poissons:}
-Le capteur d'images OV5640 a une résolution de 2592 x 1944 pixels. Cela permet amplement la résolution très suffisante à l'identification de la totalité des poissons des lacs du Québec avec le logiciel de reconnaissance développé par un tiers. Ainsi, on peut dire qu'il a une reconnaissance de 30 poissons. Ainsi, d'après l'équation \ref{eq:bareme_identification}, le concept obtient une note de 0,99. Avec une pondération de 10\%, il obtient un taux de satisfaction de 9,9\%.
-
-\begin{equation}
-    y(30) = -e^{-0.2(30-5)} + 1  \end{equation}
-
-\textbf{Capacité de stockage de données:}
-Pour stocker les données, on utilise la carte SSD Kingston de 240 Go. La carte SSD a une capacité de stockage de 240 Go. Donc, d'après l'équation \ref{eq:bareme_stockage}, on a :
-\begin{equation}
-    y(240) = -1.5e^{-0.002012*240} + 1
-\end{equation}
-
-Donc on a une note de 7\%. De ce fait, d'après sa pondération de 5\%, il obtient un taux de satisfaction de 0,37\%.
+\vspace{5mm}
 
 
 \textbf{Fiabilité du système de sécurité:}
@@ -191,18 +217,49 @@ En utilisant un système de sécurité basé sur un VPN (Virtual private network
     y = 0.849 e^{0.014*2}
 \end{equation}
 De ce fait, On obtient une note de 0,87 pour la fiabilité du système de sécurité. Avec une pondération de 5\%, on obtient un taux de satisfaction de 4,35\%.
+\vspace{5mm}
 
-\textbf{Volume d'imagerie:}
-Le capteur d'image OV5640 peut détecter des objets situés jusqu'à 100 cm du capteur. On a donc un volume estimé à 2 mètres cubes d'après la formule de calcul de volume de calotte sphérique. Ainsi, d'après l'équation \ref{eq:bareme_volume_analyse} :
+
+\textbf{Résistance à la profondeur:}	
+En utilisant le capteur OV5640, il est nécessaire d'utiliser 6 plaques d'aluminium ensemble dont l'une ayant un vitre en PMMA encastrée. Cette protection est nécessaire pour protéger le capteur de la pression et qu'il puisse toujours prendre des images. Avec cette protection, le capteur pourrait résister jusqu'à une pression extérieur de 45MPa. 45 Mpa correspond à une profondeur atteignable maximale de 4 588 mètres sous l'eau. Ainsi, d'après l'équation \ref{eq:bareme_profondeur}, on a :
+\begin{equation}
+    y(4588) = 0.003777\cdot4588-0.0557
+\end{equation}
+La note maximale pouvant être attribuée étant de 1, on confère la note de 1 à ce concept. Avec sa pondération de 4 \%, on obtient au final un taux de satisfaction de 4\%.
+\vspace{5mm}
+
+
+\textbf{Taille des spécimens observés:}
+Avec son volume d'imagerie, le capteur OV5640 est capable d'observer des poissons plus gros que 140 cm de long. D'après l'équation \ref{eq:bareme_taille_poisson},
 
 \begin{equation}
-y(2) =
-        -e^{-0.4024(2-1)}+1 
+y(140) =  \frac{140}{134}- \frac{6}{134}
 \end{equation}
-Le capteur obtient une note de 0,33. Avec une pondération de 5\%, on obtient un taux de satisfaction de 1,7\%.
+
+On a une note de 1 pour la taille maximale des spécimens observés. Ainsi, avec sa pondération de 4\%, on obtient un taux de satisfaction de 4\% avec le capteur d'image OV5640.
+\vspace{5mm}
+
+
+\textbf{Nombre de fonctionnalités de l'alarme:}
+\vspace{5mm}
+
+
+\textbf{Puissance de calcul:} Afin de déterminer la puissance de calcul de la machine, on détermine le note obtenue par la carte graphique. Dans le concept 2, on utilise un ordinateur personnalisé à nos besoins qui contient une RTX GeForce 2070. Cette carte graphique obtient une note de 131. D'après l'équation \ref{eq:bareme_gpu}:
+
+\begin{equation}
+    y = \frac{130}{219}
+\end{equation}
+
+Cet ordinateur obtient donc une note de 0.59. Avec sa pondération de 4\%, ce concept obtient une note de 2,36 \%.
+\vspace{5mm}
+
 
 \textbf{Utilisation de l'interface graphique:}
-Ici, on utilise une application web avec Primefaces. Avec cette application web, on peut facilement personnaliser l'interface graphique avec différents thèmes et créer différentes connections dans la page. Ainsi, l'interface est facile d'utilisations. D'après le barème établie au tableau \ref{t:bareme_interface}, on a une note de 0.8 pour cette interface. Avec une pondération de 2\%, on a un taux de satisfaction de 1,6\%.
+Ici, on utilise une application web avec Primefaces. Avec cette application web, on peut facilement personnaliser l'interface graphique avec différents thèmes et créer différentes connections dans la page. Ainsi, l'interface est facile d'utilisations. D'après le barème établie au tableau \ref{t:bareme_interface}, on a une note de 0.8 pour cette interface. Avec une pondération de 4\%, on a un taux de satisfaction de 3.2\%.
+
+
+
+\subsubsection{Performances}
 
 \textbf{Précision du logiciel de reconnaissance:}
 En confiant la totalité du budget de coût de main d'oeuvre à la conception du logiciel, on peut s'attendre à un logiciel de conception de très haute qualité. Ainsi, d'après l'équation \ref{eq:bareme_precision}:
@@ -210,24 +267,18 @@ En confiant la totalité du budget de coût de main d'oeuvre à la conception du
     y(1) = e^{5(1-1)}
 \end{equation}
 On obtient une note de 1 pour la précision du logiciel de reconnaissance. Avec une pondération de 15\%, on a donc un taux de satisfaction de 15\%.
-
-\textbf{Taille maximale des spécimens observables:}
-Avec son volume d'imagerie, le capteur OV5640 est capable d'observer des poissons plus gros que 140 cm de long. D'après l'équation \ref{eq:bareme_taille_poisson},
-
-\begin{equation}
-y(140) =  \frac{140}{134}- \frac{6}{134}
-\end{equation}
+\vspace{5mm}
 
 
-On a une note de 1 pour la taille maximale des spécimens observés. Ainsi, avec sa pondération de 2\%, on obtient un taux de satisfaction de 2\% avec le capteur d'image OV5640.
-
-\textbf{Précision de la température régulée:}
+\textbf{Précision de la régulation de la température:}
 La thermistance ayant une incertitude totale de 1\%. Cette précision dicte la façon dont on peut savoir la température régulée car l'arduino est plus précise avec ses sept chiffres analysables. Avec le code, ce sera la thermistance qui déterminera la précision de la température. Ainsi d'après l'équation \ref{eq:bareme_regul}, 
 
 \begin{equation}
     y(1) = e^{-0.03219*1}
 \end{equation}
 La précision de ce concept obtient une note 0.96 d'après notre équation établie dans le cahier des charges. Avec sa pondération de 2\%, ce concept obtient une note 1,9.
+\vspace{5mm}
+
 
 \textbf{Précision de la mesure de la température:}
 Pour mesurer la température de l'eau on utilise exactement le même système que pour mesurer la température régulée à l'intérieur de la machine. De ce fait, on a encore une incertitude de 1\%. Ainsi, d'après l'équation \ref{eq:bareme_precision_temperature} :
@@ -235,142 +286,140 @@ Pour mesurer la température de l'eau on utilise exactement le même système qu
     y(1) = e^{-0.03219*1}
 \end{equation}
 La précision de ce concept obtient une note 0.96 d'après notre équation établie dans le cahier des charges. Avec sa pondération de 2\%, ce concept obtient une note 1,9.
+\vspace{5mm}
+
 
 \textbf{Précision de la mesure du temps:}
 Pour la mesure du temps, on utilise un module datetime, en faisant le transfert en temps réel, on a une précision à la seconde près. L'incertitude est donc si près d'être nulle que l'on peut affirmer que ce concept a une note de 1. Avec une pondération de 1\%, on a un taux de satisfaction de 1\%. 
+\vspace{5mm}
 
-\textbf{Résolution du capteur:}
-Le capteur d'image la résolution maximale est de 2592x1944 pixels et un capacité d'enregistrement de 5 Mpx. Avec l'équation \ref{eq:bareme_res}:
-\begin{equation}
-    y(5) = - e^{-0.134(5-0.01)}+1
-\end{equation}
 
-D'après cette équation, le capteur obtient une note de 0,49 pour sa résolution. Donc, pour le capteur d,image OV5640, on a une note de 4,9\% car il a une pondération de 10\%.
 
-\textbf{Prise de mesure passive:}
-Dans la globalité du système, toutes les composantes assurent une prise de mesure passive: aucune d'entre elles n'a d'effets significatifs sur l'environnement du capteur. De ce fait, en respectant le milieu de vie des poissons, on obtient une note de 1.0 pour ce critère. Avec sa pondération de 2\%, on obtient une note de 2\%.
+\subsubsection{Coûts}
 
-\textbf{Résistance à la profondeur du capteur:}	
-En utilisant le capteur OV5640, il est nécessaire d'utiliser 6 plaques d'aluminium ensemble dont l'une ayant un vitre en PMMA encastrée. Cette protection est nécessaire pour protéger le capteur de la pression et qu'il puisse toujours prendre des images. Avec cette protection, le capteur pourrait résister jusqu'à une pression extérieur de 45MPa. 45 Mpa correspond à une profondeur atteignable maximale de 4 588 mètres sous l'eau. Ainsi, d'après l'équation \ref{eq:bareme_profondeur}, on a :
-\begin{equation}
-    y(4588) = 0.003777\cdot4588-0.0557
-\end{equation}
-La note maximale pouvant être attribuée étant de 1, on confère la note de 1 à ce concept. Avec sa pondération de 2 \%, on obtient au final un taux de satisfaction de 2\%.
+\textbf{Coûts de main d'oeuvre:}
+Pour cette solution, le développement du logiciel de reconnaissance est fait par un tiers ce qui occupe la totalité du coût en main d'oeuvre (40 000\$). D'après l'équation \ref{eq:bareme_cout_materiel} pour les prix en main d'oeuvre, cette solution obtient donc une note de 0 à un critère évalué à une pondération de 12\%. Ainsi, on obtient un taux de satisfaction nul vis à vis de cette solution.
+\vspace{5mm}
 
-\textbf{Résistance à la température du capteur:}
-On sait que le capteur de température OV5640 a la capacité de résister à des températures situées entre -20°C et 70°C. Un tel capteur résiste à un écart de température qui est au dessus des conditions d'utilisation. En rajoutant la protection et le système de refroidissement, on peut considérant cet écart comme minimal, puisque en théorie, la protection et le système de refroidissement vont aider le capteur à résister à des écarts en réalité encore plus grand. Donc, de ce fait, d'après le tableau 4.2, on a un résultat de 1 pour cette caractéristique qui a une pondération. De ce fait, on a donc un taux de satisfaction de 2\% pour ce concept.  
-
-\textbf{Puissance de calcul:}
-Afin de déterminer la puissance de calcul de la machine, on détermine le note obtenue par la carte graphique. Dans le concept 2, on utilise le HP Pavilion Power 580-139 qui contient une AMD Radeon RX 580. Cette carte graphique obtient une note de 131. D'après l'équation \ref{eq:bareme_gpu}:
+\textbf{Coûts du matériel:}
+Au total, on utilise le capteur d'image OV5640 (60 \$), une alimentation filaire à 39,00 \$, un câble optique à 782,00 \$, une carte SSD à 240 \$, une licence Primefaces à 105 \$, un VPN à 240 \$ pour 2 ans, une thermistance, un HP Pavilion Power Desktop - 580-130 à un coût de 950 \$ et un Arduino estimé à 20,69\$. On a donc un coût matériel près de 2436,69 \$. D'après l'équation \ref{eq:bareme_cout_materiel}, on a:
 
 \begin{equation}
-    y = \frac{131}{219}
-\end{equation}
+y(2436,69) =  \frac{-2436,69}{10000} +1 \end{equation}
 
-Cet ordinateur obtient donc une note de 0.6. Avec sa pondération de 2\%, ce concept obtient une note de 1,2 \%.
+on a donc une note de 0.76 pour cette solution. Avec la pondération de 3\%, cette solution a un taux de satisfaction de 2,27\%.
 
-\textbf{Nombre de fonctionnalités reliées à l'alarme:}
+
 
 
 \subsection{Concept 3}
 
+Ce concept assemble les solutions ayant le plus de fonctionnalités.
+
 \subsubsection{Qualité du produit}
 
-\textbf{Résolution du capteur}
+\textbf{Résolution du capteur:} Pour ce concept le capteur utilisé est la camera HP2 Hyperfine 2 Professional. Cette caméra est capable de prendre des images de 3 mégapixels et même des vidéos de 720p. Ainsi en se servant de l’équation \ref{eq:bareme_res} on trouve une note de 0.33 pour cette résolution. Ce qui correspond à un taux de satisfaction de 3.3\%.
+\vspace{5mm}
 
-     Pour ce concept le capteur utilisé est la camera HP2 Hyperfine 2 Professional. Cette caméra est capable de prendre des images de 3 mégapixels et même des vidéos de 720p. Ainsi en se servant de l’équation 4.1 du point 4.2.1 on trouve une note de 0.33 pour cette résolution. Ce qui correspond à un taux de satisfaction de 3.3\%.
 
-\textbf{Identification des poissons:}
+\textbf{Identification des poissons:} L’identification des poissons fait par réseau de neurones pour ce concept est évoquée au point 5.2.4.1. Avec un grand nombre de poissons (des milliers) en entrée, le système serait capable d’identifier au moins 30 poissons. De cette façon, nous obtenons la note de 0.99 en se servant de l’équation \ref{eq:bareme_identification}. et par conséquent un pourcentage de 9.99\%.
+\vspace{5mm}
 
-L’identification des poissons fait par réseau de neurones pour ce concept est évoquée au point 5.2.4.1. Avec un grand nombre de poissons (des milliers) en entrée, le système serait capable d’identifier au moins 30 poissons. De cette façon, nous obtenons la note de 0.99 en se servant de l’equation 4.2 et par conséquent un pourcentage de 9.99\%.
 
-\textbf{Volume d’analyse:}
+\textbf{Volume d’analyse:} En tenant compte du fait que la distance maximale à laquelle on peut imager un poisson est de 6 cm (critère de Johnson) et aussi du fait notre capteur est de 3 Mégapixels, on a une distance focale de 5.11m. On assume des angles de 30 et 40 degrés et avec la distance focale de 5.11m le volume d’imagerie est de 19.5m cube. Des calculs plus approfondis sont en annexes. Ainsi avec le volume de 19.5 la note attribuée est de 0.99 d’après l’équation \ref{eq:bareme_volume_analyse}. Le taux de satisfaction est donc de 4.99.
+\vspace{5mm}
 
-Le capteur est capable de détecter un poisson à une distance de 30m dans le sens ou  la portée de détection peut aller à 100 pieds  et avec un angle de 42 degrés. Avec la formule de calcul Du volume d’un cône on obtient un volume d’imagerie de 16 662.21 m cubes (à revoir). Ainsi d’après l’équation 4.3, le capteur obtient une note parfaite de 1.0 et alors un taux de satisfaction de 5\%.
-https://www.trailcampro.com/products/reconyxhc600review?variant=8129224605784 42 degré 30m
 
-\textbf{Capacité de stockage des données:}
+\textbf{Capacité de stockage des données:} Le disque dur du type HDD énoncé à la section 5.2.6.4 est utilisé pour servir de système de stockage des données. Celui qui sera utilisé pour la réalisation de ce concept permet de stocker jusqu’à 1 To de données, avec une capacité de 200000 photographies. Pour évaluer cette capacité on se sert de notre équation \ref{eq:bareme_stockage}. Ainsi on obtient la note de 0.8 soit un pourcentage de satisfaction de 4\%.
+\vspace{5mm}
 
-  Le disque dur du type HDD énoncé à la section 5.2.6.4 est utilisé pour servir de système de stockage des données. Celui qui sera utilisé pour la réalisation de ce concept permet de stocker jusqu’à 1 To de données, avec une capacité de 200000 photographies. Pour évaluer cette capacité on se sert de notre équation 4.4 au point 4.2.4. Ainsi on obtient la note de 0.8 soit un pourcentage de satisfaction de 4\%.
   
-\textbf{Durée de vie de l’alimentation du système:}
-
- En ce qui concerne l’alimentation, c’est le panneau solaire qui est utilisé pour alimenter le système. Ce panneau typiquement conçu pour cette caméra donne la possibilité d’avoir de l’énergie en continue. Il faut noter que, pour ce projet, nous supposons que l’hiver dure 4 mois soit de janvier à avril et que la productivité des panneaux solaire au Québec est de 10/100 pendant hiver. Ainsi pour les 8 mois restants de l’année on a une note parfaite de 1 car les panneaux alimentent à plein régime notre système et pour les 4 mois de l’hiver une note de 0.1  ce qui fait une note totale annuelle de 0.7 obtenue en faisant la moyenne des notes. Le pourcentage est alors de 3.5\%.
+\textbf{Durée de vie de l’alimentation du système:} En ce qui concerne l’alimentation, c’est le panneau solaire qui est utilisé pour alimenter le système. Ce panneau typiquement conçu pour cette caméra donne la possibilité d’avoir de l’énergie en continue. Il faut noter que, pour ce projet, nous supposons que l’hiver dure 4 mois soit de janvier à avril et que la productivité des panneaux solaire au Québec est de 10/100 pendant hiver. Ainsi pour les 8 mois restants de l’année on a une note parfaite de 1 car les panneaux alimentent à plein régime notre système et pour les 4 mois de l’hiver une note de 0.1  ce qui fait une note totale annuelle de 0.7 obtenue en faisant la moyenne des notes. Le pourcentage est alors de 3.5\%.
+\vspace{5mm}
  
-\textbf{Acheminement des infos:}
+ 
+\textbf{Acheminement des informations:} Pour acheminer les données au centre de control, l’option utilisée pour ce concept n’est autre que l’acheminement manuel c’est-à-dire qu’il y aura un opérateur qui va se déplacer pour atteindre le système au lieu de fixation et récupérer le disque Dur HDD utilisé pour stocker les donner. Un plongeur normal peut atteindre la profondeur de 200 m ainsi quand on utilise l’équation \ref{eq:bareme_acheminement_infos} on obtient la note de 0.63 ce qui équivaut à un pourcentage de 3.18 \%
+\vspace{5mm}
 
-Pour acheminer les données au centre de control, l’option utilisée pour ce concept n’est autre que l’acheminement manuel c’est-à-dire qu’il y aura un opérateur qui va se déplacer pour atteindre le système au lieu de fixation et récupérer le disque Dur HDD utilisé pour stocker les donner. Un plongeur normal peut atteindre la profondeur de 200 m ainsi quand on utilise l’équation 4.6 on obtient la note de 0.63 ce qui équivaut à un pourcentage de 3.18 \%
-\textbf{Fiabilité du système de sécurité:}
 
-La sécurité est un aspect important de notre projet et pour satisfaire la nécessité d’avoir un système sécurisé pour ce concept, on privilégie le partenariat avec un tiers spécialisé en sécurité tel que détaillé dans le point 5.2.8.3. Ainsi cette méthode nous permet d’avoir 3  couches de sécurité et en se référant à l’équation 4.7 on obtient la note de 0.88 équivalent du pourcentage de 4.42\%.
+\textbf{Fiabilité du système de sécurité:} La sécurité est un aspect important de notre projet et pour satisfaire la nécessité d’avoir un système sécurisé pour ce concept, on privilégie le partenariat avec un tiers spécialisé en sécurité tel que détaillé dans le point 5.2.8.3. Ainsi cette méthode nous permet d’avoir 3  couches de sécurité et en se référant à l’équation \ref{eq:bareme_sécurité} on obtient la note de 0.88 équivalent du pourcentage de 4.42\%.
+\vspace{5mm}
 
-\textbf{Résistance a la profondeur :}
 
-Rappelons que notre système doit être capable de fonctionner à une profondeur de 15.25m sous l’eau. La caméra utilisée pour ce concept sera dotée d’un revêtement lui permettant d’être submersible a une profondeur de 50m. Ainsi en utilisant l’équation 4.8 on obtient la note de 0.14 qui équivaut à un taux de satisfaction de 0.54\%
+\textbf{Résistance a la profondeur:} Rappelons que notre système doit être capable de fonctionner à une profondeur de 15.25m sous l’eau. La caméra utilisée pour ce concept sera dotée d’un revêtement lui permettant d’être submersible a une profondeur de 50m. Ainsi en utilisant l’équation \ref{eq:bareme_profondeur} on obtient la note de 0.14 qui équivaut à un taux de satisfaction de 0.56\%
+\vspace{5mm}
 
-\textbf{Taille des spécimens observés:}
 
-Avec le volume d’imagerie assez grand, notre capteur est capable d’observé des spécimens dont la taille est largement superieure à notre limite evoquée au point 4.2.10 . Ceci permet à notre capteur d’obtenir la note de 1.0 avec la formule 4.9. Le taux de satisfaction correspondant est de 4\% car la pondération est de 4\%
+\textbf{Taille des spécimens observés:} Avec le volume d’imagerie assez grand, notre capteur est capable d’observé des spécimens dont la taille est largement supérieure à notre limite evoquée au point 4.2.10 . Ceci permet à notre capteur d’obtenir la note de 1.0 avec la formule \ref{eq:bareme_taille_poisson}. Le taux de satisfaction correspondant est de 4\% car la pondération est de 4\%
+\vspace{5mm}
 
-\textbf{Nombre de fonctionnalité de l’alarme:}
 
-Le système pour fonctionnalité alarme utilisé est le Pushover message API. Ce système rempli quasiment tous les besoins physiques du projet, il est capable d’envoyer 7000 notifications par mois ce qui est amplement suffisant. Ce qui lui a valu la note de 1.0 et alors un taux de satisfaction de 4\%.
+\textbf{Nombre de fonctionnalités de l’alarme:} Le système pour fonctionnalité alarme utilisé est le Pushover message API. Ce système rempli quasiment tous les besoins physiques du projet, il est capable d’envoyer 7000 notifications par mois ce qui est amplement suffisant. Ce qui lui a valu la note de 1.0 et alors un taux de satisfaction de 4\%.
+\vspace{5mm}
 
-\textbf{Puissance de calcul:}
 
-En ce qui concerne la puissance de calcul, on utilise la formule 4.11 pour attribuer une note. La vitesse de la carte graphique est de 3.2GHz ce qui donne une note de 131, et donc une note de 0.6 à l’ordinateur. Ceci permet d’obtenir un taux de satisfaction de 2.4\%
+\textbf{Puissance de calcul:} En ce qui concerne la puissance de calcul, on utilise la formule \ref{eq:bareme_gpu} pour attribuer une note. La vitesse de la carte graphique est de 3.2GHz ce qui donne une note de 131, et donc une note de 0.6 à l’ordinateur. Ceci permet d’obtenir un taux de satisfaction de 2.4\%
+\vspace{5mm}
 
-\textbf{Utilisation de l’interface graphique:}
 
-L’interface graphique principale utilisée est l’application et développée par Commentum. Cette compagnie comprend une équipe de développeur ayant plus de 21 ans d’expérience ce qui rend le travail simple et facile d’exécution. Selon le barème établi à la section 4.2.13, nous attribuons la note de 0.8, et donc un pourcentage de 1.6\%.
+\textbf{Utilisation de l’interface graphique:} L’interface graphique principale utilisée est l’application et développée par Commentum. Cette compagnie comprend une équipe de développeur ayant plus de 21 ans d’expérience ce qui rend le travail simple et facile d’exécution. Selon le barème \ref{UIG}, nous attribuons la note de 0.8, et donc un pourcentage de 3.2\%.
+\vspace{5mm}
+
 
 \subsubsection{Performances}
 
-\textbf{Précision du logiciel de reconnaissance : }
+\textbf{Précision du logiciel de reconnaissance:}
+Le concept 3 utilise un réseau de neurone  de haute qualité et avec un entraînement de qualité avec le nombre de poisson demandé, on peut s’attendre à un taux de détection assez important. Jumelé avec le capteur Hyperfire on estime un taux de 80\% et donc une note de 0.37 d’après l’équation \ref{eq:bareme_precision} par conséquent le taux de satisfaction pour ce critère est de 5.51\%
+\vspace{5mm}
 
-...
 
-\textbf{Précision de la régulation : }
+\textbf{Précision de la régulation de la température:}
+La précision de la température régulée est évaluée selon la fonction \ref{eq:bareme_regul}. Pour réguler la température on utilise la pâte thermique et radiateur. Cette méthode nous donne une précision de 1\% près donc autour de 50\% d’écart d’après le point 4.3.2. Ainsi une note de 0.2 est obtenue pour ce critère et par conséquent un taux de satisfaction de 0.4\%.
+\vspace{5mm}
 
-La précision de la température régulée est évaluée selon la fonction 4.13. Pour réguler la température on utilise la pâte thermique et radiateur. Cette méthode nous donne une précision de 1\% près donc autour de 50\% d’écart d’après le point 4.3.2. Ainsi une note de 0.2 est obtenue pour ce critère et par conséquent un taux de satisfaction de 0.4\%.
 
-\textbf{Précision de la mesure de température : }
+\textbf{Précision de la mesure de température:} En ce qui concerne la mesure de la température, notre capteur qui est la camera hyperfire nous donne déjà cette possibilité avec une précision de plus ou moins 1\%. Alors notre formule \ref{eq:bareme_precision_temperature} nous donne une note de 0.2 et donc un taux de satisfaction de 0.4\%.
+\vspace{5mm}
 
-En ce qui concerne la mesure de la température, notre capteur qui est la camera hyperfire nous donne déjà cette possibilité avec une précision de plus ou moins 1\%. Alors notre formule 4.14 nous donne une note de 0.2 et donc un taux de satisfaction de 0.4\%.
 
-\textbf{Précision de la mesure du temps : }
-
-Comme pour la mesure de la température, notre super capteur offre également la date et l’heure de la prise d’image. Le fournisseur de la camera affirme que les images sont prises avec un retard de 0.2s ce qui peut etre considéré comme etant l’erreur et etre utilisé dans l’equation 4.15 .Pour cela, la note de 0.96 est attribuée et le taux de satisfaction de 1.93\% au critère.
+\textbf{Précision de la mesure du temps:} Comme pour la mesure de la température, notre super capteur offre également la date et l’heure de la prise d’image. Le fournisseur de la camera affirme que les images sont prises avec un retard de 0.2s ce qui peut etre considéré comme etant l’erreur et etre utilisé dans l’equation \ref{eq:bareme_precision_temps} .Pour cela, la note de 0.96 est attribuée et le taux de satisfaction de 0.96\% au critère.
 
 
 \subsubsection{Coûts}
 
 
-\textbf{Coûts de main d’œuvre : }
+\textbf{Coûts de main d’œuvre:} Un des critères importants de ces projets c’est dans doute le respect des contraintes liées aux couts. Parmi ces couts on a ceux liés à la main d’œuvre. Ces couts sont calculés en faisant la somme de : 
+\begin{enumerate}
+    \item Coûts pour identifier les poissons et compiler les données par un tiers au point 5.2.4.3 : 35000\$
+    \item Coûts pour la formation du personnel sur la sécurité des systèmes : 4h * 100/h = 400\$
+    \item Coûts pour le commentum : 4000\$ ( La compagnie performe en fonction du montant offert).
+\end{enumerate}
 
-Un des critères importants de ces projets c’est dans doute le respect des contraintes liées aux couts. Parmi ces couts on a ceux liés à la main d’œuvre. Ces couts sont calculés en faisant la somme de : 
--	Couts pour identifier les poissons et compiler les données par un tiers au point 5.2.4.3 : 35000
--	Couts pour la formation du personnel sur la sécurité des systèmes : 4h * 100/h = 400 dollars
--	Couts pour le commentum ??????
-Ce qui fait un total de 35400 pour la main d’œuvre. En utilisant l’équation 4.17 on obtient la note de 0.11 qui correspond alors au pourcentage de 1.38\%
+Ce qui fait un total de 39400 pour la main d’œuvre. En utilisant l’équation \ref{eq:bareme_cout_logiciel} on obtient la note de 0.015 qui correspond alors au pourcentage de 0.18\%
+\vspace{5mm}
 
-\textbf{Coûts du matériel : }
+\textbf{Coûts du matériel:}
 
-Le cout du matériel est calculé en faisant la somme de tout matériel nécessaire à la réalisation du concept. Il s’agit de :
--	Capteur HP2 hyperfine : 660
--	Panneau solaire : 299.99
--	Hp Pavillon Poer 580-130 : 950
--	Disque dur HDD : 54.99
--	Couts pour régulation de température : 22 + 10 = 32
--	Pushover message API : 60 dollars ( pour une année)
-La somme de tous ces couts nous donne un total de 2056.98  .Ainsi en se servant de l’équation  4.18 la note de 0.79  est obtenue ce qui vaut donc à un pourcentage de 2.38\%.
+Le coût du matériel est calculé en faisant la somme de tout matériel nécessaire à la réalisation du concept. Il s’agit de :
+\begin{enumerate}
+    \item Capteur HP2W hyperfire : 660\$
+    \item Panneau solaire : 299.99\$
+    \item Hp Pavilion Power 580-130 : 950\$
+    \item Disque dur HDD : 54.99\$
+    \item Coûts pour la régulation de température : 22 + 10 = 32\$
+    \item Pushover message API : 60 dollars (pour une année)
+\end{enumerate}
+
+La somme de tous ces coûts nous donne un total de 2056.98\$. Ainsi en se servant de l’équation \ref{eq:bareme_cout_materiel} la note de 0.79 est obtenue ce qui vaut donc à un pourcentage de 2.38\%.
 
 
 \subsection{Concept 4}
 
+Ce concept assemble les solutions les plus économiques.
+
 \subsubsection{Qualité du produit}
 
-\textbf{Résolution du capteur:} La GoFishCam présente 3 modes d'enregistrement, allant du 1080 pixels à 720 pixels avec 60 images par seconde. Le capteur peut atteindre une résolution maximale d'environ 2,07 Mégapixels. Cette résolution modeste permet d'obtenir une note de 2\% pour ce critère. \vspace{5mm}
+\textbf{Résolution du capteur:} La GoFishCam présente 3 modes d'enregistrement, allant du 1080 pixels à 720 pixels avec 60 images par seconde. Le capteur peut atteindre une résolution maximale d'environ 2,07 Mégapixels. Cette résolution modeste permet d'obtenir une note de 2,4\% pour ce critère. \vspace{5mm}
 
 \textbf{Identification des poissons:} L'utilisation du réseaux de neurones avec la librairie Tensorflow est adéquate dans le cadre du projet. En effet, avec les milliers de photos dans la banque de données, il sera facile d'identifier les poissons malgré la faible résolution du capteur. Cette solution permet de satisfaire amplement le critère de 10\%. \vspace{5mm}
 
@@ -379,22 +428,23 @@ La somme de tous ces couts nous donne un total de 2056.98  .Ainsi en se servant 
 
 \textbf{Capacité de stockage des données:} La plateforme Cloud de hubiC offre un service de stockage à faible coût. En effet, pour seulement 75\$, il sera possible d'offrir 10 000 Go de stockage pour le client. Pour sa grande efficacité et son faible coût, le critère obtient le taux de satisfaction de 5\%. \vspace{5mm}
 
-\textbf{Durée de vie de l'alimentation:} Ce concept propose l'utilisation de batterie au lithium afin d'alimenter les différentes composantes du système. Une quantité suffisante de batterie au lithium devrait amplement suffire à alimenter ce simple concept. Le capteur utilise au préalable une batterie rechargeable de type Li-Ion. L'utilisation de batterie au lithium facilitera donc l'alimentation du capteur. Puisque le concept nécessite plusieurs batteries au lithium afin de répondre à une durée de vie minimale de 14 jours, on évalue la solution à une note de 0,6 correspondant à un taux de satisfaction de 3\%. \vspace{5mm}
-
-\textbf{Acheminement des informations:} Le concept utilise un capteur ayant une connexion WiFi préalablement intégré. En effet, le capteur GoFishCam achemine les vidéos d'enregistrement à l'aide d'une application mobile. Il suffit donc de réutiliser cette connexion WiFi afin de l'acheminer au logiciel du concept. La profondeur maximale du capteur ayant un impact significatif sur l'acheminement, ce critère obtient une note de 2\%. \vspace{5mm}
-
-\textbf{Fiabilité du système de sécurité:} L'accès internet sécurisé est idéal pour ce concept. En effet, puisque la base de données sera accessible par application web, il est nécessaire que celle-ci soit protégée. Afin d'accéder au site web, un nom d'utilisateur ainsi qu'un mot de passe seras requis. Il s'agit d'un système de sécurité à 1 couche. Dans ce cas, le critère obtient une note de 0,86.
+\textbf{Durée de vie de l'alimentation:} Ce concept propose l'utilisation de batterie au lithium afin d'alimenter les différentes composantes du système. C'est un total de 16 batteries au lithium Energizer L91 AA qui seront utilisées pour fournir l'alimentation nécessaire aux composantes du capteur. Cette source d'énergie fournie une grand quantité d'énergie tout en étant économique et fiable. Le capteur utilise au préalable une batterie rechargeable de type Li-Ion. L'utilisation de batterie au lithium facilitera donc l'alimentation du capteur à l'aide d'un cable USB-C. On évalue que le système restera alimenté pour une période de 16.33 jours à l'aide de ces batteries branchées en série. Ainsi, le critère obtient une note de 0.26 selon l'équation et donc un taux de satisfaction de 1.3\%. \ref{eq:bareme_duree_batterie}.
 \vspace{5mm}
 
-\textbf{Résistance à la profondeur:} Le capteur optique de la GoFishCam peut atteindre une profondeur de 150 mètres. Avec une telle résistance à la profondeur, la solution obtient une note de 0,5, soit un taux de satisfaction de 1\%. \vspace{5mm}
+\textbf{Acheminement des informations:} Le concept utilise un capteur ayant une connexion WiFi préalablement intégré. En effet, le capteur GoFishCam achemine les vidéos d'enregistrement à l'aide d'une application mobile. Il suffit donc de réutiliser cette connexion WiFi afin de l'acheminer au logiciel du concept. La profondeur maximale du capteur ayant un impact significatif sur l'acheminement, ce critère obtient une note 0.4 ce qui donne un taux de satisfaction de 2\%. \vspace{5mm}
 
-\textbf{Taille des spécimens observés:} La GoFishCam permet d'enregistrer des poissons ayant une taille minimale de 2,24 cm. Cette donnée a été calculée à l'aide des équations fournies à l'annexe \ref{annexe:taille_poissons}. Ainsi, grâce à son capteur optique, le concept permet d'obtenir une note de 0,85 pour ce critère. L'équation \ref{eq:bareme_taille_poisson} permet de déterminer que la solution offre un taux de satisfaction de 1,7\%.
+\textbf{Fiabilité du système de sécurité:} L'accès internet sécurisé est idéal pour ce concept. En effet, puisque la base de données sera accessible par application web, il est nécessaire que celle-ci soit protégée. Afin d'accéder au site web, un nom d'utilisateur ainsi qu'un mot de passe seras requis. Il s'agit d'un système de sécurité à 1 couche. Dans ce cas, le critère obtient une note de 0,86.Par consequent un taux de satisfaction de 3\%.
+\vspace{5mm}
+
+\textbf{Résistance à la profondeur:} Le capteur optique de la GoFishCam peut atteindre une profondeur de 150 mètres. Avec une telle résistance à la profondeur, la solution obtient une note de 0,5, soit un taux de satisfaction de 2\%. \vspace{5mm}
+
+\textbf{Taille des spécimens observés:} La GoFishCam permet d'enregistrer des poissons ayant une taille minimale de 2,24 cm. Cette donnée a été calculée à l'aide des équations fournies à l'annexe \ref{annexe:taille_poissons}. Ainsi, grâce à son capteur optique, le concept permet d'obtenir une note de 0,85 pour ce critère. L'équation \ref{eq:bareme_taille_poisson} permet de déterminer que la solution offre un taux de satisfaction de 3,4\%.
 \vspace{5mm}
 
 \textbf{Nombre de fonctionnalités de l'alarme:} La plateforme Urban Airship offre un système d'alarme idéal pour le concept. En effet, cette solution est avantageuse puisqu'elle est gratuite. De plus, il est possible d'implanter ce système sur l'ordinateur Hp Pavilion Power 580-130 choisis pour ce concept. Urban Airship propose 2 principales fonctionnalités, ce qui attribue une note de 0,11 pour ce critère.
 \vspace{5mm}
 
-\textbf{Puissance de calcul:} Le concept utilise un ordinateur modeste afin de stocker les données enregistrées par le capteur. Le coût du Hp Pavilion Power 580-130 est relativement faible et réponds aux besoins du client. En effet, sa carte graphique permet d'obtenir un taux de satisfaction de 0,64\% pour le critère. 
+\textbf{Puissance de calcul:} Le concept utilise un ordinateur modeste afin de stocker les données enregistrées par le capteur. Le coût du Hp Pavilion Power 580-130 est relativement faible et réponds aux besoins du client. En effet, sa carte graphique permet d'obtenir un taux de satisfaction de 1,28\% pour le critère. 
 \vspace{5mm}
 
 \textbf{Utilisation de l'interface graphique:} Ce concept propose la création d'une application web à l'aide d'Ajax afin d'afficher les données. Ajax possède des caractéristique intéressante notamment pour la rapidité de l'accès aux données. L'esthétisme du site web sera laissée à la compagnie de développement Csoft Technology. Le concept propose ainsi une solution ayant une note de 0,6 pour ce critère.
@@ -402,12 +452,12 @@ La somme de tous ces couts nous donne un total de 2056.98  .Ainsi en se servant 
 
 \subsubsection{Performances}
 
-\textbf{Précision du logiciel de reconnaissance:} Le concept utilise un excellent système d'identification de poisson. Cependant, il est possible que la faible résolution du capteur affecte les images capturées, ce qui aura un impact pour l'identification. Ainsi, la précision du logiciel de reconnaissance obtient une note de 9\%. \vspace{5mm}
+\textbf{Précision du logiciel de reconnaissance:} Le concept utilise un excellent système d'identification de poisson. Cependant, il est possible que la faible résolution du capteur affecte les images capturées, ce qui aura un impact pour l'identification. Ainsi, la précision du logiciel de reconnaissance obtient une note de 7\%. \vspace{5mm}
 
-\textbf{Précision de la régulation de la température:} L'utilisation du module Peltier permet de réguler la température interne du système afin qu'elle ne dépasse pas les contraintes établies. Il suffit simplement d'appliquer la puissance désirée à la plaque afin qu'elle régule la température. Le coût pour un tel système est également abordable, ce qui convient au concept.
+\textbf{Précision de la régulation de la température:} L'utilisation du module Peltier permet de réguler la température interne du système afin qu'elle ne dépasse pas les contraintes établies. Il suffit simplement d'appliquer la puissance désirée à la plaque afin qu'elle régule la température. Le coût pour un tel système est également abordable, ce qui convient au concept. Le module Peltier est précis à 1\%. La précision de la régulation obtient alors le taux de satisfaction maximale de 2\%.
 \vspace{5mm}
 
-\textbf{Précision de la mesure de température:} Afin de mesurer la température extérieure, le concept 4 utilise le thermomètre Accu-Temp et une diode 1n4148 accompagné d'un Arduino Uno pour la mesure de température interne. 
+\textbf{Précision de la mesure de température:} Afin de mesurer la température extérieure, le concept 4 utilise le thermomètre Accu-Temp. Ce thermomètre mesure 0,1° de différence entre la mesure réelle et la mesure enregistrée. Au final, le critère obtient une note de 0,99 correspondant à un taux de satisfaction de 1,98\%.
 \vspace{5mm}
 
 \textbf{Précision de la mesure du temps:} Les données compilées doivent notamment fournir la date et l'heure de l'image captée. La GoFishCam possède un système intégré mesurant ces informations. En effet, les vidéos sont envoyés au centre de données accompagnés de la date et l'heure de l'enregistrement. Puisqu'il n'y a aucun délais entre l'enregistrement et la mesure du temps, l'écart absolue entre l'heure mesurée et l'heure réelle est pratiquement nulle. De cette façon, le taux de satisfaction maximal de 1\% est atteint pour ce critère. 
@@ -415,13 +465,46 @@ La somme de tous ces couts nous donne un total de 2056.98  .Ainsi en se servant 
 
 \subsubsection{Coûts}
 
-\textbf{Coût de main-d'oeuvre:}
+\textbf{Coût de main d'oeuvre:} Considérant que le concept utilise une application web simple avec Ajax, le prix n'est certainement pas élevée. En effet, la solution ne propose pas de modèle ce qui laisse davantage de liberté à la compagnie Csoft Technology. De plus, l'identification des poissons se fera par réseaux de neurones. Au final, les coûts de main d'oeuvre montent à environ 37 000\$. Le taux de satisfaction pour ce critère est de 9\% à l'aide de l'équation \ref{eq:bareme_cout_logiciel}.
 \vspace{5mm}
 
 \textbf{Coût de matériel:} L'ensemble des composantes du concept nécessite des frais de 1426,79\$. Ce concept est très avantageux au final puisqu'il n'est pas dispendieux. D'ailleurs, le critère obtient une note de 1 correspondant à un taux de satisfaction de 3\%.
 \vspace{5mm}
 
+\section{Tableau synthèse}
 
+Le tableau \ref{t:synthese_resultat} ci-dessous résume les valeurs obtenues lors de leur analyse en fonctions de nos critères d'évaluation établis dans le cahier des charges:
+
+
+\begin{table}[]
+\begin{tabular}{|p{8cm}|c|c|c|c|}
+\hline
+Critères & Concept 1  & Concept 2 & Concept 3 & Concept 4 \\ \hline
+\ref{Asssqualite} Qualité du produit & & & & \\ \hline
+\ref{Rdc} Résolution du capteur [Mpx]& 12 & 5 & 3 & 2,07 \\ \hline
+\ref{Idp} Identification des poissons & 0.6 & 0.99 & 0.99 & 1 \\ \hline
+\ref{Vdi} Volume d'analyse [m$^3$] & 1.672m$^3$ & 2 & 19,5 & 4 \\ \hline
+\ref{subsection:capacite_stockage} Capacité de stockage [Go] & 10 To & 240 & 1 To      & 10 To \\ \hline
+\ref{subsection:dureeviealim} Durée de vie de l'alimentation [jours] & 16,33 & $\infty$ & 8 mois & 16,33 \\ \hline
+\ref{Adi} Acheminement des informations [m] & 250 & 76,2 & 200 & 250 \\ \hline
+\ref{syssecu} Fiabilité du système de sécurité [couches] & 2 & 2 & 3 & 3 \\ \hline
+\ref{Respro} Résistance à la profondeur du capteur [m] & 57,21 & 4588 & 50 & 150 \\ \hline
+\ref{tmdso} Taille maximale des spécimens observés [cm] & 136 & 140 & 140 & 140 \\ \hline
+\ref{nombrefonc} Nombre de fonctionnalités liées à l'alarme & 0,22 & & 1 & 0,11 \\ \hline
+\ref{puisca} Puissance de calcul & 0,77 & & 0,6 & 0,6 \\ \hline
+\ref{UIG} Utilisation de l'interface graphique & 1 & 0,8 & & 0,6 \\ \hline
+Performances & & & & \\ \hline
+\ref{Pldr} Précision du logiciel de reconnaissance & 1 & 1 & 0.37 & 0,47 \\ \hline
+\ref{Ptree} Précision de la température régulée                      & 1          & 0,96      & 0,5       & 1         \\ \hline
+\ref{Pdlmdt} Précision de la mesure de la température régulée        & 1          & 0,96      & 0,2       & 1         \\ \hline
+\ref{Pdlmdtasd} Précision de la mesure du temps & 1 & 1 & 0,96 & 0,99 \\ \hline
+\ref{Coutsgloba} Coûts & & & & \\ \hline
+\ref{cenmaindo} Coût de main d'oeuvre [\$] & 40 000 & 40 000 & 35 000 & 37 000 \\ \hline
+\ref{ccdpsdsfsd} Coût du matériel [\$] & & 2436,69 & 2058,96 & 1426,79 \\ \hline
+\end{tabular}
+\caption{Synthèse des résultats des concepts}
+\label{t:synthese_resultat}
+\end{table}
 
 %section requin marteau:
 %\ref{annexe:equation_boitier}

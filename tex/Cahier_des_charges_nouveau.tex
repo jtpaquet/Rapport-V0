@@ -64,9 +64,11 @@ Cette section est destinée à la présentation des critères par rapport aux ob
 \newpage{}
 
 \section{Assurer la qualité de conception}
+\label{Asssqualite}
 Les critères présents dans cette section représentent une pondération de 50\% du projet. Ces critères permettent de distinguer la qualité des concepts de solution.  
 
 \subsection{Résolution du capteur}
+\label{Rdc}
 
 %\begin{wrapfigure}{R}{6cm}
 %    \centering
@@ -95,6 +97,7 @@ où $x$ est la résolution du capteur en Mpx.
 
 
 \subsection{Identification des poissons}
+\label{Idp}
 
 \begin{figure}[!htb]
     \centering
@@ -114,6 +117,7 @@ La quantité de poissons reste également à considérer dans l'implantation du 
 \end{equation}
 
 \subsection{Volume d'imagerie}
+\label{Vdi}
 
 Le volume d'imagerie est le volume dans lequel il est possible de prendre des mesures. Plus celui-ci est grand, plus il y de chance qu'il y aura un poisson et plus il sera facile de récolter les mesures. C'est pourquoi il est dans notre intérêt de le maximiser.
 
@@ -142,6 +146,7 @@ La collecte de données est un aspect primordial dans l'énonciation des critèr
 
 
 \subsection{Durée de vie de l'alimentation du système}
+\label{subsection:dureeviealim}
 
 Dans l'objectif d'atteindre une autonomie minimale de deux semaines, il est nécessaire d'optimiser le système d'alimentation du capteur. % De plus, afin de ne pas limiter la disponibilité du capteur, il est idéal d'utiliser une batterie à cet effet. Une batterie rechargeable permettrait également d'augmenter significativement la durée de vie du capteur optique.
 La durée de vie minimale demandée est de deux semaines. On considère que la composante chargée d'alimenter le système a une note de 0.8 si celui-ci est en mesure d'accomplir deux cycles de 14 jours. De cette manière, l'opérateur possède un cycle additionnel en cas d'oubli de rechargement. L'autonomie de la durée de vie de l'alimentation est évaluée selon l'équation \ref{eq:bareme_duree_batterie}. Si le système ne peut fournir de l'alimentation au capteur pour une durée de 14 jours, celui-ci sera rejeté.
@@ -156,6 +161,7 @@ La durée de vie minimale demandée est de deux semaines. On considère que la c
 
 
 \subsection{Acheminement des informations}
+\label{Adi}
 
 Le système doit être capable de fonctionner à des profondeurs pouvant atteindre les 15.25m sous l’eau. En estimant qu'un poste de contrôle se situe au maximum à 50m de la position du capteur au niveau de l'eau, la distance minimale pour acheminer les données serait d'environ 53m. Puisque le lac le plus profond a une profondeur d'environ 280m~\cite{Lac_walker}, On estime que le critère sera pleinement rempli si le système peut acheminer les données jusqu'à 284m. Ainsi, nous évaluerons ce critère selon l'équation \ref{eq:bareme_acheminement_infos} en utilisant le barème suivant avec $x$ comme étant la distance qui sépare le poste de contrôle local et le système en mètres (m). Si le système ne peut acheminer les informations au-delà de 53m, il sera rejeté automatiquement.
 
@@ -169,6 +175,7 @@ Le système doit être capable de fonctionner à des profondeurs pouvant atteind
 
 
 \subsection{Fiabilité du système de sécurité}
+\label{syssecu}
 
 %\begin{wrapfigure}{R}{6cm}
 %    \centering
@@ -181,12 +188,14 @@ La confidentialité et l'authenticité des données est primordiale dans un tel 
 
 \begin{equation}
     y =\frac{e^{x-1}-1}{e^4-1}
+    y = 0.849e^{0.014x}
     \label{eq:bareme_sécurité}
 \end{equation}
 
 \subsection{Résistance à la profondeur du capteur}
+\label{Respro}
 
-La pondération attribuée à ce critère est de 2\%. Le MFA demande un capteur submersible jusqu'à 15.25m de profondeur au minimum. Sachant que le lac le plus profond au Québec est le Lac Walker avec une profondeur de 280m \cite{Lac_walker}, il est possible de déterminer un barème linéaire entre 15.25 et 280m tel que présenté à l'équation \ref{eq:bareme_profondeur}.
+La pondération attribuée à ce critère est de 4\%. Le MFA demande un capteur submersible jusqu'à 15.25m de profondeur au minimum. Sachant que le lac le plus profond au Québec est le Lac Walker avec une profondeur de 280m \cite{Lac_walker}, il est possible de déterminer un barème linéaire entre 15.25 et 280m tel que présenté à l'équation \ref{eq:bareme_profondeur}.
 
 \begin{equation}
 y(x) = \begin{cases}
@@ -197,29 +206,28 @@ y(x) = \begin{cases}
 \end{equation}
 où $x$ est la profondeur maximale à laquelle le capteur peut être submergé en mètres.
 
-\subsection{Plage de température opérationnelle du capteur}
-
-Une pondération de 2\% est attribuée à ce critère. Le MFA demande que le capteur opère dans une plage de +5°C et -10°C par rapport à l'eau. La température de l'eau peut varier de 4 à 25°C. Le capteur doit donc être opérationnel entre -6 et 30°C. Le barème pour ce critère est montré à la table \ref{t:bareme_resistance_temperature}.
-
-\begin{table}[htp]
-   \footnotesize
-   \centering
-   \begin{tabular}{|c|c|}
-        \hline
-        Résistance à la température & Barème\\
-        \hline
-        \hline
-        Le capteur est opérationnel sur la plage de -6° à 30°C & 1.0 \\
-        \hline
-        Le capteur n'est pas opérationnel sur la plage de -6° à 30°C & Rejeté \\
-        \hline
-   \end{tabular}
-   \caption{Barème de la plage de température opérationnelle du capteur}
-   \label{t:bareme_resistance_temperature}
-\end{table}
+%\subsection{Plage de température opérationnelle du capteur} 
+%Une pondération de 2\% est attribuée à ce critère. Le MFA demande que le capteur opère dans une plage de +5°C et -10°C par rapport à l'eau. La température de l'eau peut varier de 4 à 25°C. Le capteur doit donc être opérationnel entre -6 et 30°C. Le barème pour ce critère est montré à la table \ref{t:bareme_resistance_temperature}. 
+%\begin{table}[htp]
+   %\footnotesize
+   %\centering
+   %\begin{tabular}{|c|c|}
+        %\hline
+        %Résistance à la température & Barème\\
+        %\hline
+        %\hline
+        %Le capteur est opérationnel sur la plage de -6° à 30°C & 1.0 \\
+        %\hline
+        %Le capteur n'est pas opérationnel sur la plage de -6° à 30°C & Rejeté \\
+        %\hline
+   %\end{tabular}
+   %\caption{Barème de la plage de température opérationnelle du capteur}
+   %\label{t:bareme_resistance_temperature}
+%\end{table}
 
 
 \subsection{Taille maximale des spécimens observables}
+\label{tmdso}
 
 La pondération attribuée à ce critère est de 4\%. Le MFA demande de pouvoir imager des espèces qui ont une taille minimum de 6 cm. Ça veut dire qu'il faut être capable d'imager des poissons d'au minimum 6cm, mais c'est mieux si il est possible d'imager encore plus petit. Le barème à l'équation \ref{eq:bareme_taille_poisson} est établie selon une fonction exponentielle entre 0 et 6 cm puisqu'une différence entre 0.1 cm et 0.6 cm vaut moins qu'une différence entre 5 et 5.5 cm. Le barème est présenté à l'équation \ref{annexe:bareme_exp_poisson} où les paramètres $a$ et $b$ sont ajustés pour avoir la forme de courbe voulue.
 
@@ -236,8 +244,9 @@ où $x$ est la taille minimale des spécimens observables en cm.
 
 
 \subsection{Nombre de fonctionnalités reliées à l'alarme}
+\label{nombrefonc}
 
-La pondération associée à ce critère est de 2\%. En cas de problème au niveau du transfert de donnée ou de l'opération du capteur, le système doit envoyer une alarme à un responsable. Le nombre de fonctionnalités reliées à l'envoie de l'alarme différencie la qualité entre chaque concept d'alarme. Le dispositif de génération d'alarme doit avoir au minimum 1 fonctionnalité d'alarme. Il est convenu qu'au delà de 10 fonctionnalités, les concepts deviennent équivalents et qu'ils ont une note de 1. Le barème est présenté à l'équation \ref{eq:bareme_etat_systeme}.
+La pondération associée à ce critère est de 4\%. En cas de problème au niveau du transfert de donnée ou de l'opération du capteur, le système doit envoyer une alarme à un responsable. Le nombre de fonctionnalités reliées à l'envoie de l'alarme différencie la qualité entre chaque concept d'alarme. Le dispositif de génération d'alarme doit avoir au minimum 1 fonctionnalité d'alarme. Il est convenu qu'au delà de 10 fonctionnalités, les concepts deviennent équivalents et qu'ils ont une note de 1. Le barème est présenté à l'équation \ref{eq:bareme_etat_systeme}.
 
 \begin{equation}
     y(x) = \begin{cases}
@@ -250,8 +259,9 @@ La pondération associée à ce critère est de 2\%. En cas de problème au nive
 où $x$ est le nombre de fonctionnalités reliées à l'alarme.
 
 \subsection{Puissance de calcul}
+\label{puisca}
 
-La pondération de ce critère est de 2\%. La puissance de calcul sera déterminée par la performance de la carte graphique (source). Le barème est construit à partir d'un score qui reflète la vitesse moyenne effective de la carte graphique \cite{User_Benchmark_score}. La meilleure carte graphique a un score de 219 alors une note de 1 lui sera attribuée. Le barème sera établi de manière linéaire tel que montré à l'équation \ref{eq:bareme_gpu}.
+La pondération de ce critère est de 4\%. La puissance de calcul sera déterminée par la performance de la carte graphique (source). Le barème est construit à partir d'un score qui reflète la vitesse moyenne effective de la carte graphique \cite{User_Benchmark_score}. La meilleure carte graphique a un score de 219 alors une note de 1 lui sera attribuée. Le barème sera établi de manière linéaire tel que montré à l'équation \ref{eq:bareme_gpu}.
 
 \begin{equation}
     y = \frac{x}{219}
@@ -259,6 +269,7 @@ La pondération de ce critère est de 2\%. La puissance de calcul sera détermin
 \end{equation}
 
 \subsection{Utilisation de l'interface graphique}
+\label{UIG}
 
 \begin{table}[htb!]
    \footnotesize
@@ -284,13 +295,14 @@ La pondération de ce critère est de 2\%. La puissance de calcul sera détermin
    \label{t:bareme_interface}
 \end{table}
 
-Puisque l'optique principale de ce projet tourne autour une automatisation des tâches, l'aisance d'utilisation de l'interface lors de l'accès aux données et des opérations de maintenance bimensuelles rejoint tout autant la ligne directrice du design d'appareil (pondération de 5\%). La différenciation entre un interface graphique excellent et médiocre étant difficile à quantifier par calcul, on donnera un barème sous forme de charte, où la valeur la plus grande sera accordée à une qualification de "très intuitive" et la plus faible à "très difficile d'utilisation". La charte des barèmes est présentée à la table \ref{t:bareme_interface}. 
+Puisque l'optique principale de ce projet tourne autour une automatisation des tâches, l'aisance d'utilisation de l'interface lors de l'accès aux données et des opérations de maintenance bimensuelles rejoint tout autant la ligne directrice du design d'appareil (pondération de 4\%). La différenciation entre un interface graphique excellent et médiocre étant difficile à quantifier par calcul, on donnera un barème sous forme de charte, où la valeur la plus grande sera accordée à une qualification de "très intuitive" et la plus faible à "très difficile d'utilisation". La charte des barèmes est présentée à la table \ref{t:bareme_interface}. 
 
 
 \section{Offrir un système performant}
 La performance est un aspect important du projet. Cette section comprend des critères de précision afin d'assurer la performance du système. Une pondération de 20\% est attribué à l'ensemble des critères.
 
 \subsection{Précision du logiciel de reconnaissance}
+\label{Pldr}
 
 % \begin{wrapfigure}{R}{7cm}
 \begin{figure}[htb!]
@@ -309,6 +321,7 @@ Le logiciel de reconnaissance du poisson étant au coeur du projet de conception
 \end{equation}
 
 \subsection{Précision de la température régulée}
+\label{Ptree}
 
 La pondération attribuée à la précision de la régulation de la température est de 2$\%$. Le barème prend une forme exponentielle puisqu'un changement de précision près de 1$\%$ d'écart entraîne une plus grosse variation du barème qu'un écart autour de 50$\%$ d'écart. Les paramètres de la fonction exponentielle sont ajustés de manière à ce qu'un pourcentage d'écart de 0$\%$ donne 1 et un pourcentage d'écart de 50$\%$ donne 0.2.
 
@@ -319,6 +332,7 @@ La pondération attribuée à la précision de la régulation de la température
 où $x$ est la pourcentage d'écart entre la température du système en régime permanent et la température désirée. Il s'agit donc d'un pourcentage d'erreur statique.
 
 \subsection{Précision de la mesure de température}
+\label{Pdlmdt}
 
 La pondération attribuée à la précision de la régulation de la température est de 2$\%$. Le barème est basé sur une fonction exponentielle puisqu'il est généralement facile d'avoir une bonne précision pour mesurer la température. L'ajustement des paramètres est le même qu'à l'équation \ref{eq:bareme_regul} pour la régulation de la température.
 
@@ -329,6 +343,7 @@ La pondération attribuée à la précision de la régulation de la température
 où $x$ est le pourcentage d'écart entre la température mesurée et la température réelle.
 
 \subsection{Précision de la mesure du temps}
+\label{Pdlmdtasd}
 
 La pondération attribuée à la précision de la mesure du temps est de 1$\%$. Le barème est basé sur une fonction exponentielle puisqu'il prend en compte les très grandes erreurs sur la date et l'heure. L'ajustement des paramètres est fait de manière à ce qu'un écart nul donne une note de 1 et qu'un écart de 2 semaines ($1.2\cdot 10^6$s) donne une note de 0.2.
 
@@ -339,6 +354,7 @@ La pondération attribuée à la précision de la mesure du temps est de 1$\%$. 
 où $x$ est l'écart absolue entre l'heure mesurée et l'heure réelle en secondes.
 
 \section{Coûts}
+\label{Coutsgloba}
 
 Une limite des coûts a été établie : on ne peut dépasser 10 000 dollars de frais matériel et 40 000 dollars de coûts de main d'oeuvre. 
 
@@ -351,6 +367,7 @@ Ainsi, de manière générale, le barème pour un tel critère serait:
 \end{equation}
 
 \subsection{Coûts en main d'oeuvre}
+\label{cenmaindo}
 
 \begin{equation}
 y(x) = \begin{cases}
@@ -360,7 +377,8 @@ y(x) = \begin{cases}
     \label{eq:bareme_cout_logiciel}
 \end{equation}
 
-\subsection{Coûts de conception du produit}
+\subsection{Coûts du matériel}
+\label{ccdpsdsfsd}
 
 La première étape précédant l’utilisation de la machine, est sa conception. Cette partie est non négligeable dans le processus d’analyse des coûts de la machine car elle représente la plus grande source de dépense en matériaux. Afin de combler les besoins du Ministère, on cherche à minimiser les coûts totaux liés à la fabrication de la machine. %En parallèle, il faut limiter les coûts pour que le Ministère puisse économiser et favorisera ainsi le projet.
 Ainsi, la fonction décrivant l’efficacité par rapport au coût de production suit une forme suivante :
@@ -373,7 +391,7 @@ y(x) = \begin{cases}
     \label{eq:bareme_cout_materiel}
 \end{equation}
 
-Un système ne respectant pas la limite de 10000\$ en coûts de matériel sera rejeté. Considérant l'importance du respect des coûts de conception, une pondération de 4\% a donc été attribué à ce critère.
+Un système ne respectant pas la limite de 10000\$ en coûts de matériel sera rejeté. Considérant l'importance du respect des coûts de conception, une pondération de 3\% a donc été attribué à ce critère.
 
 
 %\section{Respect des contraintes}
