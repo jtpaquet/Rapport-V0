@@ -1,0 +1,42 @@
+\chapter{}
+
+\section{Équations pour la caméra Hyperfire HP2W}
+\label{annexe:eq_hyperfire}
+
+Selon les données du fabricant, le flash émis par la caméra peut se rendre jusqu'à 100 pieds \cite{HP2W}. Par contre, il faut imager des poissons de 6cm alors c'est plutôt son pouvoir de résolution qui détermineras la distance maximale du volume d'imagerie.
+
+La caméra Hyperfire HP2W a un capteur CMOS de 3MP avec un rapport hauteur largeur standard. En se fiant à un capteur CMOS 3MP standard, il est possible de déduire que la taille des pixels de la Hyperfire est de 2.2 $\mu$m \cite{CMOS_standard}. Puisque la focale est ajustable, on assume une focale de 3 mm. En reprenant l'équation \ref{eq:johnson}, la distance maximale à laquelle on peut imager un poisson de 6 cm est de 5.11 m.
+\begin{align*}
+    h &= 16t_\text{px} \frac{d_o}{f}\\
+    0.06 &= 16 \cdot (2.2\cdot10^{-6}) \frac{d_o}{0.003}\\
+    d_o &= 5.11\text{ m}
+\end{align*}
+En assumant un angle d'ouverture de 45° et un angle d'élévation de 30°, il est possible de trouver le volume d'imagerie avec l'équation \ref{eq:volume_imagerie} sachant que $D_f=5.11$ m et $D_n=0$ m.
+\begin{align}
+    V &= \frac{4}{3} \tan{\theta/2}\tan{\phi/2} (D_f^3-D_n^3)\\
+    V &= 18.5\text{ m}^3
+\end{align}
+Il s'agit toutefois d'une approximation étant donné que les spécifications sur le diamètre de la lentille n'étaient pas fournies. La taille de poisson minimale que l'on peut résoudre serait cependant de 6 cm.
+
+\section{Volume d'imagerie de la caméra GoFishCam}
+\label{annexe:eq_gofishcam}
+On peut reprendre la même logique pour la caméra GoFishCam. Elle est équipée d'une DEL pour la vision nocturne. Si la distance maximale d'imagerie n'est pas trop élevée, la lumière devrait se rendre.
+
+Elle a une résolution d'environ 2 MP. En se fiant sur un senseur standard de 2 MP, la taille d'un pixel serait de 1.4 $\mu$m \cite{CMOS_standard_2MP}. On assume encore une fois une focale de 3 mm.
+\begin{align*}
+    h &= 16t_\text{px} \frac{d_o}{f}\\
+    0.06 &= 16 \cdot (1.4\cdot10^{-6}) \frac{d_o}{0.003}\\
+    d_o &= 8.036\text{ m}
+\end{align*}
+Puisque cette distance est plus grande, on peut réduire le volume d'imagerie pour être capable de résoudre des poissons un peu plus petits. De plus, la lumière de la GoFishCam est vert pour ne pas perturber les poissons puisque son utilisation première est pour la pêche. La lumière ne se rend probablement pas jusqu'à 5.11 m. On pose donc la distance de champ lointain à 3.0 m. Par contre, avec une telle distance, il sera possible de résoudre des poissons plus petits. En reprenant la même équation, on trouve que le poisson le plus petit que l'on peut résoudre aurait une taille de 2.24 cm.
+\begin{align*}
+    h &= 16 t_\text{px} \frac{d_o}{f}\\
+    h &= 16 \cdot (1.4\cdot10^{-6}) \frac{3.0}{0.003}\\
+    h &= 0.038 \text{ m}
+\end{align*}
+Le volume d'imagerie serait alors de 4.00 m$^3$.
+\begin{align}
+    V &= \frac{4}{3} \tan{\theta/2}\tan{\phi/2} (D_f^3-D_n^3)\\
+    V &= 4\text{ m}^3
+\end{align}
+Il s'agit toutefois d'une approximation étant donné que les spécifications sur le diamètre de la lentille n'étaient pas fournies.

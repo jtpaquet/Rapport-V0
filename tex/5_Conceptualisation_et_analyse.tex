@@ -80,13 +80,13 @@ Afin d'optimiser et de faciliter l'identification des poissons, il est nécessai
 
 \subsubsection{GoFishCam}
 
-\textbf{Description:} La GoFishCam est une caméra utilisée pour la pêche. Elle peut enregistrer des vidéos de haute définition de 720p et de 1080p. Elle peut prendre entre 30 et 60 images par seconde. Cette caméra est conçue avec du matériel militaire et sa forme aérodynamique permet une stabilisation d'image lors de l'enregistrement. La GoFishCam comprend des diodes électroluminescentes (LEDs) efficace pour la vision de nuit. Son prix s'élève à environ 325\$ et est livrable entre 10 et 15 jours.
+\textbf{Description:} La GoFishCam est une caméra utilisée pour la pêche. Elle peut enregistrer des vidéos de haute définition de 720p et de 1080p. La résolution peut ainsi atteindre environ 2 Mégapixels. Elle peut prendre entre 30 et 60 images par seconde. Cette caméra est conçue avec du matériel militaire et sa forme aérodynamique permet une stabilisation d'image lors de l'enregistrement. La GoFishCam comprend des diodes électroluminescentes (LEDs) efficace pour la vision de nuit. Son prix s'élève à environ 325\$ et est livrable entre 10 et 15 jours.
 
 \textbf{Décision:} Retenu.
 
 \textbf{Justification:} La GoFishCam comprend étonnamment des spécifications techniques adéquates pour le projet. En effet, la caméra peut atteindre une profondeur de près de 500 pieds et possède une masse de 0,094kg. La GoFishCam respecte également les contraintes reliées au volume. En effet, elle possède un volume d'environ 8,624x10$^{-5}$m$^3$. La caméra possède également un système de Wi-Fi intégré et une fonction « Live Stream » permettant la diffusion en directe sur une application.
 
-\textbf{Références:} \cite{GoFishCam} 
+\textbf{Références:} \cite{GoFishCam} \cite{GoFishCam_resolution}
 
 
 \subsubsection{Capteur d'image OV5640}
@@ -165,13 +165,15 @@ Avec cette option on pourra certes répondre à la demande du client mais il fau
  
 \subsubsection{Alimentation Filaire:}
 \textbf{Description :}
-Pour le 3e concept, il s'agit de l'alimentation filaire. Pour cette solution, le système sera directement relié a une prise électrique située à la surface par l'entremise d'un câble d'alimentation. Si nécessaire, plusieurs cordons seront enfilés pour avoir une longueur maximale.
+Pour le 3e concept, il s'agit de l'alimentation filaire. Pour cette solution, le système sera directement relié a une prise électrique située à la surface par l'entremise d'un câble d'alimentation. Si nécessaire, plusieurs cordons seront enfilés pour avoir une longueur maximale. On utilisera la rallonge filaire de 50 pieds pour 39,00\$ sur uline.ca.
  
  \textbf{Décision :}
  Retenu.
  
  \textbf{Justification :}
  La solution filaire, en plus de réduire les coûts, permet d'alimenter constamment le système dans une configuration sécuritaire.
+ 
+ \textbf{Références :} \cite{fil}
  
 \subsubsection{Panneaux solaires:}
 
@@ -337,7 +339,7 @@ L’automatisation de la prise de données sur les poissons étant au cœur du p
 
 \subsubsection{Développement par un Tiers}
 
-\textbf{Description: }L’établissement d’un partenariat avec une compagnie établie en intelligence artificielle pourrait également être envisageable dans la conception du logiciel de détection de poissons. Toute compagnie établie dans le domaine de l’intelligence artificielle, telle que la compagnie Element AI à Montréal, et qui possède de l’expertise en vision numérique pourrait amener de son expertise au projet et développer un logiciel de reconnaissance d’espèces de poisson avec aise. Le coût de développement d’un tel logiciel peut s’avérer coûteux. Puisqu’il est difficile de mettre un chiffre exact sur les tarifs d’une compagnie en particulier, on estimera, par sécurité, les coûts de développement à la limite permise, soient 40 000\$.
+\textbf{Description: }L’établissement d’un partenariat avec une compagnie établie en intelligence artificielle pourrait également être envisageable dans la conception du logiciel de détection de poissons. Toute compagnie établie dans le domaine de l’intelligence artificielle, telle que la compagnie Element AI à Montréal, et qui possède de l’expertise en vision numérique pourrait amener de son expertise au projet et développer un logiciel de reconnaissance d’espèces de poisson avec aise. Le coût de développement d’un tel logiciel peut s’avérer coûteux. Puisqu’il est difficile de mettre un chiffre exact sur les tarifs d’une compagnie en particulier, on estimera les coûts de développement à  35 000\$.
 
 \textbf{Décision :} Retenu.
 
@@ -350,9 +352,9 @@ L’automatisation de la prise de données sur les poissons étant au cœur du p
 
 \textbf{Description :} Il existe aussi déjà des solutions logicielles potables sur le marché donnant des approximations sur l’espèce d’un poisson : il est ainsi possible de réduire les coûts de production en amorçant le développement du logiciel à partir d’une application déjà fonctionnelle. Il serait possible tout en l’adaptant à notre situation. Un partenariat avec une compagnie telle que FishVerify, une application de détection de poisson pour la pêche, pourrait être un excellent point de départ dans la création d’un logiciel tel que demandé par le ministère. L’avantage de cette solution est la réduction des coûts, mais également la réduction de temps nécessaire pour développer le produit.
 
-\textbf{Décision :} Retenu, mais.
+\textbf{Décision :} Rejeté.
 
-\textbf{Justification :} On peut s’assurer d’un produit fonctionnel et efficace avec une telle optique de production. Puisqu’on amorce le projet avec un produit fonctionnel, on peut s’assurer d’un produit fonctionnel et adapté aux besoins du ministère en peu de temps. Il faut souligner que la contrainte du partenariat peut facilement rendre cette solution inconvéniente.
+\textbf{Justification :} On peut s’assurer d’un produit fonctionnel et efficace avec une telle optique de production. Puisqu’on amorce le projet avec un produit fonctionnel, on peut s’assurer d’un produit fonctionnel et adapté aux besoins du ministère en peu de temps. Bien que la solution soit intéressante, le produit possède une banque de données inapproprié pour le territoire du Québec. En effet, la banque de données de FishVerifyApp comprend environ 150 poissons communs de la Floride. De plus, il faut souligner que la contrainte du partenariat peut facilement rendre cette solution inconvéniente.
 
 
 \textbf{Références :} \cite{fishverify}
@@ -370,9 +372,9 @@ L’automatisation de la prise de données sur les poissons étant au cœur du p
     & Physiques & Économiques & Temporels & Socio-envir & \\
     \hline\hline
     Réseau de neurones & Oui  & Oui & Oui & Oui & Retenu \\
-    Logicel par détection de masque & Oui & Oui & Oui & Oui & Retenu \\
+    Logicel par détection de masque & Non & Oui & Oui & Oui & Rejeté \\
     Développement par un tiers & Oui & Oui, mais & Oui & Oui & Retenu \\
-    FishVerify app & Oui & Oui, mais & Oui & Oui & Retenu, mais \\
+    FishVerify app & Non & Oui, mais & Oui & Oui & Rejeté \\
     \hline
     \end{tabular}
 }
@@ -1074,7 +1076,7 @@ Le système se doit d'informer un responsable lorsque son bon fonctionnement est
 
 \textbf{Aspects temporels:}
 \begin{itemize}[label = {--}]
-    \item Le temps de développement de la solution doit être minimisé.
+    \item N/A
 \end{itemize}
 
 \textbf{Aspects socio-environnementaux:}
@@ -1084,46 +1086,48 @@ Le système se doit d'informer un responsable lorsque son bon fonctionnement est
 
 \subsubsection{Pushover message API}
 
-\textbf{Description :} Pour communiquer l'alarme avec l'utilisateur, la plateforme Pushover est utilisée. Elle permet d'envoyer des notifications sur des appareils mobiles et s'intègre bien sur une application web. 
+\textbf{Description :} Pour communiquer l'alarme avec l'utilisateur, il est possible d'utiliser l'application Pushover qui s'intègre bien sur un site web. Elle permet d'envoyer des notifications sur des appareils mobiles ayant iOs ou Android, sur un ordinateur, par SMS, sur la Apple Watch ou Androir Wear. Pour un forfait de 5\$ par mois, elle permet de d'envoyer 7000 notifications et 50 SMS. Sinon, il est possible de payer 5\$ par plateforme sur laquelle on souhaite envoyer des notifications.
 
 \textbf{Décision :} Retenu.
 
-\textbf{Justification :}
+\textbf{Justification :} L'application Pushover remplit les besoins physiques du projet. Avec le forfait mentionné plus haut, il serait possible d'envoyer 7000 notifications par mois, ce qui est amplement suffisant. De plus, l'intégration de Pushover sur une application web permet le traitement de l'état du système et d'envoyer une notification lorsqu'il y a un problème. Le coût de 5\$ par plateforme ou par mois entre aussi dans le budget alloué.
 
 \textbf{Références :} \cite{Pushover}
- 
- 
-\subsubsection{Google Chrome Alarms}
-
-\textbf{Description:} Pour communiquer l'alarme avec l'utilisateur, l'API de Google Chrome Alarms est utilisée. Elle permet d'envoyer des notifications l'application web et est optimisée pour une telle application.
-
-\textbf{Décision:} Retenu
-
-\textbf{Justification:} 
-
-\textbf{Références:} \cite{Chrome_Alarm}
 
 
+\subsubsection{Urban Airship}
 
-\subsubsection{Tizen Alarm API}
-
-\textbf{Description:} Pour communiquer l'alarme avec l'utilisateur, la plateforme Tizen pour applications web serait demandée.
+\textbf{Description:} La plateforme Urban Airship propose leur services pour envoyer des notifications. Cela permet d'envoyer des notifications sur les appareils Android et iOs, sur les ordinateurs connectés à internet, par email et par SMS. Avec son plan gratuit, elle permet d'envoyer 1000 notifications et de les céduler.
 
 \textbf{Décision:} Retenu.
 
-\textbf{Justification:} 
+\textbf{Justification:} Cette plateforme est retenue puisqu'elle présente plusieurs fonctionnalités permettant d'envoyer des notifications. De plus, son plan gratuit offre 1000 notifications, ce qui devrait combler la demande en notifications pour un prix qui satisfait les critères du projet.
 
-\textbf{Références:} \cite{Tizen}
+\textbf{Références:} \cite{Urban_airship}
 
-\subsubsection{Intégration avec CodeCreators}
+ 
+ 
+\subsubsection{Amazon Simple Notification Service}
 
-\textbf{Description:} 
+\textbf{Description:} Amazon SNS est un service crée pour envoyer des notifications sur les appareils mobiles qui ont iOs, Android, Windows Phone et Fire OS. Le premier million de notifications est gratuit et ensuite il faut payer 0.50\$ par million. Il permet aussi d'envoyer 1000 emails gratuitement et le tarif devient de 2\$ par 100 000 emails par la suite. Il peut envoyer 100 SMS gratuitement et offre un tarif de 0.00645\$ par SMS dépassé cette limite.
 
 \textbf{Décision:} Retenu.
 
-\textbf{Justification:} 
+\textbf{Justification:} Amazon SNS est retenu puisqu'il offre plusieurs fonctionnalités. Son coût entre aussi dans les limites admises puisqu'il n'y aura probablement pas des centaines de notifications à générer.
 
-\textbf{Références:} \cite{CodeCreators} \cite{CodeCreators2}
+\textbf{Références:} \cite{Amazon_SNS}
+
+
+
+\subsubsection{OneSignal}
+
+\textbf{Description:} La compagnie OneSignal propose un plan pour les compagnies en développement qui permet d'avoir 30000 appareils mobiles ou de bureau auxquels on peut envoyer des notifications de façon illimitée. Les notifications sont envoyées dans les minutes qui suivent. Le prix est de ce plan est de 99\$ par mois.
+
+\textbf{Décision:} Rejeté.
+
+\textbf{Justification:} Bien que cette option remplisse les critères par rapport aux fonctionnalités, son prix est trop élevé. Cette plateforme est optimisée pour des compagnies ayant une audience plus large et n'est pas adapté aux besoins du projet. À 99\$ par mois, cela fait un total de 1200\$ par année pour un aspect mineur dans le projet.
+
+\textbf{Références:} \cite{OneSignal}
 
 
 \begin{table}[!htb]
@@ -1135,10 +1139,10 @@ Le système se doit d'informer un responsable lorsque son bon fonctionnement est
     \multirow{2}{*}{Concepts} & \multicolumn{4}{c|}{Aspects de l'analyse} & \multirow{2}{*}{Décision} \\ \cline{2-5}
     & Physiques & Économiques & Temporels & Socio-envir & \\
     \hline\hline
-    Pushover message API & Oui & Oui & Oui & Oui & Retenu\\
-    Google Chrome Alarms & Oui & Oui & Oui & Oui & Retenu \\
-    Tizen Alarm API & Oui & Oui & Oui & Oui & Retenu \\
-    Intégration avec CodeCreators & Oui & Oui & Oui & Oui & Retenu \\
+    Pushover message API & Oui & Oui & N/A & N/A & Retenu\\
+    Urban Airship & Oui & Oui & N/A & N/A & Retenu \\
+    Amazon SNS & Oui & Oui & N/A & N/A & Retenu \\
+    OneSignal & Oui & Non & N/A & N/A & Rejeté \\
     \hline
     \end{tabular}
 }

@@ -19,7 +19,7 @@ Cette section est destinée à la présentation des critères par rapport aux ob
         Critères & Pondération & Barème & Min. & Max.\\
         \hline
         \hline
-        Qualité du produit & 55\% & & &\\
+        Qualité du produit & 65\% & & &\\
         \hline
         Résolution du capteur [Mpx] & 10\% & Éq. \ref{eq:bareme_res} & 10000 & $\infty$ \\
         Identification des poissons [poissons] & 10\% & Éq.  \ref{eq:bareme_identification} & 5 & $\infty$ \\
@@ -28,11 +28,11 @@ Cette section est destinée à la présentation des critères par rapport aux ob
         Durée de vie de l'alimentation du système [jours] & 5\% & Éq. \ref{eq:bareme_duree_batterie}  & 14  & $\infty$\\
         Acheminement des informations [m] & 5\% & Éq. \ref{eq:bareme_acheminement_infos} & 53 & 284 \\
         Fiabilité du système de sécurité & 5\% & Éq. \ref{eq:bareme_sécurité} & & \\
-        Résistance à la profondeur [m] & 2\% & Éq. \ref{eq:bareme_profondeur} & 15.25 & 280 \\
-        Taille des spécimens observés [cm] & 2\% & Éq. \ref{eq:bareme_taille_poisson} & 6 & 140 \\
-        Nombre de fonctionnalités de l'alarme & 2\% & Éq. \ref{eq:bareme_etat_systeme} & 0 & $\infty$\\
-        Puissance de calcul & 2\% & Éq. \ref{eq:bareme_gpu} & 0 & 198 \\
-        Utilisation de l'interface graphique & 2\% & Table \ref{t:bareme_interface} & & \\
+        Résistance à la profondeur [m] & 4\% & Éq. \ref{eq:bareme_profondeur} & 15.25 & 280 \\
+        Taille des spécimens observés [cm] & 4\% & Éq. \ref{eq:bareme_taille_poisson} & 0 & $\infty$ \\
+        Nombre de fonctionnalités de l'alarme & 4\% & Éq. \ref{eq:bareme_etat_systeme} & 0 & $\infty$\\
+        Puissance de calcul & 4\% & Éq. \ref{eq:bareme_gpu} & 0 & 198 \\
+        Utilisation de l'interface graphique & 4\% & Table \ref{t:bareme_interface} & & \\
         \hline\hline
         Performance & 20\% & & & \\
         \hline
@@ -221,21 +221,19 @@ Une pondération de 2\% est attribuée à ce critère. Le MFA demande que le cap
 
 
 \subsection{Taille maximale des spécimens observables}
-Taille des spécimens observés [cm]:
 
-La pondération attribuée à ce critère est de 2\%. Le MFA demande de pouvoir imager des espèces qui ont une taille minimum de 6 cm. De plus, le plus gros poissons d'eau douce au Canada est l'esturgeon jaune \cite{Esturgeon} et il a une taille maximale de 140cm. Le barème à l'équation \ref{eq:bareme_taille_poisson} est donc établie selon une fonction linéaire entre 5 et 140 cm.
+La pondération attribuée à ce critère est de 4\%. Le MFA demande de pouvoir imager des espèces qui ont une taille minimum de 6 cm. Ça veut dire qu'il faut être capable d'imager des poissons d'au minimum 6cm, mais c'est mieux si il est possible d'imager encore plus petit. Le barème à l'équation \ref{eq:bareme_taille_poisson} est établie selon une fonction exponentielle entre 0 et 6 cm puisqu'une différence entre 0.1 cm et 0.6 cm vaut moins qu'une différence entre 5 et 5.5 cm. Le barème est présenté à l'équation \ref{annexe:bareme_exp_poisson} où les paramètres $a$ et $b$ sont ajustés pour avoir la forme de courbe voulue.
 
 \begin{equation}
 y(x) = \begin{cases}
-        \frac{x}{134}- \frac{6}{134} & \text{ si } 6 \leq x \leq 140\\
-        1 & \text{ si } x \geq 140\\
+        \frac{1-10^{\frac{x-6}{6}}}{1-10^{-1}} & \text{si } x \leq 6\\
         \text{Rejeté} & \text{ si } x < 6
     \end{cases}
     \label{eq:bareme_taille_poisson}
 \end{equation}
-où $x$ est la taille maximale des spécimens observables en cm.
+où $x$ est la taille minimale des spécimens observables en cm.
 
-Le capteur optique doit posséder une masse inférieure à 5kg sous l'eau. Le volume du capteur sous l'eau se doit de ne pas dépasser 0.3m$^{3}$. Le capteur doit être fonctionnel jusqu'à une profondeur de 50 pieds. Le système doit supporter une température entre +5°C et -10°C par rapport à la température de l'eau où le capteur sera situé.
+% Le capteur optique doit posséder une masse inférieure à 5kg sous l'eau. Le volume du capteur sous l'eau se doit de ne pas dépasser 0.3m$^{3}$. Le capteur doit être fonctionnel jusqu'à une profondeur de 50 pieds. Le système doit supporter une température entre +5°C et -10°C par rapport à la température de l'eau où le capteur sera situé.
 
 
 \subsection{Nombre de fonctionnalités reliées à l'alarme}
@@ -304,7 +302,7 @@ La performance est un aspect important du projet. Cette section comprend des cri
 \end{figure}
 % \end{wrapfigure}
 
-Le logiciel de reconnaissance du poisson étant au coeur du projet de conception, on donnera une certaine importance à la précision et l'exactitude du programme pour assurer une collecte de données efficace (pondération de 10\%). De plus, un logiciel incapable de faire une bonne différenciation des espèces de poissons ruine l'ensemble des investissements ultérieurs: une excellente caméra ne vaut rien sans un logiciel de qualité. Par contre, à une différenciation d'exactitude dans les très hauts pourcentages (85 à 100), on donnera graduellement moins d'importance aux variations d'efficacité. À un tel niveau d'exactitude, on laissera plus d'importance aux autres caractéristiques en considérant la précision de l'appareil déjà pratiquement maximisée. La fonction quantifiant la qualité de la reconnaissance du poisson s'apparente à une fonction de type racine carrée tel que présenté ci-contre:
+Le logiciel de reconnaissance du poisson étant au coeur du projet de conception, on donnera une certaine importance à la précision et l'exactitude du programme pour assurer une collecte de données efficace (pondération de 15\%). De plus, un logiciel incapable de faire une bonne différenciation des espèces de poissons ruine l'ensemble des investissements ultérieurs: une excellente caméra ne vaut rien sans un logiciel de qualité. Par contre, à une différenciation d'exactitude dans les très hauts pourcentages (85 à 100), on donnera graduellement moins d'importance aux variations d'efficacité. À un tel niveau d'exactitude, on laissera plus d'importance aux autres caractéristiques en considérant la précision de l'appareil déjà pratiquement maximisée. La fonction quantifiant la qualité de la reconnaissance du poisson s'apparente à une fonction de type exponentielle tel que présenté ci-contre:
 
 \begin{equation}
     y = e^{5(x-1)}
@@ -479,7 +477,7 @@ Un système ne respectant pas la limite de 10000\$ en coûts de matériel sera r
 
 \begin{figure}[htb!]
     \centering
-    \includegraphics[width=\linewidth]{fig/MQ2.pdf}
+    \includegraphics[width=\linewidth]{fig/MQ3.pdf}
     \caption{Maison de qualité du projet Fish \& Chips}
     \label{fig:maison_qualite}
 \end{figure}
